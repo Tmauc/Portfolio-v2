@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components';
+export const GlobalStyle = createGlobalStyle`
+
 // Modern CSS reset
 /* Box sizing rules */
 *,
@@ -73,3 +76,18 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+  body {
+    color: ${p => p.theme.textColor};
+    font-family: 'TT Firs Neue Trl';
+    overflow-x: hidden;
+
+    .button {
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+`
