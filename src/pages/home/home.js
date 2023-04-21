@@ -16,13 +16,14 @@ function Home({ darkMode, setDarkMode }) {
 
   const handleClick = useCallback(() => {
     setActiveSide(activeSide === constants.LEFT_SIDE ? constants.RIGHT_SIDE : constants.LEFT_SIDE);
-    setActiveSection(constants.NAVBAR_ABOUT)
+    setActiveSection(constants.NAVBAR_ABOUT);
+    document.title = activeSide === constants.LEFT_SIDE ? 'Content Creator ~ Mauc' : 'Front-End Dev ~ Thomas';
   }, [activeSide])
 
   return (
-    <Background activeSide={activeSide}>
+    <Background activeSide={activeSide} darkMode={darkMode}>
       <Main>
-        <PageWrapper>
+        <PageWrapper activeSide={activeSide}>
           <Header>
             <GradientWrapper>
               <ColorGradient

@@ -5,22 +5,39 @@ import * as constants from 'constants/constants';
 
 import leftPNG from 'assets/imgs/thomas.png'
 import rightPNG from 'assets/imgs/mauc.png'
+import multipleCircleWhite from 'assets/svg/multipleCircleWhite.svg'
+import multipleCircleGrey from 'assets/svg/multipleCircleGrey.svg'
 
 export const Background = styled.div`
   background-color: ${p => p.theme.secondary};
-    ${p => {
-    if (p.activeSide === constants.LEFT_SIDE) {
-      return css`
+  ${p => {
+    if (p.darkMode) {
+      if (p.activeSide === constants.LEFT_SIDE) {
+        return css`
         background-image: url(${leftPNG}),
-        url('https://kawsar.design/wp-content/uploads/2023/02/BG-Tx-1.svg');
+        url(${multipleCircleWhite});
       `
-    } else if (p.activeSide === constants.RIGHT_SIDE) {
-      return css`
+      } else if (p.activeSide === constants.RIGHT_SIDE) {
+        return css`
         background-image: url(${rightPNG}),
-        url('https://kawsar.design/wp-content/uploads/2023/02/BG-Tx-1.svg');
+        url(${multipleCircleWhite});
       `
+      }
+    } else {
+      if (p.activeSide === constants.LEFT_SIDE) {
+        return css`
+        background-image: url(${leftPNG}),
+        url(${multipleCircleGrey});
+      `
+      } else if (p.activeSide === constants.RIGHT_SIDE) {
+        return css`
+        background-image: url(${rightPNG}),
+        url(${multipleCircleGrey});
+      `
+      }
     }
   }};
+  
   background-size: contain, cover;
   background-attachment: fixed;
   background-position: right, center center;
@@ -40,7 +57,17 @@ export const PageWrapper = styled.div`
   flex-direction: column;
   margin: 10px;
   padding: 50px;
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23FF8800FF' stroke-width='1' stroke-dasharray='21%2c 23%2c 11' stroke-dashoffset='37' stroke-linecap='square'/%3e%3c/svg%3e");
+  ${p => {
+    if (p.activeSide === constants.LEFT_SIDE) {
+      return css`
+        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23FF8800FF' stroke-width='1' stroke-dasharray='21%2c 23%2c 11' stroke-dashoffset='37' stroke-linecap='square'/%3e%3c/svg%3e");
+      `
+    } else if (p.activeSide === constants.RIGHT_SIDE) {
+      return css`
+        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23bb00ffFF' stroke-width='1' stroke-dasharray='21%2c 23%2c 11' stroke-dashoffset='37' stroke-linecap='square'/%3e%3c/svg%3e");
+      `
+    }
+  }};
 `;
 
 export const Header = styled.section`

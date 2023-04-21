@@ -7,4 +7,5 @@ export const Neumorphism = styled.div`
   & > *:not(:last-child) {
     margin-bottom: 5px;
   }
+  width: fit-content;
 `;

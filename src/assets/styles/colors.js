@@ -3,7 +3,6 @@
 export const primary = 'hsl(205, 100%, 39%)';
 export const secondary = 'hsl(0, 0%, 7%)';
 export const tertiary = 'hsl(0, 0%, 95%)';
-
 export const whiteColor = 'hsl(0, 0%, 100%)';
 export const textWhite = 'hsl(37, 17%, 91%)';
 
