@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LoginBox, Form, UserBox, Input, Label, TextArea, Button, Span } from './mailForm.style';
 
-function MailForm({ activeSide }) {
+function MailForm() {
   // eslint-disable-next-line
   const [email, setEmail] = useState("");
   // eslint-disable-next-line
@@ -23,7 +23,7 @@ function MailForm({ activeSide }) {
     }
   }
   return (
-    <LoginBox className="neumorphism">
+    <LoginBox>
       <Form>
         <UserBox>
           <Input
@@ -52,9 +52,9 @@ function MailForm({ activeSide }) {
           <Label htmlFor="message-input" id="message-label">Message</Label>
         </UserBox>
         <center>
-          <Button type="submit" activeSide={activeSide}>
+          <Button type="submit">
             SEND
-            <Span aria-hidden="true" activeSide={activeSide}></Span>
+            <Span aria-hidden="true"></Span>
           </Button>
         </center>
       </Form>

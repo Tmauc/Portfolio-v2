@@ -1,10 +1,13 @@
 import styled from 'styled-components';
-import { blackTransparent03, skyColor, sunColor, nightSkyColor, nightSkyLightColor, starsColor, moonColor, craterColor } from 'assets/styles/colors';
 
 export const ToggleWrapper = styled.div`
+  position: absolute;
+  bottom: 10px;
+  right: 0;
   overflow: hidden;
   color: white;
   transform: scale(0.6);
+  z-index: 1041;
 `;
 
 export const Label = styled.label`
@@ -13,7 +16,7 @@ export const Label = styled.label`
   position: relative;
   width: 90px;
   height: 50px;
-  background-color: ${skyColor};
+  background-color: ${p => p.theme.sky.sky};
   border-radius: 84px;
   transition: background-color 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 `;
@@ -21,21 +24,21 @@ export const Label = styled.label`
 export const ToggleHandler = styled.span`
   display: inline-block;
   position: relative;
-  z-index: 1;
+  z-index: 1042;
   top: 3px;
   left: 3px;
   width: 44px;
   height: 44px;
-  background-color: ${sunColor};
+  background-color: ${p => p.theme.sky.sun};
   border-radius: 50px;
-  box-shadow: 0 2px 6px ${blackTransparent03};
+  box-shadow: 0 2px 6px ${p => p.theme.transparent.black03};
   transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform: rotate(-45deg);
 `;
 
 export const Crater = styled.span`
   position: absolute;
-  background-color: ${craterColor};
+  background-color: ${p => p.theme.sky.crater};
   opacity: 0;
   transition: opacity 200ms ease-in-out;
   border-radius: 100%;
@@ -64,14 +67,14 @@ export const Crater = styled.span`
 
 export const Star = styled.span`
   position: absolute;
-  background-color: ${starsColor};
+  background-color: ${p => p.theme.sky.stars};
   transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
   border-radius: 50%;
 
   &.star--1 {
     top: 10px;
     left: 35px;
-    z-index: 0;
+    z-index: 1041;
     width: 30px;
     height: 3px;
   }
@@ -79,7 +82,7 @@ export const Star = styled.span`
   &.star--2 {
     top: 18px;
     left: 28px;
-    z-index: 1;
+    z-index: 1042;
     width: 30px;
     height: 3px;
   }
@@ -87,7 +90,7 @@ export const Star = styled.span`
   &.star--3 {
     top: 27px;
     left: 40px;
-    z-index: 0;
+    z-index: 1041;
     width: 30px;
     height: 3px;
   }
@@ -102,7 +105,7 @@ export const Star = styled.span`
   &.star--4 {
     top: 16px;
     left: 11px;
-    z-index: 0;
+    z-index: 1041;
     width: 2px;
     height: 2px;
     transform: translate3d(3px, 0, 0);
@@ -112,7 +115,7 @@ export const Star = styled.span`
   &.star--5 {
     top: 32px;
     left: 17px;
-    z-index: 0;
+    z-index: 1041;
     width: 3px;
     height: 3px;
     transform: translate3d(3px, 0, 0);
@@ -122,7 +125,7 @@ export const Star = styled.span`
   &.star--6 {
     top: 36px;
     left: 28px;
-    z-index: 0;
+    z-index: 1041;
     width: 2px;
     height: 2px;
     transform: translate3d(3px, 0, 0);
@@ -135,19 +138,19 @@ export const Input = styled.input`
   left: -99em;
 
   &:checked + ${Label} {
-    background-color: ${nightSkyColor};
+    background-color: ${p => p.theme.sky.nightSky};
   }
 
   &:checked + ${Label}::before {
-    color: ${nightSkyLightColor};
+    color: ${p => p.theme.sky.nightSkyLight};
   }
 
   &:checked + ${Label}::after {
-    color: ${starsColor};
+    color: ${p => p.theme.sky.stars};
   }
 
   &:checked + ${Label} ${ToggleHandler} {
-    background-color: ${moonColor};
+    background-color: ${p => p.theme.sky.moon};
     transform: translate3d(40px, 0, 0) rotate(0);
   }
 

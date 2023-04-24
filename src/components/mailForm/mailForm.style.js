@@ -1,9 +1,6 @@
-import styled, { css } from 'styled-components';
-import { orange, purple, greyLight } from 'assets/styles/colors';
-import { btnAnim } from 'assets/styles/animations';
-import { Neumorphism } from 'assets/styles/common.style';
-
-import * as constants from 'constants/constants';
+import styled from 'styled-components';
+import { btnAnim } from '../../assets/styles/animations';
+import { Neumorphism } from '../../assets/styles/common.style';
 
 export const LoginBox = styled(Neumorphism)`
   width: 100%;
@@ -30,7 +27,7 @@ export const Input = styled.input`
   &:valid ~ label {
     top: -20px;
     left: 0;
-    color: ${greyLight};
+    color: ${p => p.theme.tertiary};
     font-size: 12px;
   }
 `;
@@ -60,7 +57,7 @@ export const TextArea = styled.textarea`
   &:valid ~ label {
     top: -20px;
     left: 0;
-    color: ${greyLight};
+    color: ${p => p.theme.tertiary};
     font-size: 12px;
   }
 `;
@@ -82,38 +79,16 @@ export const Button = styled.button`
   &:hover {
     color: ${p => p.theme.tertiary};
     border-radius: 5px;
-    ${p => {
-    if (p.activeSide === constants.LEFT_SIDE) {
-      return css`
-          background-color: ${orange};
-        `
-    } else if (p.activeSide === constants.RIGHT_SIDE) {
-      return css`
-          background-color: ${purple};
-        `
-    }
-  }}
+    background-color: ${p => p.theme.primary};
   }
 `;
 
 export const Span = styled.span`
   position: absolute;
   display: block;
-  ${p => {
-    if (p.activeSide === constants.LEFT_SIDE) {
-      return css`
-        &:nth-child(1) {
-          background: linear-gradient(90deg, transparent, ${orange});
-        }
-      `
-    } else if (p.activeSide === constants.RIGHT_SIDE) {
-      return css`
-        &:nth-child(1) {
-          background: linear-gradient(90deg, transparent, ${purple});
-        }
-      `
-    }
-  }}
+  &:nth-child(1) {
+    background: linear-gradient(90deg, transparent, ${p => p.theme.primary});
+  }
 
   &:nth-child(1) {
     bottom: 2px;
@@ -122,16 +97,6 @@ export const Span = styled.span`
     height: 2px;
     animation: ${btnAnim} 2s linear infinite;
     animation-iteration-count: infinite;
-    ${p => {
-    if (p.activeSide === constants.LEFT_SIDE) {
-      return css`
-        background: linear-gradient(90deg, transparent, ${orange});
-      `
-    } else if (p.activeSide === constants.RIGHT_SIDE) {
-      return css`
-        background: linear-gradient(90deg, transparent, ${purple});
-      `
-    }
-  }}
+    background: linear-gradient(90deg, transparent, ${p => p.theme.primary});
   }
 `

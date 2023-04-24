@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api, { getToken } from 'core/TwitchAPI';
+import api, { getToken } from '../../core/TwitchAPI';
 
 const ChannelDetails = ({ channelName }) => {
   const [channelData, setChannelData] = useState(null);
@@ -21,7 +21,6 @@ const ChannelDetails = ({ channelName }) => {
     fetchData();
   }, [channelName]);
 
-  console.log('oui', channelData);
   return (
     <div>
       {channelData ? (

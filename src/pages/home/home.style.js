@@ -1,54 +1,32 @@
-import styled, { css } from 'styled-components';
-import { orange, purple, darkPink, pink, darkYellow, yellow, blackTransparent02 } from 'assets/styles/colors';
-import { glitchAnim, jiggle } from 'assets/styles/animations'
-import * as constants from 'constants/constants';
-
-import leftPNG from 'assets/imgs/thomas.png'
-import rightPNG from 'assets/imgs/mauc.png'
-import multipleCircleWhite from 'assets/svg/multipleCircleWhite.svg'
-import multipleCircleGrey from 'assets/svg/multipleCircleGrey.svg'
+import styled from 'styled-components';
+import { glitchAnim, jiggle } from '../../assets/styles/animations'
+import { LargeText } from '../../assets/styles/common.style';
+import { TABLET_WIDTH } from '../../constants/constants';
 
 export const Background = styled.div`
   background-color: ${p => p.theme.secondary};
-  ${p => {
-    if (p.darkMode) {
-      if (p.activeSide === constants.LEFT_SIDE) {
-        return css`
-        background-image: url(${leftPNG}),
-        url(${multipleCircleWhite});
-      `
-      } else if (p.activeSide === constants.RIGHT_SIDE) {
-        return css`
-        background-image: url(${rightPNG}),
-        url(${multipleCircleWhite});
-      `
-      }
-    } else {
-      if (p.activeSide === constants.LEFT_SIDE) {
-        return css`
-        background-image: url(${leftPNG}),
-        url(${multipleCircleGrey});
-      `
-      } else if (p.activeSide === constants.RIGHT_SIDE) {
-        return css`
-        background-image: url(${rightPNG}),
-        url(${multipleCircleGrey});
-      `
-      }
-    }
-  }};
+  background-image: url(${p => p.theme.backgroundCharacter}),
+    url(${p => p.theme.backgroundMultipleCircle});
   
   background-size: contain, cover;
   background-attachment: fixed;
   background-position: right, center center;
   background-repeat: no-repeat;
+
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    background-position: bottom, center center;
+  }
 `;
 
 export const Main = styled.div`
   display: flex;
-  background-color: ${blackTransparent02};
-  overflow-x: hidden;
+  background-color: ${p => p.theme.transparentBackground02};
+  overflow: hidden;
   height: 100vh;
+
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    background-color: ${p => p.theme.transparentBackground06};
+  }
 `;
 
 export const PageWrapper = styled.div`
@@ -57,17 +35,11 @@ export const PageWrapper = styled.div`
   flex-direction: column;
   margin: 10px;
   padding: 50px;
-  ${p => {
-    if (p.activeSide === constants.LEFT_SIDE) {
-      return css`
-        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23FF8800FF' stroke-width='1' stroke-dasharray='21%2c 23%2c 11' stroke-dashoffset='37' stroke-linecap='square'/%3e%3c/svg%3e");
-      `
-    } else if (p.activeSide === constants.RIGHT_SIDE) {
-      return css`
-        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23bb00ffFF' stroke-width='1' stroke-dasharray='21%2c 23%2c 11' stroke-dashoffset='37' stroke-linecap='square'/%3e%3c/svg%3e");
-      `
-    }
-  }};
+  background-image: url("${p => p.theme.backgroundUrl}");
+  
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    padding: 50px 10%;
+  }
 `;
 
 export const Header = styled.section`
@@ -79,22 +51,8 @@ export const GradientWrapper = styled.div`
   display: flex;
 `;
 
-export const LargeText = styled.h2`
-  display: inline;
-  width: fit-content;
-
-  font-size: calc(5000vw / 1080);
-  font-weight: 900;
-  line-height: 75%;
-  text-transform: uppercase;
-
-  transition: all 0.2s ease-out;
-
+export const LargeTransparentText = styled(LargeText)`
   padding-top: 20px;
-
-  color: ${p => p.theme.secondary};
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: ${p => p.theme.contrastBorder};
 
   &::after {
     content: ' ';
@@ -102,60 +60,34 @@ export const LargeText = styled.h2`
     height: 2px;
     width: 100%;
     z-index: 0;
-    background: ${p => p.theme.bottomBorder};
   }
 
-  ${p => {
-    if (p.activeSide === constants.LEFT_SIDE) {
-      return css`
-        &,
-        * {
-          &::selection {
-            background: ${orange};
-            color: ${p => p.theme.secondary};
-            -webkit-text-stroke-width: 0;
-          }
-        }
-      `
-    } else if (p.activeSide === constants.RIGHT_SIDE) {
-      return css`
-        &,
-        * {
-          &::selection {
-            background: ${purple};
-            color: ${p => p.theme.secondary};
-            -webkit-text-stroke-width: 0;
-          }
-        }
-      `
+  &,
+  * {
+    &::selection {
+      background: ${p => p.theme.primary};
+      color: ${p => p.theme.secondary};
+      -webkit-text-stroke-width: 0;
     }
-  }}
+  }
+  
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    -webkit-text-stroke-width: 1px;
+      padding-top: 10px;
+  }
 `;
 
-export const LargeLink = styled.button`
-  display: inline;
-  width: fit-content;
-
+export const LargeLink = styled(LargeText).attrs({
+  as: 'button',
+})`
   padding: 0;
   border: 0;
-
-  font-size: calc(5000vw / 1080);
-  font-weight: 900;
-  line-height: 75%;
-  text-transform: uppercase;
+  padding-top: 20px;
 
   transition: all 0.2s ease-out;
 
-  padding-top: 20px;
-
   cursor: pointer;
-
-  color: ${p => p.theme.secondary};
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: ${p => p.theme.contrastBorder};
-  &::after {
-    background: ${p => p.theme.bottomBorder};
-  }
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     transition: all 0.2s ease-out;
@@ -208,61 +140,50 @@ export const Gradient = styled(LargeLink)`
     opacity: 0.6;
   }
 
+
   &:hover::after {
     animation: ${glitchAnim} 1s;
     animation-timing-function: steps(2, end);
     background-color: transparent;
   }
+
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    margin-right: 12px;
+  }
 `
 
 export const ColorGradient = styled(Gradient)`
-  ${p => {
-    if (p.activeSide === constants.LEFT_SIDE) {
-      return css`
-        color: ${orange};
-        background-color: ${orange};
-        background-image: linear-gradient(
-          30deg,
-          ${orange} 40%,
-          ${darkYellow} 80%,
-          ${yellow} 100%
-        );
+  color: ${p => p.theme.primary};
+  background-color: ${p => p.theme.primary};
+  background-image: linear-gradient(
+    30deg,
+    ${p => p.theme.primary} 40%,
+    ${p => p.theme.primaryDark} 80%,
+    ${p => p.theme.primaryLight} 100% 100%
+  );
 
-        &::after {
-          content: 'MAUC';
-        }
+  &::after {
+    content: "${p => p.theme.content}";
+  }
 
-        &:hover::after {
-          text-shadow: -3px -3px 0px ${purple}, 3px 3px 0px ${darkPink};
-          border: 3px solid ${purple};
-        }
-      `
-    } else if (p.activeSide === constants.RIGHT_SIDE) {
-      return css`
-        color: ${purple};
-        background-color: ${purple};
-        background-image: linear-gradient(
-          30deg,
-          ${purple} 40%,
-          ${darkPink} 80%,
-          ${pink} 100%
-        );
-
-        &::after {
-          content: 'THOMAS';
-        }
-
-        &:hover::after {
-          text-shadow: -3px -3px 0px ${orange}, 3px 3px 0px ${darkYellow};
-          border: 3px solid ${orange};
-        }
-      `
-    }
-  }}
+  &:hover::after {
+    text-shadow: -3px -3px 0px ${p => p.theme.primary}, 3px 3px 0px ${p => p.theme.primaryDark};
+    border: 3px solid ${p => p.theme.primary};
+  }
 `
 
 export const MainSection = styled.section`
   margin-left: 10%;
   margin-top: 6%;
   max-width: 50vw;
+
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-left: 0;
+    max-width: 100vw;
+    font-size: 12px;
+  }
 `;

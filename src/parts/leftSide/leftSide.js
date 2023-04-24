@@ -1,18 +1,18 @@
 import React from 'react';
 
-import * as constants from 'constants/constants';
+import { NAVBAR_ABOUT, NAVBAR_CONTACT } from '../../constants/constants';
 
-import MailForm from 'components/mailForm/mailForm';
+import MailForm from '../../components/mailForm/mailForm';
 
-import { Neumorphism } from 'assets/styles/common.style';
+import { Neumorphism } from '../../assets/styles/common.style';
 
 function LeftSide({ activeSection }) {
 
   return (
     <>
-      {activeSection === constants.NAVBAR_ABOUT &&
+      {activeSection === NAVBAR_ABOUT &&
         <Neumorphism>
-          <p><b>Hello I'm Thomas</b></p>
+          <p><b>Hello I'm Thomas ~ TEMPORAIRE</b></p>
           <p><i>Front-end developer</i></p>
           <p>For over 2 years.<br />I graduated from Epitech school.</p>
           <p>Whether at school on individual and group projects
@@ -21,8 +21,8 @@ function LeftSide({ activeSection }) {
           <p>My main qualities: autonomy, rigor and curiosity.</p>
         </Neumorphism>
       }
-      {activeSection === constants.NAVBAR_CONTACT &&
-        <MailForm activeSide={constants.LEFT_SIDE} />
+      {activeSection === NAVBAR_CONTACT &&
+        <MailForm />
       }
     </>
   );

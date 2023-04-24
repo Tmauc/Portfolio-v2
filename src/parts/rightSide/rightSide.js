@@ -1,20 +1,20 @@
 import React from 'react';
 
-import * as constants from 'constants/constants';
+import { NAVBAR_ABOUT, NAVBAR_CONTACT, NAVBAR_TWITCH } from '../../constants/constants';
 
-import MailForm from 'components/mailForm/mailForm';
+import MailForm from '../../components/mailForm/mailForm';
 
-import ChannelLive from 'components/ChannelLive/ChannelLive';
+import ChannelLive from '../../components/ChannelLive/ChannelLive';
 
-import { Neumorphism } from 'assets/styles/common.style';
+import { Neumorphism } from '../../assets/styles/common.style';
 
 function RightSide({ activeSection }) {
 
   return (
     <>
-      {activeSection === constants.NAVBAR_ABOUT &&
+      {activeSection === NAVBAR_ABOUT &&
         <Neumorphism>
-          <p><b>Hello I'm Mauc</b></p>
+          <p><b>Hello I'm Mauc  ~ TEMPORAIRE</b></p>
           <p><i>A gamer</i></p>
           <p>It's been about ten years since I discovered <br />video games, photography and video and I love it.</p>
           <p>And as I like to share my passions:</p>
@@ -23,11 +23,11 @@ function RightSide({ activeSection }) {
           <p>- I take pictures and share them on instagram.</p>
         </Neumorphism>
       }
-      {activeSection === constants.NAVBAR_TWITCH &&
+      {activeSection === NAVBAR_TWITCH &&
         <ChannelLive channelId='256677231' />
       }
-      {activeSection === constants.NAVBAR_CONTACT &&
-        <MailForm activeSide={constants.RIGHT_SIDE} />
+      {activeSection === NAVBAR_CONTACT &&
+        <MailForm />
       }
     </>
   );

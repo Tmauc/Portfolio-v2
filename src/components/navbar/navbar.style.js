@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { orange, purple } from 'assets/styles/colors';
 
 export const Nav = styled.nav`
   position: fixed;
@@ -45,48 +44,29 @@ export const NavLink = styled.a`
   text-transform: uppercase;
   text-decoration: none;
   outline: none;
-
+  
+  &:hover {
+    border-right: 0.5px solid ${p => p.theme.primary};
+  }
+  
+  &:active {
+    color: ${p => p.theme.primary};
+  }
+  
   ${p => {
-    if (p.orange) {
+    if (p.active) {
       return css`
-        &:hover {
-          border-right: 0.5px solid ${orange};
-        }
-      `
-    } else if (p.purple) {
-      return css`
-        &:hover {
-          border-right: 0.5px solid ${purple};
-        }
+        color: ${p => p.theme.primary};
       `
     }
   }};
-  
+
   ${p => {
-    if (p.orange) {
-      if (p.active) {
-        return css`
-        color: ${orange};
-      `
-      }
+    if (p.disabled) {
       return css`
-        &:hover {
-          border-right: 0.5px solid ${orange};
-        }
-        &:active {
-          color: ${orange};
-        }
-      `
-    } else if (p.purple) {
-      if (p.active) {
-        return css`
-        color: ${purple};
-      `
-      }
-      return css`
-        &:hover {
-          border-right: 0.5px solid ${purple};
-        }
+        opacity: .2;
+        cursor: not-allowed;
+        pointer-events: none;
       `
     }
   }};

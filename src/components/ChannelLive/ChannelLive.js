@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import api, { getToken } from 'core/TwitchAPI';
 import { TwitchPlayer, TwitchChat } from 'react-twitch-embed';
-import { Neumorphism } from 'assets/styles/common.style';
+import api, { getToken } from '../../core/TwitchAPI';
+import { Neumorphism } from '../../assets/styles/common.style';
 import { TwitchPlayerStyle, LiveWrapper } from './ChannelLive.style'
+
+import useDeviceType from '../../hooks/useDeviceType';
 
 const ChannelPlanning = ({ channelId }) => {
   const [streamData, setStreamData] = useState(null);
+  const { isMobile } = useDeviceType();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,14 +53,16 @@ const ChannelPlanning = ({ channelId }) => {
           />
         </TwitchPlayerStyle>
       </Neumorphism>
-      <Neumorphism>
-        <TwitchChat
-          title={streamData?.title}
-          channel='maucsama'
-          width="100%"
-          height="100%"
-        />
-      </Neumorphism>
+      {!isMobile &&
+        <Neumorphism>
+          <TwitchChat
+            title={streamData?.title}
+            channel='maucsama'
+            width="100%"
+            height="100%"
+          />
+        </Neumorphism>
+      }
     </LiveWrapper>
   );
 };

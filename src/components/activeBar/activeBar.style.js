@@ -1,10 +1,13 @@
 import styled from 'styled-components';
-import { bounceLeft } from 'assets/styles/animations';
+import { bounceLeft } from '../../assets/styles/animations';
+import { TABLET_WIDTH } from '../../constants/constants';
 
 export const AlignWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+
+  z-index: 200;
 `;
 
 export const WrapperActiveBar = styled.span`
@@ -39,6 +42,11 @@ export const WrapperActiveBar = styled.span`
   animation: ${bounceLeft} 2s linear;
   animation-iteration-count: infinite;
   transition: all 0.2s ease-out;
+
+   @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    font-size: 8px;
+    letter-spacing: 4px;
+  }
 `;
 
 export const Scroll = styled.p`
