@@ -20,7 +20,7 @@ import NanumPenWoff from '../fonts/NanumPen.woff';
 
 export const GlobalFonts = createGlobalStyle`
 @font-face {
-  font-family: "TT Firs Neue Trl";
+  font-family: "TT Firs Neue Trl Regular";
   src: url(${TTFirsNeueTrlRegularWoff2}) format("woff2"),
     url(${TTFirsNeueTrlRegularWoff}) format("woff");
   font-weight: normal;
@@ -29,25 +29,7 @@ export const GlobalFonts = createGlobalStyle`
 }
 
 @font-face {
-  font-family: "TT Firs Neue Trl";
-  src: url(${TTFirsNeueTrlBlackWoff2}) format("woff2"),
-    url(${TTFirsNeueTrlBlackWoff}) format("woff");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "TT Firs Neue Trl";
-  src: url(${TTFirsNeueTrlBoldWoff2}) format("woff2"),
-    url(${TTFirsNeueTrlBoldWoff}) format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "TT Firs Neue Trl";
+  font-family: "TT Firs Neue Trl Italic";
   src: url(${TTFirsNeueTrlItWoff2}) format("woff2"),
     url(${TTFirsNeueTrlItWoff}) format("woff");
   font-weight: normal;
@@ -56,7 +38,25 @@ export const GlobalFonts = createGlobalStyle`
 }
 
 @font-face {
-  font-family: "TT Firs Neue Trl";
+  font-family: "TT Firs Neue Trl Black";
+  src: url(${TTFirsNeueTrlBlackWoff2}) format("woff2"),
+    url(${TTFirsNeueTrlBlackWoff}) format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Firs Neue Trl Bold";
+  src: url(${TTFirsNeueTrlBoldWoff2}) format("woff2"),
+    url(${TTFirsNeueTrlBoldWoff}) format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TT Firs Neue Trl Light";
   src: url(${TTFirsNeueTrlLightWoff2}) format("woff2"),
     url(${TTFirsNeueTrlLightWoff}) format("woff");
   font-weight: 300;
@@ -72,4 +72,4 @@ export const GlobalFonts = createGlobalStyle`
   font-style: normal;
   font-display: swap;
 }
-`
+`;

@@ -17,18 +17,25 @@ export const Input = styled.input`
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: ${p => p.theme.tertiary};
+  color: ${(p) => p.theme.tertiary};
   margin-bottom: 30px;
   border: none;
-  border-bottom: 1px solid ${p => p.theme.tertiary};
+  border-bottom: 1px solid ${(p) => p.theme.tertiary};
   outline: none;
   background: transparent;
   &:focus ~ label,
   &:valid ~ label {
     top: -20px;
     left: 0;
-    color: ${p => p.theme.tertiary};
+    color: ${(p) => p.theme.tertiary};
     font-size: 12px;
+  }
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: ${(p) => p.theme.tertiary} !important;
   }
 `;
 
@@ -38,7 +45,7 @@ export const Label = styled.label`
   left: 0;
   padding: 10px 0;
   font-size: 16px;
-  color: ${p => p.theme.tertiary};
+  color: ${(p) => p.theme.tertiary};
   pointer-events: none;
   transition: 0.5s;
 `;
@@ -47,17 +54,17 @@ export const TextArea = styled.textarea`
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: ${p => p.theme.tertiary};
+  color: ${(p) => p.theme.tertiary};
   margin-bottom: 30px;
   border: none;
-  border-bottom: 1px solid ${p => p.theme.tertiary};
+  border-bottom: 1px solid ${(p) => p.theme.tertiary};
   outline: none;
   background: transparent;
   &:focus ~ label,
   &:valid ~ label {
     top: -20px;
     left: 0;
-    color: ${p => p.theme.tertiary};
+    color: ${(p) => p.theme.tertiary};
     font-size: 12px;
   }
 `;
@@ -66,7 +73,7 @@ export const Button = styled.button`
   position: relative;
   display: inline-block;
   padding: 10px 20px;
-  color: ${p => p.theme.tertiary};
+  color: ${(p) => p.theme.tertiary};
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
@@ -77,9 +84,9 @@ export const Button = styled.button`
   background-color: transparent;
   border: 0;
   &:hover {
-    color: ${p => p.theme.tertiary};
+    color: ${(p) => p.theme.tertiary};
     border-radius: 5px;
-    background-color: ${p => p.theme.primary};
+    background-color: ${(p) => p.theme.primary};
   }
 `;
 
@@ -87,7 +94,7 @@ export const Span = styled.span`
   position: absolute;
   display: block;
   &:nth-child(1) {
-    background: linear-gradient(90deg, transparent, ${p => p.theme.primary});
+    background: linear-gradient(90deg, transparent, ${(p) => p.theme.primary});
   }
 
   &:nth-child(1) {
@@ -97,6 +104,6 @@ export const Span = styled.span`
     height: 2px;
     animation: ${btnAnim} 2s linear infinite;
     animation-iteration-count: infinite;
-    background: linear-gradient(90deg, transparent, ${p => p.theme.primary});
+    background: linear-gradient(90deg, transparent, ${(p) => p.theme.primary});
   }
-`
+`;

@@ -1,25 +1,26 @@
 import styled, { css } from 'styled-components';
 import { LargeText } from '../../assets/styles/common.style';
 
-export const Label = styled.label``
+export const Label = styled.label``;
 
 export const SpanMenu = styled.span`
-  position: absolute;
+  position: fixed;
   left: -20px;
   bottom: -20px;
   z-index: 100;
   width: 80px;
   height: 80px;
-  background-color: ${p => p.theme.secondary};
+  background-color: ${(p) => p.theme.secondary};
   //background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%23FF8800FF' stroke-width='1' stroke-dasharray='21%2c 23%2c 11' stroke-dashoffset='10' stroke-linecap='butt'/%3e%3c/svg%3e");
   border-radius: 100px;
   border-radius: 50% 50% 50% 50%;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
-  box-shadow: 0 0 0 0 ${p => p.theme.secondary}, 0 0 0 0 ${p => p.theme.secondary};
+  box-shadow: 0 0 0 0 ${(p) => p.theme.secondary},
+    0 0 0 0 ${(p) => p.theme.secondary};
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-`
+`;
 export const SpanHamburgerMenu = styled.span`
   position: absolute;
   top: 32px;
@@ -32,12 +33,14 @@ export const SpanHamburgerMenu = styled.span`
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 
-  background-color: ${p => p.theme.primary};
-  &::after, &::before {
-    background-color: ${p => p.theme.primary};
-  };
-  
-  &::after, &::before {
+  background-color: ${(p) => p.theme.primary};
+  &::after,
+  &::before {
+    background-color: ${(p) => p.theme.primary};
+  }
+
+  &::after,
+  &::before {
     -webkit-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
     content: '';
@@ -45,7 +48,7 @@ export const SpanHamburgerMenu = styled.span`
     display: block;
     width: 100%;
     height: 80%;
-  };
+  }
 
   &:before {
     top: -8px;
@@ -54,7 +57,7 @@ export const SpanHamburgerMenu = styled.span`
   &:after {
     bottom: -8px;
   }
-`
+`;
 
 export const Wrapper = styled.div`
   z-index: 200;
@@ -66,7 +69,7 @@ export const Wrapper = styled.div`
   right: 0;
   visibility: hidden;
   overflow: hidden;
-`
+`;
 
 export const Ul = styled.ul`
   padding: 0;
@@ -74,14 +77,14 @@ export const Ul = styled.ul`
   width: 100%;
   height: 100%;
   flex-direction: column-reverse;
-      justify-content: flex-end;
+  justify-content: flex-end;
 
   padding: 0px 10%;
   margin: 10px;
-`
+`;
 export const Li = styled.li`
   list-style-type: none;
-`
+`;
 
 export const A = styled(LargeText).attrs({
   as: 'a',
@@ -93,33 +96,34 @@ export const A = styled(LargeText).attrs({
   font-size: 8vw;
   -webkit-text-stroke-width: 1px;
   -webkit-tap-highlight-color: transparent;
-  -webkit-text-stroke-color: ${p => p.theme.primary};
+  -webkit-text-stroke-color: ${(p) => p.theme.primary};
   &:hover {
-    color: ${p => p.theme.primary};
+    color: ${(p) => p.theme.primary};
   }
 
-  ${p => {
+  ${(p) => {
     if (p.disabled) {
       return css`
         -webkit-text-stroke-color: ${p.theme.primary};
-        opacity: .2;
+        opacity: 0.2;
         cursor: not-allowed;
         pointer-events: none;
-      `
+      `;
     }
     if (p.active) {
       return css`
         -webkit-text-stroke-color: ${p.theme.primary};
         color: ${p.theme.primary};
-      `
+      `;
     }
   }};
-`
+`;
 
 export const Input = styled.input`
   display: none;
   &:checked + ${SpanMenu} {
-    box-shadow: 0 0 0 100vw ${p => p.theme.secondary}, 0 0 0 100vh ${p => p.theme.secondary};
+    box-shadow: 0 0 0 100vw ${(p) => p.theme.secondary},
+      0 0 0 100vh ${(p) => p.theme.secondary};
     border-radius: 0;
   }
 
@@ -140,12 +144,12 @@ export const Input = styled.input`
     top: 0;
   }
 
-  &:checked + ${SpanMenu} + ${Wrapper}{
+  &:checked + ${SpanMenu} + ${Wrapper} {
     visibility: visible;
   }
 
-  &:checked + ${SpanMenu} + ${Wrapper} ${A}{
-    -webkit-transition: 0s .3s ease-in-out;
-    transition: 0s .3s ease-in-out;
+  &:checked + ${SpanMenu} + ${Wrapper} ${A} {
+    -webkit-transition: 0s 0.3s ease-in-out;
+    transition: 0s 0.3s ease-in-out;
   }
-`
+`;

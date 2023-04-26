@@ -1,0 +1,70 @@
+{
+  "activeBar": "Swap personality",
+  "contact": {
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  },
+  "largeText": {
+    "contentCreatorPart1": "Content",
+    "contentCreatorPart2": "creator",
+    "developer": "Developer"
+  },
+  "left": {
+    "about": {
+      "hello": "Hello I'm Thomas 🙂",
+      "job": "Front-end developer",
+      "part1": "I graduated from ",
+      "part2": "Epitech School",
+      "part3": ", and I have more than 3 years of experience.",
+      "part4": "I am passionate about WebDesign and WebDev.",
+      "part5": "My ",
+      "part6": "best qualities",
+      "part7": "are :",
+      "part8": "Autonomy, rigor and curiosity."
+    }
+  },
+  "navbar": {
+    "about": "About",
+    "contact": "Contact",
+    "photography": "Photography",
+    "projects": "Projects",
+    "resume": "Resume",
+    "skills": "Skills",
+    "twitch": "Twitch"
+  },
+  "right": {
+    "about": {
+      "hello": "Hello, I'm Mauc 🙂",
+      "job": "A content creator",
+      "part1": "5 years ago I started creating content and sharing my passions:",
+      "part3": "- Broadcasts of ",
+      "part4": "stream",
+      "part5": " on Twitch.",
+      "part6": "- Creations of ",
+      "part7": "videos",
+      "part8": " on Youtube.",
+      "part9": "- Publications of ",
+      "part10": "podcast",
+      "part11": " on the different platforms.",
+      "part12": "- Photographer and photo model 📸",
+      "part13": "Join the community 🌸"
+    }
+  },
+  "smallPostIt": {
+    "itsMe": "It's me 👀",
+    "niceWatch": "Nice watch !",
+    "sweaterReyes": "Sweater Reyes ✨"
+  },
+  "title": {
+    "mauc": "Content Creator ~ Mauc",
+    "thomas": "Front-End Dev ~ Thomas"
+  },
+  "twitch": {
+    "game": "Game: ",
+    "offline": "Offline ⚪",
+    "onLive": "On live 🔴",
+    "status": "Status: ",
+    "title": "Title: "
+  }
+}

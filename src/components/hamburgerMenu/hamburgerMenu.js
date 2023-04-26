@@ -1,8 +1,19 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { Label, Input, SpanMenu, SpanHamburgerMenu, Wrapper, Ul, Li, A } from './hamburgerMenu.style';
+import {
+  Label,
+  Input,
+  SpanMenu,
+  SpanHamburgerMenu,
+  Wrapper,
+  Ul,
+  Li,
+  A,
+} from './hamburgerMenu.style';
 
 function HamburgerMenu({ activeSection, setActiveSection, navbarItems }) {
+  const [t] = useTranslation();
   const handleLinkClick = (event) => {
     event.preventDefault();
 
@@ -18,7 +29,7 @@ function HamburgerMenu({ activeSection, setActiveSection, navbarItems }) {
 
   return (
     <Label>
-      <Input type="checkbox" />
+      <Input title="HamburgerMenu" type="checkbox" />
       <SpanMenu>
         <SpanHamburgerMenu />
       </SpanMenu>
@@ -33,7 +44,7 @@ function HamburgerMenu({ activeSection, setActiveSection, navbarItems }) {
                 disabled={item.disabled}
                 tabIndex={item.tabIndex}
               >
-                {item.label}
+                {t(item.label)}
               </A>
             </Li>
           ))}

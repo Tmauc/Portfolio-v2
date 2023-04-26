@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ToggleWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   right: 0;
   overflow: hidden;
@@ -16,7 +16,7 @@ export const Label = styled.label`
   position: relative;
   width: 90px;
   height: 50px;
-  background-color: ${p => p.theme.sky.sky};
+  background-color: ${(p) => p.theme.sky.sky};
   border-radius: 84px;
   transition: background-color 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 `;
@@ -29,16 +29,16 @@ export const ToggleHandler = styled.span`
   left: 3px;
   width: 44px;
   height: 44px;
-  background-color: ${p => p.theme.sky.sun};
+  background-color: ${(p) => p.theme.sky.sun};
   border-radius: 50px;
-  box-shadow: 0 2px 6px ${p => p.theme.transparent.black03};
+  box-shadow: 0 2px 6px ${(p) => p.theme.transparent.black03};
   transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform: rotate(-45deg);
 `;
 
 export const Crater = styled.span`
   position: absolute;
-  background-color: ${p => p.theme.sky.crater};
+  background-color: ${(p) => p.theme.sky.crater};
   opacity: 0;
   transition: opacity 200ms ease-in-out;
   border-radius: 100%;
@@ -67,7 +67,7 @@ export const Crater = styled.span`
 
 export const Star = styled.span`
   position: absolute;
-  background-color: ${p => p.theme.sky.stars};
+  background-color: ${(p) => p.theme.sky.stars};
   transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
   border-radius: 50%;
 
@@ -138,19 +138,19 @@ export const Input = styled.input`
   left: -99em;
 
   &:checked + ${Label} {
-    background-color: ${p => p.theme.sky.nightSky};
+    background-color: ${(p) => p.theme.sky.nightSky};
   }
 
   &:checked + ${Label}::before {
-    color: ${p => p.theme.sky.nightSkyLight};
+    color: ${(p) => p.theme.sky.nightSkyLight};
   }
 
   &:checked + ${Label}::after {
-    color: ${p => p.theme.sky.stars};
+    color: ${(p) => p.theme.sky.stars};
   }
 
   &:checked + ${Label} ${ToggleHandler} {
-    background-color: ${p => p.theme.sky.moon};
+    background-color: ${(p) => p.theme.sky.moon};
     transform: translate3d(40px, 0, 0) rotate(0);
   }
 
@@ -175,9 +175,15 @@ export const Input = styled.input`
     transform: translate3d(-7px, 0, 0);
   }
 
-  &:checked + ${Label} ${Star}.star--4,
-  &:checked + ${Label} ${Star}.star--5,
-  &:checked + ${Label} ${Star}.star--6 {
+  &:checked
+    + ${Label}
+    ${Star}.star--4,
+    &:checked
+    + ${Label}
+    ${Star}.star--5,
+    &:checked
+    + ${Label}
+    ${Star}.star--6 {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }

@@ -12,13 +12,19 @@ import { ORANGE_COLOR } from './constants/constants';
 
 function App() {
   const isbrowserDarkMode = useDarkMode();
-  const [isDarkMode, setIsDarkMode] = useState(isbrowserDarkMode || localStorage.getItem('isDarkMode') === true);
+  const [isDarkMode, setIsDarkMode] = useState(
+    isbrowserDarkMode || localStorage.getItem('isDarkMode') === true
+  );
   const [selectedTheme, setSelectedTheme] = useState(ORANGE_COLOR);
   const [theme, setTheme] = useState(themes[selectedTheme].darkTheme);
 
   useEffect(() => {
     localStorage.setItem('isDarkMode', isDarkMode);
-    setTheme(isDarkMode ? themes[selectedTheme].darkTheme : themes[selectedTheme].lightTheme);
+    setTheme(
+      isDarkMode
+        ? themes[selectedTheme].darkTheme
+        : themes[selectedTheme].lightTheme
+    );
   }, [isDarkMode, selectedTheme]);
 
   return (

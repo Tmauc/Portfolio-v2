@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { NAVBAR_ABOUT, NAVBAR_CONTACT } from '../../constants/constants';
 
@@ -6,24 +7,38 @@ import MailForm from '../../components/mailForm/mailForm';
 
 import { Neumorphism } from '../../assets/styles/common.style';
 
-function LeftSide({ activeSection }) {
+import {
+  H2,
+  P,
+  Italic,
+  HighlightRect,
+  HighlightLine,
+} from '../../assets/styles/common.style';
 
+function LeftSide({ activeSection }) {
+  const [t] = useTranslation();
   return (
     <>
-      {activeSection === NAVBAR_ABOUT &&
+      {activeSection === NAVBAR_ABOUT && (
         <Neumorphism>
-          <p><b>Hello I'm Thomas ~ TEMPORAIRE</b></p>
-          <p><i>Front-end developer</i></p>
-          <p>For over 2 years.<br />I graduated from Epitech school.</p>
-          <p>Whether at school on individual and group projects
-            (about 50), or in the corporate world (2 years of professional experience), I always give my all to what I do.</p>
-          <p>At Epitech, I learned to learn and never give up. I am persistent and always finish what I start.</p>
-          <p>My main qualities: autonomy, rigor and curiosity.</p>
+          <H2>
+            <b>{t('left.about.hello')}</b>
+          </H2>
+          <Italic>{t('left.about.job')}</Italic>
+          <P>
+            {t('left.about.part1')}
+            <HighlightRect>{t('left.about.part2')}</HighlightRect>{t('left.about.part3')}
+          </P>
+          <P>{t('left.about.part4')}</P>
+          <P>
+            {t('left.about.part5')}<HighlightRect>{t('left.about.part6')}</HighlightRect>{t('left.about.part7')}{' '}
+            <HighlightLine>
+              {t('left.about.part8')}
+            </HighlightLine>
+          </P>
         </Neumorphism>
-      }
-      {activeSection === NAVBAR_CONTACT &&
-        <MailForm />
-      }
+      )}
+      {activeSection === NAVBAR_CONTACT && <MailForm />}
     </>
   );
 }

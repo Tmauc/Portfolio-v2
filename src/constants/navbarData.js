@@ -6,68 +6,68 @@ import {
   NAVBAR_RESUME,
   NAVBAR_SKILLS,
   NAVBAR_TWITCH,
-} from "./constants";
+} from './constants';
 
 export const NAVBAR_ITEMS_LEFT = [
   {
     href: '#contact',
-    label: 'Contact',
+    label: 'navbar.contact',
     activeConstant: NAVBAR_CONTACT,
-    tabIndex: 5,
+    tabIndex: 0,
   },
   {
     href: '#projects',
-    label: 'Projects',
+    label: 'navbar.projects',
     activeConstant: NAVBAR_PROJECTS,
     disabled: true,
-    tabIndex: 4,
+    tabIndex: 0,
   },
   {
     href: '#resume',
-    label: 'Resume',
+    label: 'navbar.resume',
     activeConstant: NAVBAR_RESUME,
     disabled: true,
-    tabIndex: 3,
+    tabIndex: 0,
   },
   {
     href: '#skills',
-    label: 'Skills',
+    label: 'navbar.skills',
     activeConstant: NAVBAR_SKILLS,
     disabled: true,
-    tabIndex: 2,
+    tabIndex: 0,
   },
   {
     href: '#about',
-    label: 'About',
+    label: 'navbar.about',
     activeConstant: NAVBAR_ABOUT,
-    tabIndex: 1,
+    tabIndex: 0,
   },
 ];
 
 export const NAVBAR_ITEMS_RIGHT = [
   {
     href: '#contact',
-    label: 'Contact',
+    label: 'navbar.contact',
     activeConstant: NAVBAR_CONTACT,
-    tabIndex: 4,
+    tabIndex: 0,
   },
   {
     href: '#photography',
-    label: 'Photography',
+    label: 'navbar.photography',
     activeConstant: NAVBAR_PHOTOGRAPHY,
     disabled: true,
-    tabIndex: 3,
+    tabIndex: 0,
   },
   {
     href: '#twitch',
-    label: 'Twitch',
+    label: 'navbar.twitch',
     activeConstant: NAVBAR_TWITCH,
-    tabIndex: 2,
+    tabIndex: 0,
   },
   {
     href: '#about',
-    label: 'About',
+    label: 'navbar.about',
     activeConstant: NAVBAR_ABOUT,
-    tabIndex: 1,
+    tabIndex: 0,
   },
 ];

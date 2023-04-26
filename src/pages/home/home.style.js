@@ -1,31 +1,54 @@
 import styled from 'styled-components';
-import { glitchAnim, jiggle } from '../../assets/styles/animations'
+import { glitchAnim, jiggle } from '../../assets/styles/animations';
 import { LargeText } from '../../assets/styles/common.style';
 import { TABLET_WIDTH } from '../../constants/constants';
 
 export const Background = styled.div`
-  background-color: ${p => p.theme.secondary};
-  background-image: url(${p => p.theme.backgroundCharacter}),
-    url(${p => p.theme.backgroundMultipleCircle});
-  
-  background-size: contain, cover;
+  background-color: ${(p) => p.theme.secondary};
+  background-image: url(${(p) => p.theme.backgroundMultipleCircle});
+
+  background-size: cover;
   background-attachment: fixed;
-  background-position: right, center center;
+  background-position: center center;
   background-repeat: no-repeat;
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
-    background-position: bottom, center center;
+    background-position: center center;
+  }
+  &,
+  * {
+    &::selection {
+      background: ${(p) => p.theme.primary};
+      color: ${(p) => p.theme.secondary};
+      -webkit-text-stroke-width: 0;
+    }
+  }
+`;
+
+export const Img = styled.img`
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: auto;
+  min-height: 100vh;
+  height: 1000px;
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    object-fit: contain;
+    object-position: bottom;
+    width: 100vw;
+    height: auto;
   }
 `;
 
 export const Main = styled.div`
+  position: relative;
   display: flex;
-  background-color: ${p => p.theme.transparentBackground02};
   overflow: hidden;
   height: 100vh;
+  background-color: ${(p) => p.theme.transparentBackground02};
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
-    background-color: ${p => p.theme.transparentBackground06};
+    background-color: ${(p) => p.theme.transparentBackground06};
   }
 `;
 
@@ -34,11 +57,13 @@ export const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 10px;
+  margin-left: 50px;
   padding: 50px;
-  background-image: url("${p => p.theme.backgroundUrl}");
-  
+  background-image: url("${(p) => p.theme.backgroundUrl}");
+
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     padding: 50px 10%;
+    margin-left: 10px;
   }
 `;
 
@@ -65,15 +90,15 @@ export const LargeTransparentText = styled(LargeText)`
   &,
   * {
     &::selection {
-      background: ${p => p.theme.primary};
-      color: ${p => p.theme.secondary};
+      background: ${(p) => p.theme.primary};
+      color: ${(p) => p.theme.secondary};
       -webkit-text-stroke-width: 0;
     }
   }
-  
+
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     -webkit-text-stroke-width: 1px;
-      padding-top: 10px;
+    padding-top: 10px;
   }
 `;
 
@@ -110,10 +135,10 @@ export const Gradient = styled(LargeLink)`
   &,
   * {
     &::selection {
-      background: ${p => p.theme.secondary};
-      color: ${p => p.theme.tertiary};
-      -webkit-text-fill-color: ${p => p.theme.tertiary};
-      -moz-text-fill-color: ${p => p.theme.tertiary};
+      background: ${(p) => p.theme.secondary};
+      color: ${(p) => p.theme.tertiary};
+      -webkit-text-fill-color: ${(p) => p.theme.tertiary};
+      -moz-text-fill-color: ${(p) => p.theme.tertiary};
     }
   }
 
@@ -140,7 +165,6 @@ export const Gradient = styled(LargeLink)`
     opacity: 0.6;
   }
 
-
   &:hover::after {
     animation: ${glitchAnim} 1s;
     animation-timing-function: steps(2, end);
@@ -148,34 +172,37 @@ export const Gradient = styled(LargeLink)`
   }
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
-    margin-right: 12px;
+    margin-right: 10px;
   }
-`
+`;
 
 export const ColorGradient = styled(Gradient)`
-  color: ${p => p.theme.primary};
-  background-color: ${p => p.theme.primary};
+  color: ${(p) => p.theme.primary};
+  background-color: ${(p) => p.theme.primary};
   background-image: linear-gradient(
     30deg,
-    ${p => p.theme.primary} 40%,
-    ${p => p.theme.primaryDark} 80%,
-    ${p => p.theme.primaryLight} 100% 100%
+    ${(p) => p.theme.primary} 40%,
+    ${(p) => p.theme.primaryDark} 80%,
+    ${(p) => p.theme.primaryLight} 100% 100%
   );
 
   &::after {
-    content: "${p => p.theme.content}";
+    content: '${(p) => p.theme.content}';
   }
 
   &:hover::after {
-    text-shadow: -3px -3px 0px ${p => p.theme.primary}, 3px 3px 0px ${p => p.theme.primaryDark};
-    border: 3px solid ${p => p.theme.primary};
+    text-shadow: -3px -3px 0px ${(p) => p.theme.invertPrimary},
+      3px 3px 0px ${(p) => p.theme.invertPrimaryDark};
+    border: 3px solid ${(p) => p.theme.invertPrimary};
   }
-`
+`;
 
 export const MainSection = styled.section`
-  margin-left: 10%;
-  margin-top: 6%;
+  display: flex;
+  align-items: center;
+
   max-width: 50vw;
+  height: 100%;
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     display: flex;
@@ -183,6 +210,7 @@ export const MainSection = styled.section`
     align-items: center;
     align-self: center;
     margin-left: 0;
+    margin-top: 0;
     max-width: 100vw;
     font-size: 12px;
   }

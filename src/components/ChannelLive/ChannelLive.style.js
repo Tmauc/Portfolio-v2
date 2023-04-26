@@ -8,11 +8,11 @@ export const TwitchPlayerStyle = styled.div`
     height: 170px;
     width: 100%;
   }
-`
+`;
 
 export const LiveWrapper = styled.div`
   display: flex;
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     flex-direction: column;
   }
-`
+`;

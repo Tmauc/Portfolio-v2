@@ -1,19 +1,33 @@
 import React, { useCallback } from 'react';
 
-import { ToggleWrapper, Input, Label, ToggleHandler, Crater, Star } from './switchDarkMode.style';
+import {
+  ToggleWrapper,
+  Input,
+  Label,
+  ToggleHandler,
+  Crater,
+  Star,
+} from './switchDarkMode.style';
 
 function SwitchDarkMode({ isDarkMode, setIsDarkMode, setLoading }) {
-
   const handleToggle = useCallback(() => {
     setLoading(true);
     setTimeout(() => {
-      setIsDarkMode(isDarkMode => !isDarkMode);
+      setIsDarkMode((isDarkMode) => !isDarkMode);
     }, 500);
   }, [setIsDarkMode, setLoading]);
 
   return (
     <ToggleWrapper>
-      <Input type="checkbox" className="dn" id="dn" checked={isDarkMode} onChange={handleToggle} />
+      <Input
+        type="checkbox"
+        title="Toggle dark mode"
+        className="dn"
+        id="dn"
+        checked={isDarkMode}
+        aria-label="Toggle dark mode"
+        onChange={handleToggle}
+      />
       <Label htmlFor="dn" className="toggle">
         <ToggleHandler>
           <Crater className="crater crater--1"></Crater>

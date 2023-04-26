@@ -1,7 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+
 import { Nav, NavItem, NavLink, Ul, Span } from './navbar.style';
 
 function Navbar({ activeSection, setActiveSection, navbarItems }) {
+  const [t] = useTranslation();
   const handleLinkClick = (event) => {
     event.preventDefault();
 
@@ -25,7 +28,7 @@ function Navbar({ activeSection, setActiveSection, navbarItems }) {
               disabled={item.disabled}
               tabIndex={item.tabIndex}
             >
-              <Span>{item.label}</Span>
+              <Span>{t(item.label)}</Span>
             </NavLink>
           </NavItem>
         ))}

@@ -9,7 +9,7 @@ const ChannelDetails = ({ channelName }) => {
       const token = await getToken();
       const response = await api.get(`/users?login=${channelName}`, {
         headers: {
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 

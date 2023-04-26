@@ -9,8 +9,8 @@ export const LoaderWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   z-index: 1040;
-  opacity: ${p => p.visible ? 1 : 0};
-  background-color: ${p => p.theme.secondary};
+  opacity: ${(p) => (p.visible ? 1 : 0)};
+  background-color: ${(p) => p.theme.secondary};
   transition: opacity 0.3s ease, background-color 1s ease;
 `;
 
@@ -29,20 +29,20 @@ export const LoaderElement = styled.div`
     left: 0;
     border-radius: 50%;
     animation: ${shadow} 0.5s linear infinite;
-    background-color: ${p => p.theme.tertiary};
+    background-color: ${(p) => p.theme.tertiary};
     transition: background-color 1s ease;
 
-  ${p => {
-    if (p.isSwap) {
-      return css`
-          background-color: ${p => p.theme.primaryDark};
-        `
-    }
-  }};
+    ${(p) => {
+      if (p.isSwap) {
+        return css`
+          background-color: ${(p) => p.theme.primaryDark};
+        `;
+      }
+    }};
   }
 
   &:after {
-  content: '';
+    content: '';
     width: 100%;
     height: 100%;
     position: absolute;
@@ -50,14 +50,14 @@ export const LoaderElement = styled.div`
     left: 0;
     border-radius: 4px;
     animation: ${jump} 0.5s linear infinite;
-    background-color: ${p => p.theme.tertiary};
+    background-color: ${(p) => p.theme.tertiary};
     transition: background-color 1s ease;
-    ${p => {
-    if (p.isSwap) {
-      return css`
-          background-color: ${p => p.theme.primary};
-        `
-    }
-  }};
+    ${(p) => {
+      if (p.isSwap) {
+        return css`
+          background-color: ${(p) => p.theme.primary};
+        `;
+      }
+    }};
   }
 `;

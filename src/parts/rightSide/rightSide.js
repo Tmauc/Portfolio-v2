@@ -1,6 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { NAVBAR_ABOUT, NAVBAR_CONTACT, NAVBAR_TWITCH } from '../../constants/constants';
+import {
+  NAVBAR_ABOUT,
+  NAVBAR_CONTACT,
+  NAVBAR_TWITCH,
+} from '../../constants/constants';
 
 import MailForm from '../../components/mailForm/mailForm';
 
@@ -8,27 +13,42 @@ import ChannelLive from '../../components/ChannelLive/ChannelLive';
 
 import { Neumorphism } from '../../assets/styles/common.style';
 
-function RightSide({ activeSection }) {
+import {
+  H2,
+  P,
+  Italic,
+  HighlightRect,
+  HighlightLine,
+} from '../../assets/styles/common.style';
 
+function RightSide({ activeSection }) {
+  const [t] = useTranslation();
   return (
     <>
-      {activeSection === NAVBAR_ABOUT &&
+      {activeSection === NAVBAR_ABOUT && (
         <Neumorphism>
-          <p><b>Hello I'm Mauc  ~ TEMPORAIRE</b></p>
-          <p><i>A gamer</i></p>
-          <p>It's been about ten years since I discovered <br />video games, photography and video and I love it.</p>
-          <p>And as I like to share my passions:</p>
-          <p>- I broadcast lives on twitch.</p>
-          <p>- I do video editing and post my videos on youtube.</p>
-          <p>- I take pictures and share them on instagram.</p>
+          <H2>
+            <b>{t('right.about.hello')}</b>
+          </H2>
+          <Italic>{t('right.about.job')}</Italic>
+          <P>{t('right.about.part1')}</P>
+          <P>
+            {t('right.about.part3')}<HighlightRect>{t('right.about.part4')}</HighlightRect>{t('right.about.part5')}
+          </P>
+          <P>
+            {t('right.about.part6')}<HighlightRect>{t('right.about.part7')}</HighlightRect>{t('right.about.part8')}
+          </P>
+          <P>
+            {t('right.about.part9')}<HighlightRect>{t('right.about.part10')}</HighlightRect>{t('right.about.part11')}
+          </P>
+          <P>{t('right.about.part12')}</P>
+          <P>
+            <HighlightLine>{t('right.about.part13')}</HighlightLine>
+          </P>
         </Neumorphism>
-      }
-      {activeSection === NAVBAR_TWITCH &&
-        <ChannelLive channelId='256677231' />
-      }
-      {activeSection === NAVBAR_CONTACT &&
-        <MailForm />
-      }
+      )}
+      {activeSection === NAVBAR_TWITCH && <ChannelLive channelId="256677231" />}
+      {activeSection === NAVBAR_CONTACT && <MailForm />}
     </>
   );
 }

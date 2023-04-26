@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+<path fill="none" stroke="hsl(32, 100%, 50%)" stroke-dasharray="77 124" stroke-linecap="round" stroke-linejoin="round" stroke-width="15" marker-end="url(#a)" d="M99 99q94 777 301 301 244-581 301 301" transform="rotate(89 399 398.982)"/>
+<defs>
+<marker id="a" markerHeight="5.5" markerWidth="5.5" orient="auto" refX="2.75" refY="2.75" viewBox="0 0 5.5 5.5">
+<path fill="hsl(32, 100%, 50%)" d="M0 5.5V0l5.5 2.75z"/>
+</marker>
+</defs>
+</svg>

@@ -1,27 +1,41 @@
-import leftPNG from '../assets/imgs/thomas.png'
-import rightPNG from '../assets/imgs/mauc.png'
-import multipleCircleWhite from '../assets/svg/multipleCircleWhite.svg'
-import multipleCircleGrey from '../assets/svg/multipleCircleGrey.svg'
+import leftPNG from '../assets/imgs/thomas.webp';
+import rightPNG from '../assets/imgs/mauc.webp';
+import multipleCircleWhite from '../assets/svg/multipleCircleWhite.svg';
+import multipleCircleGrey from '../assets/svg/multipleCircleGrey.svg';
+import OrangeArrow from '../assets/svg/orangeArrow.svg';
+import PurpleArrow from '../assets/svg/purpleArrow.svg';
+import SmallOrangeArrow from '../assets/svg/smallOrangeArrow.svg';
+import SmallPurpleArrow from '../assets/svg/smallPurpleArrow.svg';
 
 const orangeColors = {
   primary: 'hsl(32, 100%, 50%)',
   primaryDark: 'hsl(47, 100%, 50%)',
   primaryLight: 'hsl(53, 100%, 50%)',
 
+  invertPrimary: 'hsl(284, 100%, 50%)',
+  invertPrimaryDark: 'hsl(299, 100%, 50%)',
+
   content: 'MAUC',
+  itsMeArrow: OrangeArrow,
+  smallArrow: SmallOrangeArrow,
   backgroundCharacter: leftPNG,
   backgroundUrl: "data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23FF8800FF' stroke-width='1' stroke-dasharray='21%2c 23%2c 11' stroke-dashoffset='37' stroke-linecap='square'/%3e%3c/svg%3e",
-}
+};
 
 const purpleColors = {
   primary: 'hsl(284, 100%, 50%)',
   primaryDark: 'hsl(299, 100%, 50%)',
   primaryLight: 'hsl(319, 100%, 50%)',
 
+  invertPrimary: 'hsl(32, 100%, 50%)',
+  invertPrimaryDark: 'hsl(47, 100%, 50%)',
+
   content: 'THOMAS',
+  itsMeArrow: PurpleArrow,
+  smallArrow: SmallPurpleArrow,
   backgroundCharacter: rightPNG,
   backgroundUrl: "data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23bb00ffFF' stroke-width='1' stroke-dasharray='21%2c 23%2c 11' stroke-dashoffset='37' stroke-linecap='square'/%3e%3c/svg%3e",
-}
+};
 
 const lightColors = {
   secondary: 'hsl(0, 0%, 95%)',
@@ -35,7 +49,7 @@ const lightColors = {
   transparentBackground06: 'hsla(0, 0%, 100%, 0.6)',
 
   backgroundMultipleCircle: multipleCircleGrey,
-}
+};
 
 const darkColors = {
   secondary: 'hsl(0, 0%, 7%)',
@@ -49,7 +63,7 @@ const darkColors = {
   transparentBackground06: 'hsla(0, 0%, 0%, 0.6)',
 
   backgroundMultipleCircle: multipleCircleWhite,
-}
+};
 
 const defaultColors = {
   text: {
@@ -91,7 +105,7 @@ export const themes = {
       ...defaultColors,
       ...orangeColors,
       ...darkColors,
-    }
+    },
   },
   purple: {
     lightTheme: {
@@ -103,6 +117,6 @@ export const themes = {
       ...defaultColors,
       ...purpleColors,
       ...darkColors,
-    }
-  }
+    },
+  },
 };

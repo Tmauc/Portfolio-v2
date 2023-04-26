@@ -24,7 +24,7 @@ export const NETWORK_ITEMS_LEFT = [
     url: 'https://www.twitch.tv/maucsama',
     icon: brands('twitch'),
     className: 'twitch',
-  }
+  },
 ];
 
 export const NETWORK_ITEMS_RIGHT = [
@@ -36,8 +36,7 @@ export const NETWORK_ITEMS_RIGHT = [
   },
   {
     name: 'YouTube',
-    url:
-      'https://www.youtube.com/channel/UCLoRQsaPSD1QFqoHbxxX-CA',
+    url: 'https://www.youtube.com/channel/UCLoRQsaPSD1QFqoHbxxX-CA',
     icon: brands('youtube'),
     className: 'youtube',
   },

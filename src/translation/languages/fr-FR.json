@@ -1,0 +1,70 @@
+{
+  "activeBar": "Changer de personnalité",
+  "contact": {
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer"
+  },
+  "largeText": {
+    "contentCreatorPart1": "Createur",
+    "contentCreatorPart2": "de contenu",
+    "developer": "Developpeur"
+  },
+  "left": {
+    "about": {
+      "hello": "Bonjour, je m'appelle Thomas 🙂",
+      "job": "Développeur Front-end",
+      "part1": "J'ai obtenu mon diplôme de ",
+      "part2": "École Epitech",
+      "part3": ", et j'ai plus de 3 ans d'expérience.",
+      "part4": "Je suis passionné de WebDesign et WebDev.",
+      "part5": "Mes ",
+      "part6": "meilleures qualités",
+      "part7": "sont :",
+      "part8": "L'autonomie, la rigueur et la curiosité."
+    }
+  },
+  "navbar": {
+    "about": "A propos",
+    "contact": "Contact",
+    "photography": "Photographie",
+    "projects": "Projets",
+    "resume": "Résumé",
+    "skills": "Compétences",
+    "twitch": "Twitch"
+  },
+  "right": {
+    "about": {
+      "hello": "Bonjour, je suis Mauc 🙂",
+      "job": "Un créateur de contenu",
+      "part1": "Il y a 5 ans j'ai commencé à créer du contenu et partager mes passions :",
+      "part3": "- Diffusions de ",
+      "part4": "stream",
+      "part5": " sur Twitch.",
+      "part6": "- Créations de ",
+      "part7": "vidéos",
+      "part8": " sur Youtube.",
+      "part9": "- Publications de ",
+      "part10": "podcast",
+      "part11": " sur les différentes plates-formes.",
+      "part12": "- Photographe et modèle photos 📸",
+      "part13": "Rejoins la communauté 🌸"
+    }
+  },
+  "smallPostIt": {
+    "itsMe": "C'est moi 👀",
+    "niceWatch": "Belle montre !",
+    "sweaterReyes": "Ptit pull Reyes ✨"
+  },
+  "title": {
+    "mauc": "Créateur de contenu ~ Mauc",
+    "thomas": "Dev Front-End ~ Thomas"
+  },
+  "twitch": {
+    "game": "Jeu: ",
+    "status": "Statut : ",
+    "onLive": "En direct 🔴",
+    "offline": "Hors ligne ⚪",
+    "title": "Titre: "
+  }
+}

@@ -1,4 +1,3 @@
-
 import { keyframes } from 'styled-components';
 
 export const btnAnim = keyframes`
@@ -46,6 +45,21 @@ export const bounceLeft = keyframes`
   }
   75% {
     margin-left: 10px;
+  }
+`;
+
+export const bounceLeftMobile = keyframes`
+  0%, 5.2%, 100% {
+    margin-left: 0px;
+  }
+  25% {
+    margin-left: -5px;
+  }
+  50% {
+    margin-left: 0px;
+  }
+  75% {
+    margin-left: 5px;
   }
 `;
 

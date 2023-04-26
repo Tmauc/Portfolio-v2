@@ -1,10 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import SwitchLang from '../../components/switchLang/switchLang';
+
 import { Wrapper, IconWrapper, Tooltip, Span } from './networks.style';
 
 function Networks({ networkItems }) {
-
   return (
     <Wrapper>
       {networkItems.map(({ name, url, icon, className }) => (
@@ -19,6 +20,7 @@ function Networks({ networkItems }) {
           </Span>
         </IconWrapper>
       ))}
+      <SwitchLang />
     </Wrapper>
   );
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { TABLET_WIDTH } from '../constants/constants'
+import { TABLET_WIDTH } from '../constants/constants';
 
 function useDeviceType() {
   const [isMobile, setIsMobile] = useState(false);
