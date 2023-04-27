@@ -114,8 +114,8 @@ export const Span = styled.span`
   justify-content: center;
   align-items: center;
 
-  height: 100%;
-  width: 100%;
+  width: 18px;
+  height: 18px;
 `;
 
 export const Tooltip = styled.div`

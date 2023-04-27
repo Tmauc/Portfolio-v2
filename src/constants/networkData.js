@@ -1,28 +1,28 @@
-import { brands } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { FaTwitch, FaLinkedin, FaGithub, FaYoutube, FaTwitter, FaInstagram, FaTiktok } from 'react-icons/fa';
 
 export const NETWORK_ITEMS_LEFT = [
   {
     name: 'Linkedin',
     url: 'https://www.linkedin.com/in/tmauc/',
-    icon: brands('linkedin'),
+    icon: <FaLinkedin />,
     className: 'linkedin',
   },
   {
     name: 'GitHub',
     url: 'https://github.com/Tmauc',
-    icon: brands('github'),
+    icon: <FaGithub />,
     className: 'github',
   },
   {
     name: 'Twitter',
     url: 'https://twitter.com/MaucSama',
-    icon: brands('twitter'),
+    icon: <FaTwitter />,
     className: 'twitter',
   },
   {
     name: 'Twitch',
     url: 'https://www.twitch.tv/maucsama',
-    icon: brands('twitch'),
+    icon: <FaTwitch />,
     className: 'twitch',
   },
 ];
@@ -31,31 +31,31 @@ export const NETWORK_ITEMS_RIGHT = [
   {
     name: 'Twitch',
     url: 'https://www.twitch.tv/maucsama',
-    icon: brands('twitch'),
+    icon: <FaTwitch />,
     className: 'twitch',
   },
   {
     name: 'YouTube',
     url: 'https://www.youtube.com/channel/UCLoRQsaPSD1QFqoHbxxX-CA',
-    icon: brands('youtube'),
+    icon: <FaYoutube />,
     className: 'youtube',
   },
   {
     name: 'Twitter',
     url: 'https://twitter.com/MaucSama',
-    icon: brands('twitter'),
+    icon: <FaTwitter />,
     className: 'twitter',
   },
   {
     name: 'Instagram',
     url: 'https://www.instagram.com/t.mauc/',
-    icon: brands('instagram'),
+    icon: <FaInstagram />,
     className: 'instagram',
   },
   {
     name: 'TikTok',
     url: 'https://www.tiktok.com/@maucsama',
-    icon: brands('tiktok'),
+    icon: <FaTiktok />,
     className: 'tiktok',
   },
 ];

@@ -1,5 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import SwitchLang from '../../components/switchLang/switchLang';
 
@@ -16,7 +15,7 @@ function Networks({ networkItems }) {
         >
           <Tooltip>{name}</Tooltip>
           <Span>
-            <FontAwesomeIcon icon={icon} />
+            {icon}
           </Span>
         </IconWrapper>
       ))}

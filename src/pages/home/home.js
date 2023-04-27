@@ -52,7 +52,7 @@ import {
 function Home({ isDarkMode, setIsDarkMode, selectedTheme, setSelectedTheme }) {
   const [activeSection, setActiveSection] = useState(NAVBAR_ABOUT);
   const [activeSide, setActiveSide] = useState(LEFT_SIDE);
-  const [loading, setLoading] = useState('swap');
+  const [loading, setLoading] = useState(false);
   const { isMobile } = useDeviceType();
   const { itsMeArrow, smallArrow, backgroundCharacter } = useTheme();
   const [t] = useTranslation();

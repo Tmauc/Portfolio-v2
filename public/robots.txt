@@ -22,4 +22,5 @@ Disallow: /author/*
 Disallow: /page/*?*
 Disallow: /?s=
 
-Sitemap: https://www.example.com/sitemap.xml
+Sitemap: https://www.tmauc.fr/sitemap.xml
+Host: https://tmauc.fr
