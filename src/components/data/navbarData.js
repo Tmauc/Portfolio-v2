@@ -26,7 +26,6 @@ export const NAVBAR_ITEMS_LEFT = [
     href: '#resume',
     label: 'navbar.resume',
     activeConstant: NAVBAR_RESUME,
-    disabled: true,
     tabIndex: 0,
   },
   {

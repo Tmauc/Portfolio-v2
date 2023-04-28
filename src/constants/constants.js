@@ -12,7 +12,7 @@ export const NAVBAR_PHOTOGRAPHY = 'photography';
 export const TABLET_WIDTH = 768;
 export const PHONE_WIDTH = 600;
 export const LAPTOP_WIDTH = 1200;
-export const LAPTOP_HEIGHT = 800;
+export const LAPTOP_HEIGHT = 900;
 
 export const ORANGE_COLOR = 'orange';
 export const PURPLE_COLOR = 'purple';

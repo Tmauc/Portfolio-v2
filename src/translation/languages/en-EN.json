@@ -29,6 +29,22 @@
     "skills": "Skills",
     "twitch": "Twitch"
   },
+  "resume": {
+    "baccalaureate": "Scientific Baccalaureate",
+    "baccalaureateDesc": "Pretty good awarded.",
+    "backOfficeDev": "Back Office Developer",
+    "education": "Education:",
+    "freelance": "Freelance",
+    "frontDev": "Front End Developer",
+    "frontEndDevTrainee": "Front End Developer (trainee)",
+    "ibaniDesc": "Ibani: Company managing the exchange of money. MtPelerin: Company (future bank) which aims at the creation of digital account safe, free, fast. Improvement of the admin site. Update of the mobile application.Tools: Vue.js / React Native, Javascript / MacOS",
+    "inattenduDesc": "Event enterprise in presence and virtual. Site management (Vue.js). ZOOM master. Sound, video and light management.",
+    "maskottDesc": "Recreate a webapp in react.",
+    "master": "Master",
+    "newAccessDesc": "Multinational editor of banking software for private banks. Creation of a web application allowing to view a project as a node and a link (Force Layout). Automated log manager (several thousands of logs, parsed, then compiled into a single log according to the user's parameters).Tools: C, JavaScript(angular, d3.js), Html / Css, VisualStudio.",
+    "masterDesc": "The Grande Ecole program is Epitech's historical curriculum. It lasts 5 years and trains experts in computer science. It offers a dense and varied technical content, including a diversity of programming projects, and covering many languages that will allow the student to approach all new technologies with serenity.",
+    "professional": "Professional:"
+  },
   "right": {
     "about": {
       "hello": "Hello, I'm Mauc 🙂",

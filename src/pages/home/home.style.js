@@ -62,7 +62,7 @@ export const PageWrapper = styled.div`
   background-image: url("${(p) => p.theme.backgroundUrl}");
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
-    padding: 50px 10%;
+    padding: 50px 8%;
     margin-left: 10px;
   }
 `;
@@ -203,6 +203,8 @@ export const MainSection = styled.section`
 
   max-width: 50vw;
   height: 100%;
+
+  margin-top: 10px;
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     display: flex;

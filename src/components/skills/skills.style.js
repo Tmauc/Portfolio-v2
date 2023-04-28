@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TABLET_WIDTH } from 'constants/constants';
+import { TABLET_WIDTH, LAPTOP_HEIGHT } from 'constants/constants';
 import { Neumorphism } from 'assets/styles/common.style';
 
 export const MainWrapper = styled(Neumorphism)`
@@ -9,6 +9,13 @@ export const MainWrapper = styled(Neumorphism)`
   & > *:not(:last-child) {
     margin-bottom: 15px;
   }
+
+  @media only screen and (max-height: ${LAPTOP_HEIGHT}px) {
+    & > *:not(:last-child) {
+      margin-bottom: 0px;
+    }
+  }
+
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     & > *:not(:last-child) {
       margin-bottom: 10px;
@@ -58,6 +65,11 @@ export const Span = styled.span`
     color: currentColor;
   }
 
+  @media only screen and (max-height: ${LAPTOP_HEIGHT}px) {
+    height: 25px;
+    width: 25px;
+  }
+
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     height: 20px;
     width: 20px;
@@ -69,7 +81,9 @@ export const P = styled.p`
   color: ${p => p.theme.tertiary};
   white-space: nowrap;
 
-  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+  @media only screen and (max-width: ${TABLET_WIDTH}px), 
+       only screen and (max-height: ${LAPTOP_HEIGHT}px) {
     margin-left: 5px;
   }
+
 `;
