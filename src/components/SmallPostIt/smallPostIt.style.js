@@ -6,7 +6,7 @@ import {
   ITSME_ARROW,
   WATCH_ARROW,
   REYES_PULL,
-} from '../../constants/constants';
+} from 'constants/constants';
 
 export const Wrapper = styled.div`
   position: fixed;

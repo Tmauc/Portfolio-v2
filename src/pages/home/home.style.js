@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { glitchAnim, jiggle } from '../../assets/styles/animations';
-import { LargeText } from '../../assets/styles/common.style';
-import { TABLET_WIDTH } from '../../constants/constants';
+import { glitchAnim, jiggle } from 'assets/styles/animations';
+import { LargeText } from 'assets/styles/common.style';
+import { TABLET_WIDTH } from 'constants/constants';
 
 export const Background = styled.div`
   background-color: ${(p) => p.theme.secondary};

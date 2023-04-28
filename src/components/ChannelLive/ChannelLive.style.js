@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TABLET_WIDTH } from '../../constants/constants';
+import { TABLET_WIDTH } from 'constants/constants';
 
 export const TwitchPlayerStyle = styled.div`
   height: 300px;

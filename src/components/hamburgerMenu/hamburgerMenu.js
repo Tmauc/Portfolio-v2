@@ -1,18 +1,22 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+import Networks from 'components/networks/networks';
+import SwitchLang from 'components/switchLang/switchLang';
+
 import {
   Label,
   Input,
   SpanMenu,
   SpanHamburgerMenu,
   Wrapper,
+  NetworksWrapper,
   Ul,
   Li,
   A,
 } from './hamburgerMenu.style';
 
-function HamburgerMenu({ activeSection, setActiveSection, navbarItems }) {
+function HamburgerMenu({ activeSection, setActiveSection, navbarItems, networkItems }) {
   const [t] = useTranslation();
   const handleLinkClick = (event) => {
     event.preventDefault();
@@ -35,6 +39,7 @@ function HamburgerMenu({ activeSection, setActiveSection, navbarItems }) {
       </SpanMenu>
       <Wrapper id="wrapper">
         <Ul>
+          <SwitchLang isMobile={true} />
           {navbarItems.map((item, index) => (
             <Li key={index}>
               <A
@@ -49,6 +54,9 @@ function HamburgerMenu({ activeSection, setActiveSection, navbarItems }) {
             </Li>
           ))}
         </Ul>
+        <NetworksWrapper>
+          <Networks networkItems={networkItems} />
+        </NetworksWrapper>
       </Wrapper>
     </Label>
   );

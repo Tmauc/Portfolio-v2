@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 
 import {
   LoginBox,
@@ -11,7 +12,6 @@ import {
   Button,
   Span,
 } from './mailForm.style';
-import axios from 'axios';
 
 function MailForm() {
   const [email, setEmail] = useState('');

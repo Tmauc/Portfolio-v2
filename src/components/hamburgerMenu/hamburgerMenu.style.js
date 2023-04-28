@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { LargeText } from '../../assets/styles/common.style';
+import { LargeText } from 'assets/styles/common.style';
 
 export const Label = styled.label``;
 
@@ -71,6 +71,12 @@ export const Wrapper = styled.div`
   overflow: hidden;
 `;
 
+export const NetworksWrapper = styled.div`
+    -webkit-transition: 0s 0.2s ease-in-out;
+  transition: 0s 0.2s ease-in-out;
+
+`;
+
 export const Ul = styled.ul`
   padding: 0;
   display: flex;
@@ -82,6 +88,7 @@ export const Ul = styled.ul`
   padding: 0px 10%;
   margin: 10px;
 `;
+
 export const Li = styled.li`
   list-style-type: none;
 `;

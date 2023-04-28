@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { TABLET_WIDTH } from '../../constants/constants';
+import { TABLET_WIDTH } from 'constants/constants';
 
 const sketchStyle = css`
   content: '';

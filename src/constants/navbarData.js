@@ -6,7 +6,7 @@ import {
   NAVBAR_RESUME,
   NAVBAR_SKILLS,
   NAVBAR_TWITCH,
-} from './constants';
+} from 'constants/constants';
 
 export const NAVBAR_ITEMS_LEFT = [
   {
@@ -33,7 +33,6 @@ export const NAVBAR_ITEMS_LEFT = [
     href: '#skills',
     label: 'navbar.skills',
     activeConstant: NAVBAR_SKILLS,
-    disabled: true,
     tabIndex: 0,
   },
   {

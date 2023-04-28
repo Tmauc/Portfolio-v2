@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TABLET_WIDTH } from '../../constants/constants';
+import { TABLET_WIDTH } from 'constants/constants';
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -15,9 +15,6 @@ export const Wrapper = styled.div`
 
   color: ${(p) => p.theme.secondary};
 
-  @media only screen and (max-width: ${TABLET_WIDTH}px) {
-    left: 39%;
-  }
 `;
 
 export const IconWrapper = styled.div`

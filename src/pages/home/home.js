@@ -1,14 +1,15 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
-import Networks from '../../components/networks/networks';
-import ActiveBar from '../../components/activeBar/activeBar';
-import Navbar from '../../components/navbar/navbar';
-import HamburgerMenu from '../../components/hamburgerMenu/hamburgerMenu';
-import SwitchDarkMode from '../../components/switchDarkMode/switchDarkMode';
-import Loader from '../../components/loader/loader';
-import SmallPostIt from '../../components/SmallPostIt/smallPostIt';
+import Networks from 'components/networks/networks';
+import ActiveBar from 'components/activeBar/activeBar';
+import Navbar from 'components/navbar/navbar';
+import HamburgerMenu from 'components/hamburgerMenu/hamburgerMenu';
+import SwitchDarkMode from 'components/switchDarkMode/switchDarkMode';
+import Loader from 'components/loader/loader';
+import SmallPostIt from 'components/SmallPostIt/smallPostIt';
 
 import {
   LEFT_SIDE,
@@ -21,21 +22,21 @@ import {
   ITSME_ARROW,
   WATCH_ARROW,
   REYES_PULL,
-} from '../../constants/constants';
+} from 'constants/constants';
 
 import {
   NAVBAR_ITEMS_LEFT,
   NAVBAR_ITEMS_RIGHT,
-} from '../../constants/navbarData';
+} from 'constants/navbarData';
 import {
   NETWORK_ITEMS_LEFT,
   NETWORK_ITEMS_RIGHT,
-} from '../../constants/networkData';
+} from 'constants/networkData';
 
-import LeftSide from '../../parts/leftSide/leftSide';
-import RightSide from '../../parts/rightSide/rightSide';
+import LeftSide from 'parts/leftSide/leftSide';
+import RightSide from 'parts/rightSide/rightSide';
 
-import useDeviceType from '../../hooks/useDeviceType';
+import useDeviceType from 'hooks/useDeviceType';
 
 import {
   Background,
@@ -49,9 +50,9 @@ import {
   MainSection,
 } from './home.style';
 
-function Home({ isDarkMode, setIsDarkMode, selectedTheme, setSelectedTheme }) {
+function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
   const [activeSection, setActiveSection] = useState(NAVBAR_ABOUT);
-  const [activeSide, setActiveSide] = useState(LEFT_SIDE);
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const { isMobile } = useDeviceType();
   const { itsMeArrow, smallArrow, backgroundCharacter } = useTheme();
@@ -61,10 +62,7 @@ function Home({ isDarkMode, setIsDarkMode, selectedTheme, setSelectedTheme }) {
     setLoading('swap');
 
     setTimeout(() => {
-      setActiveSide(activeSide === LEFT_SIDE ? RIGHT_SIDE : LEFT_SIDE);
-      setSelectedTheme(
-        selectedTheme === ORANGE_COLOR ? PURPLE_COLOR : ORANGE_COLOR
-      );
+      navigate(activeSide === LEFT_SIDE ? '/mauc' : '/thomas');
       setActiveSection(NAVBAR_ABOUT);
       document.title =
         activeSide === LEFT_SIDE
@@ -73,7 +71,13 @@ function Home({ isDarkMode, setIsDarkMode, selectedTheme, setSelectedTheme }) {
       const checkbox = document.querySelector('input[type="checkbox"]');
       checkbox.checked = false;
     }, 500);
-  }, [activeSide, selectedTheme, setSelectedTheme, t]);
+  }, [activeSide, navigate, t]);
+
+  useEffect(() => {
+    setSelectedTheme(
+      activeSide === LEFT_SIDE ? ORANGE_COLOR : PURPLE_COLOR
+    );
+  }, [activeSide, setSelectedTheme])
 
   const navbarItems =
     activeSide === LEFT_SIDE ? NAVBAR_ITEMS_LEFT : NAVBAR_ITEMS_RIGHT;
@@ -81,7 +85,7 @@ function Home({ isDarkMode, setIsDarkMode, selectedTheme, setSelectedTheme }) {
     activeSide === LEFT_SIDE ? NETWORK_ITEMS_LEFT : NETWORK_ITEMS_RIGHT;
 
   return (
-    <Background isDarkMode={isDarkMode}>
+    <Background>
       <Img activeSide={activeSide} alt="An image to represent me in the current side" src={backgroundCharacter} />
       <Main>
         <PageWrapper>
@@ -133,6 +137,7 @@ function Home({ isDarkMode, setIsDarkMode, selectedTheme, setSelectedTheme }) {
             activeSection={activeSection}
             setActiveSection={setActiveSection}
             navbarItems={navbarItems}
+            networkItems={networkItems}
           />
 
         ) : (
@@ -142,7 +147,7 @@ function Home({ isDarkMode, setIsDarkMode, selectedTheme, setSelectedTheme }) {
             navbarItems={navbarItems}
           />
         )}
-        <Networks networkItems={networkItems} />
+        {!isMobile && <Networks networkItems={networkItems} />}
         <SwitchDarkMode
           aria-label="Toggle dark mode"
           isDarkMode={isDarkMode}

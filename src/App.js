@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from 'react-router-dom';
 
-import { useDarkMode } from './hooks/useDarkMode';
-import Home from './pages/home/home';
+import { useDarkMode } from 'hooks/useDarkMode';
+import Home from 'pages/home/home';
 
-import { GlobalFonts } from './assets/styles/fonts';
-import { GlobalStyle } from './assets/styles/cssReset';
-import { themes } from './themes/themes';
+import { GlobalFonts } from 'assets/styles/fonts';
+import { GlobalStyle } from 'assets/styles/cssReset';
+import { themes } from 'themes/themes';
 
-import { ORANGE_COLOR } from './constants/constants';
+import { ORANGE_COLOR, LEFT_SIDE, RIGHT_SIDE } from 'constants/constants';
 
 function App() {
   const isbrowserDarkMode = useDarkMode();
@@ -31,12 +37,35 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalFonts />
       <GlobalStyle />
-      <Home
-        isDarkMode={isDarkMode}
-        setIsDarkMode={setIsDarkMode}
-        selectedTheme={selectedTheme}
-        setSelectedTheme={setSelectedTheme}
-      />
+      <Router>
+        <Routes>
+          <Route
+            exact
+            path="/thomas"
+            element={
+              <Home
+                isDarkMode={isDarkMode}
+                setIsDarkMode={setIsDarkMode}
+                setSelectedTheme={setSelectedTheme}
+                activeSide={LEFT_SIDE}
+              />
+            }
+          />
+          <Route
+            exact
+            path="/mauc"
+            element={
+              <Home
+                isDarkMode={isDarkMode}
+                setIsDarkMode={setIsDarkMode}
+                setSelectedTheme={setSelectedTheme}
+                activeSide={RIGHT_SIDE}
+              />
+            }
+          />
+          <Route path="*" element={<Navigate to="/thomas" />} />
+        </Routes>
+      </Router>
     </ThemeProvider>
   );
 }

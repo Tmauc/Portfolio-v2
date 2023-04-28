@@ -1,11 +1,10 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
-import { NAVBAR_ABOUT, NAVBAR_CONTACT } from '../../constants/constants';
+import Skills from 'components/skills/skills';
+import MailForm from 'components/mailForm/mailForm';
 
-import MailForm from '../../components/mailForm/mailForm';
-
-import { Neumorphism } from '../../assets/styles/common.style';
+import { NAVBAR_ABOUT, NAVBAR_SKILLS, NAVBAR_CONTACT } from 'constants/constants';
 
 import {
   H2,
@@ -13,7 +12,8 @@ import {
   Italic,
   HighlightRect,
   HighlightLine,
-} from '../../assets/styles/common.style';
+  Neumorphism,
+} from 'assets/styles/common.style';
 
 function LeftSide({ activeSection }) {
   const [t] = useTranslation();
@@ -26,20 +26,21 @@ function LeftSide({ activeSection }) {
           </H2>
           <Italic>{t('left.about.job')}</Italic>
           <P>
-            {t('left.about.part1')}
-            <HighlightRect>{t('left.about.part2')}</HighlightRect>{t('left.about.part3')}
+            <Trans i18nKey="left.about.certificate" components={{ 1: <HighlightRect /> }} />
           </P>
-          <P>{t('left.about.part4')}</P>
+          <P>{t('left.about.passions')}</P>
           <P>
-            {t('left.about.part5')}<HighlightRect>{t('left.about.part6')}</HighlightRect>{t('left.about.part7')}{' '}
-            <HighlightLine>
-              {t('left.about.part8')}
-            </HighlightLine>
+            <Trans
+              i18nKey="left.about.qualities"
+              components={{ 1: <HighlightRect />, 2: <HighlightLine /> }}
+            />
           </P>
         </Neumorphism>
       )}
+      {activeSection === NAVBAR_SKILLS && <Skills />}
       {activeSection === NAVBAR_CONTACT && <MailForm />}
     </>
   );
 }
+
 export default LeftSide;

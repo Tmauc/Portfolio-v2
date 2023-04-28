@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { btnAnim } from '../../assets/styles/animations';
-import { Neumorphism } from '../../assets/styles/common.style';
+import { btnAnim } from 'assets/styles/animations';
+import { Neumorphism } from 'assets/styles/common.style';
 
 export const LoginBox = styled(Neumorphism)`
   width: 100%;

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TwitchPlayer, TwitchChat } from 'react-twitch-embed';
-import api, { getToken } from '../../core/TwitchAPI';
-import { Neumorphism } from '../../assets/styles/common.style';
+
+import api, { getToken } from 'core/TwitchAPI';
+import useDeviceType from 'hooks/useDeviceType';
+import { Neumorphism } from 'assets/styles/common.style';
+
 import { TwitchPlayerStyle, LiveWrapper } from './ChannelLive.style';
 
-import useDeviceType from '../../hooks/useDeviceType';
 
 const ChannelPlanning = ({ channelId }) => {
   const [streamData, setStreamData] = useState(null);

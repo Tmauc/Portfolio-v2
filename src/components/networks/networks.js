@@ -1,12 +1,14 @@
 import React from 'react';
 
-import SwitchLang from '../../components/switchLang/switchLang';
+import SwitchLang from 'components/switchLang/switchLang';
+import useDeviceType from 'hooks/useDeviceType';
 
 import { Wrapper, IconWrapper, Tooltip, Span } from './networks.style';
 
 function Networks({ networkItems }) {
+  const { isMobile } = useDeviceType();
   return (
-    <Wrapper>
+    <Wrapper isMobile>
       {networkItems.map(({ name, url, icon, className }) => (
         <IconWrapper
           key={className}
@@ -19,7 +21,7 @@ function Networks({ networkItems }) {
           </Span>
         </IconWrapper>
       ))}
-      <SwitchLang />
+      {!isMobile && <SwitchLang />}
     </Wrapper>
   );
 }

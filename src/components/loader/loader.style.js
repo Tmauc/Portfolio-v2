@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { shadow, jump } from '../../assets/styles/animations';
+import { shadow, jump } from 'assets/styles/animations';
 
 export const LoaderWrapper = styled.div`
   position: absolute;
@@ -33,12 +33,12 @@ export const LoaderElement = styled.div`
     transition: background-color 1s ease;
 
     ${(p) => {
-      if (p.isSwap) {
-        return css`
+    if (p.isSwap) {
+      return css`
           background-color: ${(p) => p.theme.primaryDark};
         `;
-      }
-    }};
+    }
+  }};
   }
 
   &:after {
@@ -53,11 +53,11 @@ export const LoaderElement = styled.div`
     background-color: ${(p) => p.theme.tertiary};
     transition: background-color 1s ease;
     ${(p) => {
-      if (p.isSwap) {
-        return css`
+    if (p.isSwap) {
+      return css`
           background-color: ${(p) => p.theme.primary};
         `;
-      }
-    }};
+    }
+  }};
   }
 `;

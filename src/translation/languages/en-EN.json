@@ -1,5 +1,5 @@
 {
-  "activeBar": "Swap personality",
+  "activeBar": "Swap character",
   "contact": {
     "email": "Email",
     "message": "Message",
@@ -14,19 +14,15 @@
     "about": {
       "hello": "Hello I'm Thomas 🙂",
       "job": "Front-end developer",
-      "part1": "I graduated from ",
-      "part2": "Epitech School",
-      "part3": ", and I have more than 3 years of experience.",
-      "part4": "I am passionate about WebDesign and WebDev.",
-      "part5": "My ",
-      "part6": "best qualities",
-      "part7": "are :",
-      "part8": "Autonomy, rigor and curiosity."
+      "certificate": "I am a graduate from <1>Epitech School</1>, and I have more than 3 years of experience.",
+      "passions": "I am keen on WebDesign and WebDev.",
+      "qualities": "My <1>best qualities</1> are: <2>independence, thoroughness, and curiosity.</2>"
     }
   },
   "navbar": {
     "about": "About",
     "contact": "Contact",
+    "language": "Language: ",
     "photography": "Photography",
     "projects": "Projects",
     "resume": "Resume",
@@ -37,19 +33,21 @@
     "about": {
       "hello": "Hello, I'm Mauc 🙂",
       "job": "A content creator",
-      "part1": "5 years ago I started creating content and sharing my passions:",
-      "part3": "- Broadcasts of ",
-      "part4": "stream",
-      "part5": " on Twitch.",
-      "part6": "- Creations of ",
-      "part7": "videos",
-      "part8": " on Youtube.",
-      "part9": "- Publications of ",
-      "part10": "podcast",
-      "part11": " on the different platforms.",
-      "part12": "- Photographer and photo model 📸",
-      "part13": "Join the community 🌸"
+      "startContent": "5 years ago I started creating content and sharing my passions:",
+      "streamBroadcasts": "- Broadcast of <1>streams</1> on Twitch.",
+      "videosCreation": "- Creation of <1>videos</1> on Youtube.",
+      "podcastPublications": "- Publication of <1>podcasts</1> on various platforms.",
+      "photographer": "- Photographer and photo model 📸",
+      "joinCommunity": "Join the community 🌸"
     }
+  },
+  "skills": {
+    "web": "Web :",
+    "object": "Objects :",
+    "mobile": "Mobiles :",
+    "functional": "Functionals :",
+    "os": "OS :",
+    "other": "Other :"
   },
   "smallPostIt": {
     "itsMe": "It's me 👀",

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { TABLET_WIDTH } from '../../constants/constants';
+import { LargeText } from 'assets/styles/common.style';
 
 export const ToggleWrapper = styled.div`
   position: absolute;
@@ -10,10 +10,20 @@ export const ToggleWrapper = styled.div`
   color: white;
   transform: scale(0.6);
   z-index: 1041;
+`;
 
-  @media only screen and (max-width: ${TABLET_WIDTH}px) {
-    right: -75px;
-  }
+export const LangButton = styled(LargeText).attrs({
+  as: 'button',
+})`
+  font-size: 8vw;
+  line-height: 100%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: ${(p) => p.theme.primary};
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  -webkit-transition: 0s 0.3s ease-in-out;
+  transition: 0s 0.3s ease-in-out;
 `;
 
 export const Label = styled.label`

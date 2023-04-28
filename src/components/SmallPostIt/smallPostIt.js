@@ -5,7 +5,7 @@ import {
   ITSME_ARROW,
   WATCH_ARROW,
   REYES_PULL,
-} from '../../constants/constants';
+} from 'constants/constants';
 
 import { Wrapper, Img, Text } from './smallPostIt.style';
 

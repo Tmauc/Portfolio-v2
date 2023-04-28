@@ -1,4 +1,12 @@
-import { FaTwitch, FaLinkedin, FaGithub, FaYoutube, FaTwitter, FaInstagram, FaTiktok } from 'react-icons/fa';
+import {
+  FaTwitch,
+  FaLinkedin,
+  FaGithub,
+  FaYoutube,
+  FaTwitter,
+  FaInstagram,
+  FaTiktok
+} from 'react-icons/fa';
 
 export const NETWORK_ITEMS_LEFT = [
   {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { bounceLeft, bounceLeftMobile } from '../../assets/styles/animations';
-import { TABLET_WIDTH } from '../../constants/constants';
+import { bounceLeft, bounceLeftMobile } from 'assets/styles/animations';
+import { TABLET_WIDTH } from 'constants/constants';
 
 export const AlignWrapper = styled.div`
   display: flex;

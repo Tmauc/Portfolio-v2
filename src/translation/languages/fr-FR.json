@@ -1,5 +1,5 @@
 {
-  "activeBar": "Changer de personnalité",
+  "activeBar": "Changer de personnage",
   "contact": {
     "email": "Email",
     "message": "Message",
@@ -14,10 +14,9 @@
     "about": {
       "hello": "Bonjour, je m'appelle Thomas 🙂",
       "job": "Développeur Front-end",
-      "part1": "J'ai obtenu mon diplôme de ",
-      "part2": "École Epitech",
-      "part3": ", et j'ai plus de 3 ans d'expérience.",
-      "part4": "Je suis passionné de WebDesign et WebDev.",
+      "certificate": "J'ai obtenu mon diplôme de <1>l'École Epitech</1>, et j'ai plus de 3 ans d'expérience.",
+      "passions": "Je suis passionné de WebDesign et WebDev.",
+      "qualities": "Mes <1>meilleures qualités</1> sont : <2>l'autonomie, la rigueur et la curiosité.</2>",
       "part5": "Mes ",
       "part6": "meilleures qualités",
       "part7": "sont :",
@@ -27,6 +26,7 @@
   "navbar": {
     "about": "A propos",
     "contact": "Contact",
+    "language": "Langue : ",
     "photography": "Photographie",
     "projects": "Projets",
     "resume": "Résumé",
@@ -37,19 +37,21 @@
     "about": {
       "hello": "Bonjour, je suis Mauc 🙂",
       "job": "Un créateur de contenu",
-      "part1": "Il y a 5 ans j'ai commencé à créer du contenu et partager mes passions :",
-      "part3": "- Diffusions de ",
-      "part4": "stream",
-      "part5": " sur Twitch.",
-      "part6": "- Créations de ",
-      "part7": "vidéos",
-      "part8": " sur Youtube.",
-      "part9": "- Publications de ",
-      "part10": "podcast",
-      "part11": " sur les différentes plates-formes.",
-      "part12": "- Photographe et modèle photos 📸",
-      "part13": "Rejoins la communauté 🌸"
+      "startContent": "Il y a 5 ans j'ai commencé à créer du contenu et partager mes passions :",
+      "streamBroadcasts": "- Diffusion de <1>streams</1> sur Twitch.",
+      "videosCreation": "- Création de <1>vidéos</1> sur Youtube.",
+      "podcastPublications": "- Publication de <1>podcasts</1> sur les différentes plateformes.",
+      "photographer": "- Photographe et modèle photos 📸",
+      "joinCommunity": "Rejoins la communauté 🌸"
     }
+  },
+  "skills": {
+    "web": "Web :",
+    "object": "Objets :",
+    "mobile": "Mobiles :",
+    "functional": "Fonctionnels :",
+    "os": "OS :",
+    "other": "Autres :"
   },
   "smallPostIt": {
     "itsMe": "C'est moi 👀",
