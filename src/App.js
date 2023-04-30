@@ -7,7 +7,7 @@ import {
   Navigate,
 } from 'react-router-dom';
 
-import { useDarkMode } from 'hooks/useDarkMode';
+import useDarkMode from 'hooks/useDarkMode';
 import Home from 'pages/home/home';
 
 import { GlobalFonts } from 'assets/styles/fonts';

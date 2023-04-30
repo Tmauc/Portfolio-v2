@@ -17,11 +17,13 @@ import {
   Neumorphism,
 } from 'assets/styles/common.style';
 
+import { Wrapper, Section } from './leftSide.style';
+
 function LeftSide({ activeSection }) {
   const [t] = useTranslation();
   return (
-    <>
-      {activeSection === NAVBAR_ABOUT && (
+    <Wrapper>
+      <Section>
         <Neumorphism>
           <H2>
             <b>{t('left.about.hello')}</b>
@@ -38,12 +40,20 @@ function LeftSide({ activeSection }) {
             />
           </P>
         </Neumorphism>
-      )}
-      {activeSection === NAVBAR_SKILLS && <Skills />}
-      {activeSection === NAVBAR_RESUME && <Resume />}
-      {activeSection === NAVBAR_PROJECTS && <Projects />}
-      {activeSection === NAVBAR_CONTACT && <MailForm />}
-    </>
+      </Section>
+      <Section>
+        <Skills />
+      </Section>
+      <Section>
+        <Resume />
+      </Section >
+      <Section>
+        <Projects />
+      </Section >
+      <Section>
+        <MailForm />
+      </Section >
+    </Wrapper>
   );
 }
 

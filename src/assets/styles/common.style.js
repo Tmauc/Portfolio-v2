@@ -27,7 +27,6 @@ export const Neumorphism = styled.div`
 `;
 
 export const LargeText = styled.h1`
-  display: inline;
   width: fit-content;
 
   font-family: "TT Firs Neue Trl Black";

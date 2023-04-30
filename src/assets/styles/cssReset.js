@@ -39,6 +39,28 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: ${p => p.theme.contrastBorder};
+    border-radius: 4px;
+    width: 3px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${p => p.theme.primary};
+  }
 }
 
 /* A elements that don't have a class get default styles */
@@ -77,10 +99,14 @@ select {
   }
 }
 
+  html {
+    background-color: ${p => p.theme.secondary};
+  }
+
   body {
     color: ${(p) => p.theme.textColor};
     font-family: 'TT Firs Neue Trl Regular';
-    overflow: hidden;
+    //overflow: hidden;
 
     .button {
       transition: all 0.2s ease-in-out;

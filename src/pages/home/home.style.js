@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { glitchAnim, jiggle } from 'assets/styles/animations';
 import { LargeText } from 'assets/styles/common.style';
 import { TABLET_WIDTH } from 'constants/constants';
@@ -25,13 +25,35 @@ export const Background = styled.div`
   }
 `;
 
-export const Img = styled.img`
+export const ImgWrapper = styled.div`
   position: fixed;
   top: 0;
+  bottom: 0;
   right: 0;
+  transition: all .4s ease-in-out;
+  
+  ${p => {
+    if (p.isScrolling) {
+      return css`
+        transform: scale(.5);
+        bottom: 30%;
+        transform-origin: right bottom;
+      `
+    } else {
+      return css`
+        transform: scale(1);
+        transform-origin: right bottom;
+      `
+    }
+  }}
+
+`;
+
+export const Img = styled.img`
   width: auto;
   min-height: 100vh;
   height: 1000px;
+
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     object-fit: contain;
     object-position: bottom;
@@ -43,8 +65,8 @@ export const Img = styled.img`
 export const Main = styled.div`
   position: relative;
   display: flex;
-  overflow: hidden;
-  height: 100vh;
+  overflow: auto;
+  //height: auto;
   background-color: ${(p) => p.theme.transparentBackground02};
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
@@ -58,8 +80,9 @@ export const PageWrapper = styled.div`
   flex-direction: column;
   margin: 10px;
   margin-left: 50px;
-  padding: 50px;
+  padding: 0 50px;
   background-image: url("${(p) => p.theme.backgroundUrl}");
+  overflow: auto;
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     padding: 50px 8%;
@@ -70,15 +93,34 @@ export const PageWrapper = styled.div`
 export const Header = styled.section`
   display: flex;
   flex-direction: column;
+  height: 105vh;
+`;
+
+export const TextWrapper = styled.div`
+  position: fixed;
+  transition: all .3s ease-in-out;
+  transform-origin: left top;
+
+  ${p => {
+    if (p.isScrolling) {
+      return css`
+        opacity: 0;
+      `
+    } else {
+      return css`
+        transform: scale(1);
+        padding-top: 50px;
+      `
+    }
+  }}
 `;
 
 export const GradientWrapper = styled.div`
   display: flex;
+  margin-bottom: 20px;
 `;
 
 export const LargeTransparentText = styled(LargeText)`
-  padding-top: 20px;
-
   &::after {
     content: ' ';
     display: block;
@@ -201,16 +243,13 @@ export const MainSection = styled.section`
   display: flex;
   align-items: center;
 
-  max-width: 50vw;
+  max-width: 65vw;
   height: 100%;
 
   margin-top: 10px;
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
     margin-left: 0;
     margin-top: 0;
     max-width: 100vw;

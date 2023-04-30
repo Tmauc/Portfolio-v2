@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  background-color: red;
+  background-color: transparent;
 
   ${p => {
     if (p.type === ITSME_ARROW) {

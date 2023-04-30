@@ -3,8 +3,9 @@ import { TABLET_WIDTH } from 'constants/constants';
 
 export const Wrapper = styled.div`
   position: fixed;
-  left: 49%;
-  transform: translate(-50%);
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
   right: 0;
   bottom: 10px;
   z-index: 1030;

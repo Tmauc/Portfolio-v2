@@ -37,13 +37,16 @@ import LeftSide from 'parts/leftSide/leftSide';
 import RightSide from 'parts/rightSide/rightSide';
 
 import useDeviceType from 'hooks/useDeviceType';
+import useScrollDetection from 'hooks/useScroll';
 
 import {
   Background,
   Main,
+  ImgWrapper,
   Img,
   PageWrapper,
   Header,
+  TextWrapper,
   GradientWrapper,
   ColorGradient,
   LargeTransparentText,
@@ -57,6 +60,7 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
   const { isMobile } = useDeviceType();
   const { itsMeArrow, smallArrow, backgroundCharacter } = useTheme();
   const [t] = useTranslation();
+  const isScrolling = useScrollDetection();
 
   const handleClick = useCallback(() => {
     setLoading('swap');
@@ -86,43 +90,51 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
 
   return (
     <Background>
-      <Img activeSide={activeSide} alt="An image to represent me in the current side" src={backgroundCharacter} />
+      <ImgWrapper isScrolling={isScrolling}>
+        <Img
+          activeSide={activeSide}
+          alt="An image to represent me in the current side"
+          src={backgroundCharacter}
+        />
+        {!isMobile &&
+          <div id='smallPostIt-Wrapper'>
+            <SmallPostIt svgSRC={itsMeArrow} type={ITSME_ARROW} activeSide={activeSide} />
+            {activeSide === LEFT_SIDE && <SmallPostIt svgSRC={smallArrow} type={WATCH_ARROW} />}
+            {activeSide === RIGHT_SIDE && <SmallPostIt svgSRC={smallArrow} type={REYES_PULL} />}
+          </div>
+        }
+      </ImgWrapper>
       <Main>
         <PageWrapper>
-          {!isMobile &&
-            <div id='smallPostIt-Wrapper'>
-              <SmallPostIt svgSRC={itsMeArrow} type={ITSME_ARROW} activeSide={activeSide} />
-              {activeSide === LEFT_SIDE && <SmallPostIt svgSRC={smallArrow} type={WATCH_ARROW} />}
-              {activeSide === RIGHT_SIDE && <SmallPostIt svgSRC={smallArrow} type={REYES_PULL} />}
-            </div>
-          }
           <Header>
-            <GradientWrapper>
-              <ColorGradient
-                onClick={handleClick}
-                aria-label={`Go to ${activeSide === LEFT_SIDE ? THOMAS : MAUC
-                  }'s side page`}
-                tabIndex={0}
-              >
-                {activeSide === LEFT_SIDE ? THOMAS : MAUC}
-              </ColorGradient>
-              <ActiveBar />
-            </GradientWrapper>
-            <LargeTransparentText>
-              {activeSide === LEFT_SIDE ? (
-                <p>
-                  Front End
-                  <br />
-                  {t('largeText.developer')}
-                </p>
-              ) : (
-                <p>
-                  {t('largeText.contentCreatorPart1')}
-                  <br />
-                  {t('largeText.contentCreatorPart2')}
-                </p>
-              )}
-            </LargeTransparentText>
+            <TextWrapper isScrolling={isScrolling}>
+              <GradientWrapper>
+                <ColorGradient
+                  onClick={handleClick}
+                  aria-label={`Go to ${activeSide === LEFT_SIDE ? THOMAS : MAUC
+                    }'s side page`}
+                  tabIndex={0}
+                >
+                  {activeSide === LEFT_SIDE ? THOMAS : MAUC}
+                </ColorGradient>
+                <ActiveBar />
+              </GradientWrapper>
+              <LargeTransparentText>
+                {activeSide === LEFT_SIDE ? (
+                  <p>
+                    Front End
+                    <br />
+                    {t('largeText.developer')}
+                  </p>
+                ) : (
+                  <p>
+                    {t('largeText.contentCreatorPart1')}
+                    <br />
+                    {t('largeText.contentCreatorPart2')}
+                  </p>
+                )}
+              </LargeTransparentText>
+            </TextWrapper>
           </Header>
           <MainSection>
             {activeSide === LEFT_SIDE ? (

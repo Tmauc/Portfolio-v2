@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { TABLET_WIDTH, LAPTOP_HEIGHT } from 'constants/constants';
+import { TABLET_WIDTH } from 'constants/constants';
 import { Neumorphism } from 'assets/styles/common.style';
 
 export const MainWrapper = styled.div`
@@ -26,17 +26,7 @@ export const Wrapper = styled(Neumorphism)`
 export const ResumesWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  max-height: 200px;
   padding-right: 10px;
-
-  @media only screen and (max-height: ${LAPTOP_HEIGHT}px) {
-    max-height: 100px;
-  }
-
-  @media only screen and (max-width: ${TABLET_WIDTH}px) {
-    max-height: 200px;
-  }
 
   ::-webkit-scrollbar {
     width: 5px;
@@ -105,8 +95,7 @@ export const ResumeHeader = styled.div`
     margin-right: 10px;
   }
 
-  @media only screen and (max-width: ${TABLET_WIDTH}px), 
-       only screen and (max-height: ${LAPTOP_HEIGHT}px) {
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
     min-height: 40px;
   }
 `;

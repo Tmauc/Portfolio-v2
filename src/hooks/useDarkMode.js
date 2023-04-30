@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export function useDarkMode() {
+function useDarkMode() {
   const [isbrowserDarkMode, setIsbrowserDarkMode] = useState(
     window.matchMedia('(prefers-color-scheme: dark)').matches
   );
@@ -16,3 +16,5 @@ export function useDarkMode() {
 
   return isbrowserDarkMode;
 }
+
+export default useDarkMode;

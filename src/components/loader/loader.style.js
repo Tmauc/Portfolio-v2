@@ -3,6 +3,8 @@ import { shadow, jump } from 'assets/styles/animations';
 
 export const LoaderWrapper = styled.div`
   position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
