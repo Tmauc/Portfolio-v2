@@ -8,7 +8,7 @@ import {
   FUNCTIONAL_ITEMS as functionalItems,
   OS_ITEMS as osItems,
   OTHER_ITEMS as otherItems,
-} from 'components/data/skillsData';
+} from 'data/skillsData';
 
 import { MainWrapper, Wrapper, SkillsWrapper, SkillWrapper, Title, Span, P } from './skills.style';
 

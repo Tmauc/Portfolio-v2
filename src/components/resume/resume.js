@@ -6,7 +6,7 @@ import { TiCalendar } from 'react-icons/ti';
 import {
   EDUCATIONAL_ITEMS as educationalItems,
   PROFESSIONAL_ITEMS as professionalItems,
-} from 'components/data/resumeData';
+} from 'data/resumeData';
 
 import { MainWrapper, Wrapper, ResumesWrapper, ResumeWrapper, ResumeHeader, Title, P, BigText, Desc } from './resume.style';
 

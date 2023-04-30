@@ -4,8 +4,9 @@ import { useTranslation, Trans } from 'react-i18next';
 import Skills from 'components/skills/skills';
 import MailForm from 'components/mailForm/mailForm';
 import Resume from 'components/resume/resume';
+import Projects from 'components/projects/projects';
 
-import { NAVBAR_ABOUT, NAVBAR_SKILLS, NAVBAR_CONTACT, NAVBAR_RESUME } from 'constants/constants';
+import { NAVBAR_ABOUT, NAVBAR_SKILLS, NAVBAR_CONTACT, NAVBAR_RESUME, NAVBAR_PROJECTS } from 'constants/constants';
 
 import {
   H2,
@@ -40,6 +41,7 @@ function LeftSide({ activeSection }) {
       )}
       {activeSection === NAVBAR_SKILLS && <Skills />}
       {activeSection === NAVBAR_RESUME && <Resume />}
+      {activeSection === NAVBAR_PROJECTS && <Projects />}
       {activeSection === NAVBAR_CONTACT && <MailForm />}
     </>
   );

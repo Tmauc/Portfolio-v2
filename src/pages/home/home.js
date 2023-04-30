@@ -27,11 +27,11 @@ import {
 import {
   NAVBAR_ITEMS_LEFT,
   NAVBAR_ITEMS_RIGHT,
-} from 'components/data/navbarData';
+} from 'data/navbarData';
 import {
   NETWORK_ITEMS_LEFT,
   NETWORK_ITEMS_RIGHT,
-} from 'components/data/networkData';
+} from 'data/networkData';
 
 import LeftSide from 'parts/leftSide/leftSide';
 import RightSide from 'parts/rightSide/rightSide';

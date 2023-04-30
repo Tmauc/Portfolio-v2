@@ -19,7 +19,6 @@ export const NAVBAR_ITEMS_LEFT = [
     href: '#projects',
     label: 'navbar.projects',
     activeConstant: NAVBAR_PROJECTS,
-    disabled: true,
     tabIndex: 0,
   },
   {
