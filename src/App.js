@@ -19,7 +19,7 @@ import { ORANGE_COLOR, LEFT_SIDE, RIGHT_SIDE } from 'constants/constants';
 function App() {
   const isbrowserDarkMode = useDarkMode();
   const [isDarkMode, setIsDarkMode] = useState(
-    isbrowserDarkMode || localStorage.getItem('isDarkMode') === true
+    localStorage.getItem('isDarkMode') === 'true' || isbrowserDarkMode
   );
   const [selectedTheme, setSelectedTheme] = useState(ORANGE_COLOR);
   const [theme, setTheme] = useState(themes[selectedTheme].darkTheme);

@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Networks from 'components/networks/networks';
 import SwitchLang from 'components/switchLang/switchLang';
+import Networks from 'components/networks/networks';
+
+import useActiveNavbarLink from 'hooks/useActiveNavbarLink'
+
+import {
+  NETWORK_MOBILE_ITEMS as networkItems
+} from 'data/networkData';
 
 import {
   Label,
@@ -16,7 +22,7 @@ import {
   A,
 } from './hamburgerMenu.style';
 
-function HamburgerMenu({ activeSection, setActiveSection, navbarItems, networkItems }) {
+function HamburgerMenu({ navbarItems }) {
   const [t] = useTranslation();
   const handleLinkClick = (event) => {
     event.preventDefault();
@@ -25,11 +31,15 @@ function HamburgerMenu({ activeSection, setActiveSection, navbarItems, networkIt
 
     if (link && link.hasAttribute('href')) {
       const sectionId = link.getAttribute('href').slice(1);
-      setActiveSection(sectionId);
+      var elmntToView = document.getElementById(sectionId);
+      elmntToView.scrollIntoView();
       const checkbox = document.querySelector('input[type="checkbox"]');
       checkbox.checked = false;
     }
   };
+
+  const navbarRef = useRef(null);
+  const activeSection = useActiveNavbarLink(navbarRef);
 
   return (
     <Label>
@@ -37,7 +47,7 @@ function HamburgerMenu({ activeSection, setActiveSection, navbarItems, networkIt
       <SpanMenu>
         <SpanHamburgerMenu />
       </SpanMenu>
-      <Wrapper id="wrapper">
+      <Wrapper id="wrapper" ref={navbarRef}>
         <Ul>
           <SwitchLang isMobile={true} />
           {navbarItems.map((item, index) => (

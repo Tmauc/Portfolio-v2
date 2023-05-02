@@ -37,6 +37,9 @@ html:focus-within {
 /* Set core body defaults */
 body {
   min-height: 100vh;
+  max-height: 100vh;
+  min-height: 100dvh;
+  max-height: 100dvh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }

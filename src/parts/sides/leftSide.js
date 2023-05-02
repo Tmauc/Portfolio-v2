@@ -2,11 +2,9 @@ import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 
 import Skills from 'components/skills/skills';
-import MailForm from 'components/mailForm/mailForm';
 import Resume from 'components/resume/resume';
-import Projects from 'components/projects/projects';
-
-import { NAVBAR_ABOUT, NAVBAR_SKILLS, NAVBAR_CONTACT, NAVBAR_RESUME, NAVBAR_PROJECTS } from 'constants/constants';
+//import Projects from 'components/projects/projects';
+import Button from 'components/button/button';
 
 import {
   H2,
@@ -14,15 +12,19 @@ import {
   Italic,
   HighlightRect,
   HighlightLine,
-  Neumorphism,
-} from 'assets/styles/common.style';
+  Section,
+  AboutWrapper,
+  ContactWrapper,
+  Center,
+} from './sides.style';
 
-function LeftSide({ activeSection }) {
+
+function LeftSide() {
   const [t] = useTranslation();
   return (
     <>
-      {activeSection === NAVBAR_ABOUT && (
-        <Neumorphism>
+      <Section id='about'>
+        <AboutWrapper>
           <H2>
             <b>{t('left.about.hello')}</b>
           </H2>
@@ -37,12 +39,22 @@ function LeftSide({ activeSection }) {
               components={{ 1: <HighlightRect />, 2: <HighlightLine /> }}
             />
           </P>
-        </Neumorphism>
-      )}
-      {activeSection === NAVBAR_SKILLS && <Skills />}
-      {activeSection === NAVBAR_RESUME && <Resume />}
-      {activeSection === NAVBAR_PROJECTS && <Projects />}
-      {activeSection === NAVBAR_CONTACT && <MailForm />}
+        </AboutWrapper>
+        <ContactWrapper>
+          <Button label={t('button.project')} />
+        </ContactWrapper>
+      </Section>
+      <Section id='skills'>
+        <P><Trans i18nKey="left.skills" components={{ 1: <HighlightRect /> }} /></P>
+        <Skills />
+      </Section >
+      <Section id='resume'>
+        <P><Trans i18nKey="left.resume" components={{ 1: <HighlightRect /> }} /></P>
+        <Resume />
+      </Section >
+      <Center>
+        <Button label={t('button.contact')} />
+      </Center>
     </>
   );
 }

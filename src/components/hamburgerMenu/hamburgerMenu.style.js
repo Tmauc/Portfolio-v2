@@ -34,9 +34,11 @@ export const SpanHamburgerMenu = styled.span`
   transition: 0.5s ease-in-out;
 
   background-color: ${(p) => p.theme.primary};
+  background-color: ${(p) => p.theme.tertiary};
   &::after,
   &::before {
     background-color: ${(p) => p.theme.primary};
+    background-color: ${(p) => p.theme.tertiary};
   }
 
   &::after,
@@ -131,6 +133,8 @@ export const Input = styled.input`
   &:checked + ${SpanMenu} {
     box-shadow: 0 0 0 100vw ${(p) => p.theme.secondary},
       0 0 0 100vh ${(p) => p.theme.secondary};
+    box-shadow: 0 0 0 100vw ${(p) => p.theme.secondary},
+      0 0 0 100dvh ${(p) => p.theme.secondary};
     border-radius: 0;
   }
 

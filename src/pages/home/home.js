@@ -3,18 +3,18 @@ import { useTranslation } from 'react-i18next';
 import { useTheme } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
-import Networks from 'components/networks/networks';
 import ActiveBar from 'components/activeBar/activeBar';
 import Navbar from 'components/navbar/navbar';
 import HamburgerMenu from 'components/hamburgerMenu/hamburgerMenu';
 import SwitchDarkMode from 'components/switchDarkMode/switchDarkMode';
 import Loader from 'components/loader/loader';
+import ScrollIndicator from 'components/scrollIndicator/scrollIndicator';
 import SmallPostIt from 'components/SmallPostIt/smallPostIt';
+import Socials from 'components/socials/socials';
 
 import {
   LEFT_SIDE,
   RIGHT_SIDE,
-  NAVBAR_ABOUT,
   ORANGE_COLOR,
   PURPLE_COLOR,
   THOMAS,
@@ -28,13 +28,9 @@ import {
   NAVBAR_ITEMS_LEFT,
   NAVBAR_ITEMS_RIGHT,
 } from 'data/navbarData';
-import {
-  NETWORK_ITEMS_LEFT,
-  NETWORK_ITEMS_RIGHT,
-} from 'data/networkData';
 
-import LeftSide from 'parts/leftSide/leftSide';
-import RightSide from 'parts/rightSide/rightSide';
+import LeftSide from 'parts/sides/leftSide';
+import RightSide from 'parts/sides/rightSide';
 
 import useDeviceType from 'hooks/useDeviceType';
 
@@ -48,10 +44,10 @@ import {
   ColorGradient,
   LargeTransparentText,
   MainSection,
+  MainWrapper,
 } from './home.style';
 
 function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
-  const [activeSection, setActiveSection] = useState(NAVBAR_ABOUT);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const { isMobile } = useDeviceType();
@@ -63,7 +59,6 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
 
     setTimeout(() => {
       navigate(activeSide === LEFT_SIDE ? '/mauc' : '/thomas');
-      setActiveSection(NAVBAR_ABOUT);
       document.title =
         activeSide === LEFT_SIDE
           ? t('title.mauc')
@@ -81,8 +76,6 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
 
   const navbarItems =
     activeSide === LEFT_SIDE ? NAVBAR_ITEMS_LEFT : NAVBAR_ITEMS_RIGHT;
-  const networkItems =
-    activeSide === LEFT_SIDE ? NETWORK_ITEMS_LEFT : NETWORK_ITEMS_RIGHT;
 
   return (
     <Background>
@@ -96,7 +89,7 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
               {activeSide === RIGHT_SIDE && <SmallPostIt svgSRC={smallArrow} type={REYES_PULL} />}
             </div>
           }
-          <Header>
+          <Header id='header'>
             <GradientWrapper>
               <ColorGradient
                 onClick={handleClick}
@@ -124,36 +117,32 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
               )}
             </LargeTransparentText>
           </Header>
-          <MainSection>
-            {activeSide === LEFT_SIDE ? (
-              <LeftSide activeSection={activeSection} />
-            ) : (
-              <RightSide activeSection={activeSection} />
-            )}
+          <MainSection id="mainSection">
+            <MainWrapper>
+              {activeSide === LEFT_SIDE ? (
+                <LeftSide />
+              ) : (
+                <RightSide />
+              )}
+            </MainWrapper>
           </MainSection>
         </PageWrapper>
         {isMobile ? (
           <HamburgerMenu
-            activeSection={activeSection}
-            setActiveSection={setActiveSection}
             navbarItems={navbarItems}
-            networkItems={networkItems}
           />
 
         ) : (
-          <Navbar
-            activeSection={activeSection}
-            setActiveSection={setActiveSection}
-            navbarItems={navbarItems}
-          />
+          <Navbar navbarItems={navbarItems} />
         )}
-        {!isMobile && <Networks networkItems={networkItems} />}
         <SwitchDarkMode
           aria-label="Toggle dark mode"
           isDarkMode={isDarkMode}
           setIsDarkMode={setIsDarkMode}
           setLoading={setLoading}
         />
+        {!isMobile && <Socials />}
+        <ScrollIndicator />
         {loading && (
           <Loader
             aria-label="Loader"

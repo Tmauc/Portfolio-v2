@@ -1,5 +1,9 @@
 {
   "activeBar": "Changer de personnage",
+  "button": {
+    "contact": "Envie de papoter ?",
+    "project": "Un projet ?"
+  },
   "contact": {
     "email": "Email",
     "message": "Message",
@@ -14,14 +18,12 @@
     "about": {
       "hello": "Bonjour, je m'appelle Thomas 🙂",
       "job": "Développeur Front-end",
-      "certificate": "J'ai obtenu mon diplôme de <1>l'École Epitech</1>, et j'ai plus de 3 ans d'expérience.",
+      "certificate": "J'ai obtenu mon diplôme de <1>l'école Epitech</1> et j'ai plus de 4 ans d'expérience.",
       "passions": "Je suis passionné de WebDesign et WebDev.",
-      "qualities": "Mes <1>meilleures qualités</1> sont : <2>l'autonomie, la rigueur et la curiosité.</2>",
-      "part5": "Mes ",
-      "part6": "meilleures qualités",
-      "part7": "sont :",
-      "part8": "L'autonomie, la rigueur et la curiosité."
-    }
+      "qualities": "Mes <1>meilleures qualités</1> sont : <2>l'autonomie, la rigueur et la curiosité.</2>"
+    },
+    "resume": "Depuis mon entrée à l'école <1>Epitech</1> en 2017, je me forme et améliore mes compétences à travers plusieurs expériences <1>professionnelles</1> :",
+    "skills": "Au fil des années d'études et de travail, j'ai <1>développé</1> diverses compétences :"
   },
   "navbar": {
     "about": "A propos",
@@ -29,25 +31,27 @@
     "language": "Langue : ",
     "photography": "Photographie",
     "projects": "Projets",
-    "resume": "Résumé",
+    "resume": "Expériences",
     "skills": "Compétences",
     "twitch": "Twitch"
   },
   "resume": {
     "baccalaureate": "Baccalauréat Scientifique",
     "baccalaureateDesc": "Mention assez bien obtenue.",
-    "backOfficeDev": "Développeur Back Office",
-    "education": "Éducation :",
-    "freelance": "Freelance",
-    "frontDev": "Développeur Front End",
-    "frontEndDevTrainee": "Développeur Front End (stagiaire)",
+    "backOfficeDev": "Dev Back Office",
+    "education": "Formation :",
+    "experiences": "Expériences :",
+    "freelance": "Dev Freelance",
+    "frontDev": "Dev Front End",
     "ibaniDesc": "Ibani : Société gérant l'échange d'argent. MtPelerin : Société (future banque) qui vise à la création de compte numérique sécurisé, gratuit, rapide. Amélioration du site d'administration. Mise à jour de l'application mobile : Vue.js / React Native, Javascript / MacOS.",
     "inattenduDesc": "Entreprise événementielle en présence et virtuelle. Gestion du site (Vue.js). ZOOM master. Gestion du son, de la vidéo et de la lumière.",
     "maskottDesc": "Recréer une webapp en react.",
     "master": "Master",
-    "newAccessDesc": "Editeur multinational de logiciels bancaires pour les banques privées. Création d'une application web permettant de visualiser un projet sous forme de noeud et de lien (Force Layout). Gestionnaire de logs automatisé (plusieurs milliers de logs, analysés, puis compilés en un seul log selon les paramètres de l'utilisateur).Outils : C, JavaScript(angular, d3.js), Html / Css, VisualStudio.",
     "masterDesc": "Le programme Grande École est le cursus historique d'Epitech. Il dure 5 ans et forme des experts en informatique. Il offre un contenu technique dense et varié, incluant une diversité de projets de programmation, et couvrant de nombreux langages qui permettront à l'étudiant d'aborder toutes les nouvelles technologies avec sérénité.",
-    "professional": "Professionnel :"
+    "months": "{{num}} mois",
+    "newAccessDesc": "Editeur multinational de logiciels bancaires pour les banques privées. Création d'une application web permettant de visualiser un projet sous forme de noeud et de lien (Force Layout). Gestionnaire de logs automatisé (plusieurs milliers de logs, analysés, puis compilés en un seul log selon les paramètres de l'utilisateur).Outils : C, JavaScript(angular, d3.js), Html / Css, VisualStudio.",
+    "oneHalfYears": "1,5 ans",
+    "years": "{{num}} ans"
   },
   "right": {
     "about": {

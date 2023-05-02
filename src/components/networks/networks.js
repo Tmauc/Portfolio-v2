@@ -1,27 +1,23 @@
 import React from 'react';
 
-import SwitchLang from 'components/switchLang/switchLang';
-import useDeviceType from 'hooks/useDeviceType';
-
-import { Wrapper, IconWrapper, Tooltip, Span } from './networks.style';
+import { Wrapper, IconWrapper, Span } from './networks.style';
 
 function Networks({ networkItems }) {
-  const { isMobile } = useDeviceType();
+
   return (
-    <Wrapper isMobile>
-      {networkItems.map(({ name, url, icon, className }) => (
+    <Wrapper isMobile >
+      {networkItems.map(({ color, url, icon, className }) => (
         <IconWrapper
           key={className}
           onClick={() => window.open(url, '_blank')}
           className={className}
+          color={color}
         >
-          <Tooltip>{name}</Tooltip>
-          <Span>
+          <Span color={color}>
             {icon}
           </Span>
         </IconWrapper>
       ))}
-      {!isMobile && <SwitchLang />}
     </Wrapper>
   );
 }

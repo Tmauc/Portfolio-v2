@@ -1,7 +1,6 @@
 import {
   NAVBAR_ABOUT,
   NAVBAR_PHOTOGRAPHY,
-  NAVBAR_CONTACT,
   NAVBAR_PROJECTS,
   NAVBAR_RESUME,
   NAVBAR_SKILLS,
@@ -10,15 +9,10 @@ import {
 
 export const NAVBAR_ITEMS_LEFT = [
   {
-    href: '#contact',
-    label: 'navbar.contact',
-    activeConstant: NAVBAR_CONTACT,
-    tabIndex: 0,
-  },
-  {
     href: '#projects',
     label: 'navbar.projects',
     activeConstant: NAVBAR_PROJECTS,
+    disabled: true,
     tabIndex: 0,
   },
   {
@@ -42,12 +36,6 @@ export const NAVBAR_ITEMS_LEFT = [
 ];
 
 export const NAVBAR_ITEMS_RIGHT = [
-  {
-    href: '#contact',
-    label: 'navbar.contact',
-    activeConstant: NAVBAR_CONTACT,
-    tabIndex: 0,
-  },
   {
     href: '#photography',
     label: 'navbar.photography',

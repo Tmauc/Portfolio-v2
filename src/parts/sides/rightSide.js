@@ -1,15 +1,8 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 
-import MailForm from 'components/mailForm/mailForm';
-
 import ChannelLive from 'components/ChannelLive/ChannelLive';
-
-import {
-  NAVBAR_ABOUT,
-  NAVBAR_CONTACT,
-  NAVBAR_TWITCH,
-} from 'constants/constants';
+import Button from 'components/button/button';
 
 import {
   H2,
@@ -17,15 +10,17 @@ import {
   Italic,
   HighlightRect,
   HighlightLine,
-  Neumorphism,
-} from 'assets/styles/common.style';
+  Section,
+  AboutWrapper,
+  Center,
+} from './sides.style';
 
-function RightSide({ activeSection }) {
+function RightSide() {
   const [t] = useTranslation();
   return (
     <>
-      {activeSection === NAVBAR_ABOUT && (
-        <Neumorphism>
+      <Section id='about'>
+        <AboutWrapper>
           <H2>
             <b>{t('right.about.hello')}</b>
           </H2>
@@ -44,10 +39,14 @@ function RightSide({ activeSection }) {
           <P>
             <HighlightLine>{t('right.about.joinCommunity')}</HighlightLine>
           </P>
-        </Neumorphism>
-      )}
-      {activeSection === NAVBAR_TWITCH && <ChannelLive channelId="256677231" />}
-      {activeSection === NAVBAR_CONTACT && <MailForm />}
+        </AboutWrapper>
+      </Section>
+      <Section id='twitch'>
+        <ChannelLive channelId="256677231" />
+      </Section>
+      <Center>
+        <Button label={t('button.contact')} />
+      </Center>
     </>
   );
 }

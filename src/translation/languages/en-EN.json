@@ -1,5 +1,9 @@
 {
   "activeBar": "Swap character",
+  "button": {
+    "contact": "Want to talk?",
+    "project": "A project?"
+  },
   "contact": {
     "email": "Email",
     "message": "Message",
@@ -14,10 +18,12 @@
     "about": {
       "hello": "Hello I'm Thomas 🙂",
       "job": "Front-end developer",
-      "certificate": "I am a graduate from <1>Epitech School</1>, and I have more than 3 years of experience.",
+      "certificate": "I am a graduate from <1>Epitech School</1>, and I have more than 4 years of experience.",
       "passions": "I am keen on WebDesign and WebDev.",
-      "qualities": "My <1>best qualities</1> are: <2>independence, thoroughness, and curiosity.</2>"
-    }
+      "qualities": "My <1>best qualities</1> are: independence, thoroughness, and curiosity."
+    },
+    "resume": "Since I started studying at <1>Epitech</1> school in 2017, I have been learning and improving my skills through several <1>professional</1> experiences:",
+    "skills": "Throughout the years, I have <1>developed</1> various skills:"
   },
   "navbar": {
     "about": "About",
@@ -34,16 +40,18 @@
     "baccalaureateDesc": "Pretty good awarded.",
     "backOfficeDev": "Back Office Developer",
     "education": "Education:",
-    "freelance": "Freelance",
+    "experiences": "Experiences:",
+    "freelance": "Freelance Developer",
     "frontDev": "Front End Developer",
-    "frontEndDevTrainee": "Front End Developer (trainee)",
     "ibaniDesc": "Ibani: Company managing the exchange of money. MtPelerin: Company (future bank) which aims at the creation of digital account safe, free, fast. Improvement of the admin site. Update of the mobile application.Tools: Vue.js / React Native, Javascript / MacOS",
     "inattenduDesc": "Event enterprise in presence and virtual. Site management (Vue.js). ZOOM master. Sound, video and light management.",
     "maskottDesc": "Recreate a webapp in react.",
     "master": "Master",
-    "newAccessDesc": "Multinational editor of banking software for private banks. Creation of a web application allowing to view a project as a node and a link (Force Layout). Automated log manager (several thousands of logs, parsed, then compiled into a single log according to the user's parameters).Tools: C, JavaScript(angular, d3.js), Html / Css, VisualStudio.",
     "masterDesc": "The Grande Ecole program is Epitech's historical curriculum. It lasts 5 years and trains experts in computer science. It offers a dense and varied technical content, including a diversity of programming projects, and covering many languages that will allow the student to approach all new technologies with serenity.",
-    "professional": "Professional:"
+    "months": "{{num}} months",
+    "newAccessDesc": "Multinational editor of banking software for private banks. Creation of a web application allowing to view a project as a node and a link (Force Layout). Automated log manager (several thousands of logs, parsed, then compiled into a single log according to the user's parameters).Tools: C, JavaScript(angular, d3.js), Html / Css, VisualStudio.",
+    "oneHalfYears": "1.5 years",
+    "years": "{{num}} years"
   },
   "right": {
     "about": {

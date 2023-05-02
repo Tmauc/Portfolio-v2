@@ -1,18 +1,35 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { TiCalendar } from 'react-icons/ti';
+import { BiTimeFive, BiChevronDownCircle, BiChevronUpCircle } from 'react-icons/bi';
 
 import {
   EDUCATIONAL_ITEMS as educationalItems,
   PROFESSIONAL_ITEMS as professionalItems,
 } from 'data/resumeData';
 
-import { MainWrapper, Wrapper, ResumesWrapper, ResumeWrapper, ResumeHeader, Title, P, BigText, Desc } from './resume.style';
+import {
+  MainWrapper,
+  Wrapper,
+  ResumesWrapper,
+  ResumeWrapper,
+  ResumeHeader,
+  Title,
+  P,
+  BigText,
+  DescWrapper,
+  DescSeparator,
+  Desc,
+  InfoWrapper,
+  LineWrapper,
+  ChevronWrapper,
+} from './resume.style';
 
 function ResumeGroup({ items, titleSection }) {
   const [t] = useTranslation();
   const [openSection, setOpenSection] = useState(null);
+  const [isOpen, setIsOpen] = useState(null)
 
   const handleResumeClick = useCallback((id) => {
     if (openSection === id) {
@@ -20,7 +37,12 @@ function ResumeGroup({ items, titleSection }) {
     } else {
       setOpenSection(id);
     }
+    setIsOpen(false);
   }, [openSection])
+
+  useEffect(() => {
+    setIsOpen(true);
+  }, [openSection]);
 
   return (
     <Wrapper>
@@ -29,16 +51,36 @@ function ResumeGroup({ items, titleSection }) {
         {items.map((item) => (
           <ResumeWrapper
             key={'key' + item.name}
+            isOpenSection={openSection}
             isOpen={openSection === item.id}
             onClick={() => handleResumeClick(item.id)}
           >
             <ResumeHeader>
-              <TiCalendar />
-              <P>{item.date}</P>
+              <InfoWrapper>
+                <LineWrapper>
+                  <TiCalendar />
+                  <P>{item.date}</P>
+                </LineWrapper>
+                <LineWrapper>
+                  <BiTimeFive />
+                  <P>{t(item.durationType, { num: item.duration })}</P>
+                </LineWrapper>
+              </InfoWrapper>
+
               <BigText>{item.name}</BigText>
               <P>{t(item.title)}</P>
+              <ChevronWrapper>
+                {openSection === item.id ? <BiChevronUpCircle /> : <BiChevronDownCircle />}
+              </ChevronWrapper>
             </ResumeHeader>
-            {openSection === item.id && <Desc isOpen={openSection === item.id}>{t(item.desc)}</Desc>}
+            {openSection === item.id &&
+              <DescWrapper>
+                <DescSeparator />
+                <Desc isOpen={isOpen}>
+                  {t(item.desc)}
+                </Desc>
+              </DescWrapper>
+            }
           </ResumeWrapper>
         ))}
       </ResumesWrapper>
@@ -52,7 +94,7 @@ function Resume() {
   return (
     <MainWrapper>
       <ResumeGroup items={educationalItems} titleSection={t('resume.education')} />
-      <ResumeGroup items={professionalItems} titleSection={t('resume.professional')} />
+      <ResumeGroup items={professionalItems} titleSection={t('resume.experiences')} />
     </MainWrapper>
   );
 }

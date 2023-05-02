@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const ToggleWrapper = styled.div`
   position: fixed;
-  bottom: 10px;
-  right: 0;
+  top: 15px;
+  right: 20PX;
   overflow: hidden;
   color: white;
   transform: scale(0.6);

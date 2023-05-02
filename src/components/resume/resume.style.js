@@ -1,18 +1,22 @@
 import styled, { css } from 'styled-components';
-import { TABLET_WIDTH, LAPTOP_HEIGHT } from 'constants/constants';
-import { Neumorphism } from 'assets/styles/common.style';
+import { TABLET_WIDTH } from 'constants/constants';
 
 export const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 98%;
 
   & > *:not(:last-child) {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+  }
+
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    & > *:not(:last-child) {
+      margin-bottom: 20px;
+    }
   }
 `;
 
-export const Wrapper = styled(Neumorphism)`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -23,41 +27,29 @@ export const Wrapper = styled(Neumorphism)`
   }
 `;
 
-export const ResumesWrapper = styled.div`
+export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  max-height: 200px;
-  padding-right: 10px;
+`;
 
-  @media only screen and (max-height: ${LAPTOP_HEIGHT}px) {
-    max-height: 100px;
+export const LineWrapper = styled.div`
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 10px;
+  & > *:not(:last-child) {
+    margin-right: 5px;
   }
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
-    max-height: 200px;
+    margin-bottom: 5px;
   }
+`;
 
-  ::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: ${p => p.theme.contrastBorder};
-    border-radius: 4px;
-    width: 3px;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: ${p => p.theme.primary};
-  }
+export const ResumesWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  -webkit-tap-highlight-color: transparent;
 `;
 
 export const ResumeWrapper = styled.div`
@@ -65,16 +57,14 @@ export const ResumeWrapper = styled.div`
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 
-  &:hover {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
   ${p => {
     if (p.isOpen) {
       return css`
-        padding-top: 10px;
         padding-bottom: 10px;
+      `
+    } else if (p.isOpenSection) {
+      return css`
+        opacity: .1;
       `
     }
   }}
@@ -90,9 +80,21 @@ export const ResumeWrapper = styled.div`
   }
 `;
 
+export const ChevronWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    transition: all .2s ease-in-out;
+    width: 25px;
+    height: 25px;
+  }
+`
+
 export const ResumeHeader = styled.div`
   display: grid;
-  grid-template-columns: .1fr 1.2fr 2fr 1fr;
+  grid-template-columns: 1.2fr 2fr 1fr .3fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -101,13 +103,30 @@ export const ResumeHeader = styled.div`
   align-items: center;
   align-content: center;
 
+  &:hover {
+    ${ChevronWrapper} {
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
   & > *:not(:last-child) {
     margin-right: 10px;
   }
 
-  @media only screen and (max-width: ${TABLET_WIDTH}px), 
-       only screen and (max-height: ${LAPTOP_HEIGHT}px) {
-    min-height: 40px;
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    grid-template-columns: 2fr 2fr 1.5fr .3fr;
+    min-height: 60px;
+    &:hover {
+      ${ChevronWrapper} {
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+    };
   }
 `;
 
@@ -132,11 +151,26 @@ export const BigText = styled.p`
   }
 `;
 
+export const DescWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const DescSeparator = styled.div`
+  width: 100px;
+  height: 1px;
+  background-color: ${p => p.theme.tertiary};
+
+  margin-bottom: 10px;
+`;
+
 export const Desc = styled.p`
   font-size: 12px;
   opacity: 0;
   height: 0;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.4s ease-in-out;
 
   ${p => {
     if (p.isOpen) {

@@ -31,7 +31,9 @@ export const Img = styled.img`
   right: 0;
   width: auto;
   min-height: 100vh;
+  min-height: 100dvh;
   height: 1000px;
+  overflow: hidden;
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     object-fit: contain;
     object-position: bottom;
@@ -45,6 +47,7 @@ export const Main = styled.div`
   display: flex;
   overflow: hidden;
   height: 100vh;
+  height: 100dvh;
   background-color: ${(p) => p.theme.transparentBackground02};
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
@@ -63,11 +66,12 @@ export const PageWrapper = styled.div`
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     padding: 50px 8%;
+    padding-right: 0;
     margin-left: 10px;
   }
 `;
 
-export const Header = styled.section`
+export const Header = styled.div`
   display: flex;
   flex-direction: column;
 `;
@@ -197,23 +201,45 @@ export const ColorGradient = styled(Gradient)`
   }
 `;
 
-export const MainSection = styled.section`
-  display: flex;
-  align-items: center;
+export const MainSection = styled.div`
+  overflow-y: auto;
+  overflow-x: hidden;
 
-  max-width: 50vw;
+  max-width: 100vw;
   height: 100%;
 
-  margin-top: 10px;
+  margin-top: 20px;
+
+  &::-webkit-scrollbar {
+      width:30px; // manage scrollbar width here
+    }
+    &::-webkit-scrollbar * {
+      background:transparent; // manage scrollbar background color here
+    }
+    &::-webkit-scrollbar-thumb {
+      background:rgba(255,0,0,0) !important; // manage scrollbar thumb background color here
+    }
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     display: flex;
     justify-content: center;
-    align-items: center;
-    align-self: center;
     margin-left: 0;
-    margin-top: 0;
+    margin-top: 30px;
     max-width: 100vw;
     font-size: 12px;
+  }
+`;
+
+export const MainWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 55vw;
+
+  & > *:not(:last-child) {
+    margin-bottom: 150px;
+  }
+
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    max-width: 100vw;
   }
 `;

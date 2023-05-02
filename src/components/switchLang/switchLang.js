@@ -6,17 +6,15 @@ import i18n from 'translation/i18n';
 import { LANG_FR, LANG_EN } from 'constants/constants';
 
 import {
-  ToggleWrapper,
+  Wrapper,
   LangButton,
-  Input,
-  Label,
-  ToggleHandler,
+  LangDesktop,
+  Separator,
 } from './switchLang.style';
 
 function SwitchLang({ isMobile }) {
   const [t] = useTranslation();
   const [lang, setLang] = useState(localStorage.getItem('language') || LANG_FR);
-  const isChecked = lang === LANG_FR ? false : true
 
   const handleToggle = useCallback(() => {
     setTimeout(() => {
@@ -33,22 +31,14 @@ function SwitchLang({ isMobile }) {
   return (
     <>
       {!isMobile ?
-        <ToggleWrapper>
-          <Input
-            type="checkbox"
-            title="Toggle Language"
-            className="tgl"
-            id="tgl"
-            checked={isChecked}
-            aria-label="Toggle Language"
-            onChange={handleToggle}
-          />
-          <Label htmlFor="tgl" className="toggle">
-            <ToggleHandler>{lang === LANG_FR ? 'FR' : 'EN'}</ToggleHandler>
-          </Label>
-        </ToggleWrapper>
+        <Wrapper>
+          <Separator />
+          <LangDesktop onClick={handleToggle}>
+            {lang === LANG_FR ? 'FR' : 'EN'}
+          </LangDesktop>
+        </Wrapper>
         :
-        <LangButton onClick={handleToggle}>
+        <LangButton onClick={handleToggle} mobile>
           {t('navbar.language')} {lang === LANG_FR ? 'FR' : 'EN'}
         </LangButton>
       }

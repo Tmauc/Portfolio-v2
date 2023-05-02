@@ -137,3 +137,17 @@ export const glitchAnim = keyframes`
     transform: translate(0);
   }
 `;
+
+export const scrollFade = keyframes`
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg) translate(- 20px, 20px);
+    opacity: 0;
+  }
+`;

@@ -4,9 +4,8 @@ import { TwitchPlayer, TwitchChat } from 'react-twitch-embed';
 
 import api, { getToken } from 'core/TwitchAPI';
 import useDeviceType from 'hooks/useDeviceType';
-import { Neumorphism } from 'assets/styles/common.style';
 
-import { TwitchPlayerStyle, LiveWrapper } from './ChannelLive.style';
+import { TwitchPlayerStyle, SideWrapper, LiveWrapper } from './ChannelLive.style';
 
 
 const ChannelPlanning = ({ channelId }) => {
@@ -39,7 +38,7 @@ const ChannelPlanning = ({ channelId }) => {
 
   return (
     <LiveWrapper>
-      <Neumorphism>
+      <SideWrapper>
         {streamData ? (
           <>
             <p>
@@ -67,17 +66,17 @@ const ChannelPlanning = ({ channelId }) => {
             height="100%"
           />
         </TwitchPlayerStyle>
-      </Neumorphism>
-      {!isMobile && (
-        <Neumorphism>
+      </SideWrapper>
+      <SideWrapper>
+        {!isMobile && (
           <TwitchChat
             title={streamData?.title}
             channel="maucsama"
             width="100%"
             height="100%"
           />
-        </Neumorphism>
-      )}
+        )}
+      </SideWrapper>
     </LiveWrapper>
   );
 };

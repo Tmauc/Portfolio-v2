@@ -1,30 +1,25 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import useActiveNavbarLink from 'hooks/useActiveNavbarLink';
+
+import SwitchLang from 'components/switchLang/switchLang';
 
 import { Nav, NavItem, NavLink, Ul, Span } from './navbar.style';
 
-function Navbar({ activeSection, setActiveSection, navbarItems }) {
+function Navbar({ navbarItems }) {
   const [t] = useTranslation();
-  const handleLinkClick = (event) => {
-    event.preventDefault();
-
-    const link = event.target.closest('a');
-
-    if (link && link.hasAttribute('href')) {
-      const sectionId = link.getAttribute('href').slice(1);
-      setActiveSection(sectionId);
-    }
-  };
+  const navbarRef = useRef(null);
+  const activeSection = useActiveNavbarLink(navbarRef);
 
   return (
-    <Nav aria-label="Main Navigation" role="navigation">
+    <Nav aria-label="Main Navigation" role="navigation" ref={navbarRef}>
       <Ul>
         {navbarItems.map((item, index) => (
           <NavItem key={index}>
             <NavLink
               href={item.href}
               active={activeSection === item.activeConstant}
-              onClick={!item.disabled ? handleLinkClick : undefined}
               disabled={item.disabled}
               tabIndex={item.tabIndex}
             >
@@ -32,6 +27,7 @@ function Navbar({ activeSection, setActiveSection, navbarItems }) {
             </NavLink>
           </NavItem>
         ))}
+        <SwitchLang />
       </Ul>
     </Nav>
   );

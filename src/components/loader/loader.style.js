@@ -8,6 +8,7 @@ export const LoaderWrapper = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   z-index: 1040;
   opacity: ${(p) => (p.visible ? 1 : 0)};
   background-color: ${(p) => p.theme.secondary};

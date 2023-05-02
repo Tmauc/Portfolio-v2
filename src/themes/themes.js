@@ -81,7 +81,9 @@ const defaultColors = {
   },
   transparent: {
     black01: 'hsla(0, 0%, 0%, 0.1)',
-    black03: 'hsla(0, 0%, 0%, 0.3)',
+    black03: 'hsla(0, 0%, 0%, 1)',
+    white02: 'hsl(0, 0%, 100%, 0.2)',
+    white05: 'hsl(0, 0%, 100%, 0.5)',
   },
   sky: {
     sky: 'hsl(199, 100%, 76%)',
