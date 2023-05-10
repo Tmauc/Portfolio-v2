@@ -22,11 +22,9 @@ jobs:
           npm run build
 
       - name: Upload to FTP
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        uses: webfactory/ssh-agent@v0.7.0
         with:
-          server: ${{ secrets.SERVER }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           protocol: 'sftp'
           local-dir: './dist/'
           server-dir: '/tmauc.fr/'
