@@ -1,11 +1,19 @@
 import React from 'react'
 
-import { Wrapper, Span } from './scrollIndicator.style'
+import useScroll from 'hooks/useScroll';
 
-function ScrollIndicator() {
+import { Wrapper, SpanScroll, SpanGoToTop } from './scrollIndicator.style'
+
+function ScrollIndicator({ mainRef }) {
+  const [isScrollBottom, scrollToTop] = useScroll(mainRef);
+
   return (
     <Wrapper>
-      <Span />
+      {isScrollBottom ?
+        <SpanGoToTop onClick={scrollToTop} />
+        :
+        <SpanScroll />
+      }
     </Wrapper>
   )
 }

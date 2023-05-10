@@ -27,8 +27,8 @@ function Navbar({ navbarItems }) {
             </NavLink>
           </NavItem>
         ))}
-        <SwitchLang />
       </Ul>
+      <SwitchLang />
     </Nav>
   );
 }

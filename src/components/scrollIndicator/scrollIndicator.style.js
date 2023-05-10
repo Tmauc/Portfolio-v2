@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { scrollFade } from 'assets/styles/animations';
+import { scrollFade, scrollTopFade } from 'assets/styles/animations';
 import { TABLET_WIDTH } from 'constants/constants';
 
 export const Wrapper = styled.div`
@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Span = styled.span`
+export const SpanScroll = styled.span`
   display: block;
   width: 15px;
   height: 15px;
@@ -29,4 +29,19 @@ export const Span = styled.span`
   -webkit-animation: ${scrollFade} 1.5s infinite;
   animation: ${scrollFade} 1.5s infinite;
   box-sizing: border-box;
+`;
+
+export const SpanGoToTop = styled.span`
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-left: 1px solid ${p => p.theme.tertiary};
+  border-bottom: 1px solid ${p => p.theme.tertiary};
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-animation: ${scrollTopFade} 3s infinite;
+  animation: ${scrollTopFade} 3s infinite;
+  box-sizing: border-box;
+
+  cursor: pointer;
 `;

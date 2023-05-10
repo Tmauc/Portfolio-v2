@@ -5,6 +5,7 @@ export const Nav = styled.nav`
   bottom: 5%;
   left: 10px;
   display: flex;
+  flex-direction: column;
   text-decoration: none;
   width: fit-content;
   height: 90vh;
@@ -20,6 +21,9 @@ export const Ul = styled.ul`
   margin-block-start: 0;
   margin-block-end: 0;
   padding-inline-start: 0px;
+
+  height: 100%;
+  margin-bottom: 40px;
 
   & > *:not(:last-child) {
     margin-bottom: 20px;

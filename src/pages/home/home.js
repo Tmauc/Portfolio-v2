@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
@@ -53,6 +53,7 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
   const { isMobile } = useDeviceType();
   const { itsMeArrow, smallArrow, backgroundCharacter } = useTheme();
   const [t] = useTranslation();
+  const mainRef = useRef(null);
 
   const handleClick = useCallback(() => {
     setLoading('swap');
@@ -117,7 +118,7 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
               )}
             </LargeTransparentText>
           </Header>
-          <MainSection id="mainSection">
+          <MainSection id="mainSection" ref={mainRef}>
             <MainWrapper>
               {activeSide === LEFT_SIDE ? (
                 <LeftSide />
@@ -142,7 +143,7 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
           setLoading={setLoading}
         />
         {!isMobile && <Socials />}
-        <ScrollIndicator />
+        <ScrollIndicator mainRef={mainRef} />
         {loading && (
           <Loader
             aria-label="Loader"
