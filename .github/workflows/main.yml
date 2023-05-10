@@ -24,7 +24,7 @@ jobs:
       - name: Upload to FTP
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
-          server: ${{ secrets.SERVER }}
+          server: ftp.rqbo0794.odns.fr
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           local-dir: './dist/'
