@@ -27,5 +27,6 @@ jobs:
           server: ${{ secrets.SERVER }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
+          protocol: 'sftp'
           local-dir: './dist/'
           server-dir: '/tmauc.fr/'
