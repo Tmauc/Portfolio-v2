@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 
+import { MAIL_NAME } from 'constants/constants';
+
 import Skills from 'components/skills/skills';
 import Resume from 'components/resume/resume';
 //import Projects from 'components/projects/projects';
@@ -41,7 +43,7 @@ function LeftSide() {
           </P>
         </AboutWrapper>
         <ContactWrapper>
-          <Button label={t('button.project')} />
+          <Button label={t('button.project')} href={'mailto:' + MAIL_NAME + '@gmail.com'}/>
         </ContactWrapper>
       </Section>
       <Section id='skills'>
@@ -53,7 +55,7 @@ function LeftSide() {
         <Resume />
       </Section >
       <Center>
-        <Button label={t('button.contact')} />
+        <Button label={t('button.contact')} href={'mailto:' + MAIL_NAME + '@gmail.com'}/>
       </Center>
     </>
   );

@@ -3,19 +3,19 @@ import { RiSendPlaneFill } from 'react-icons/ri';
 
 import { ButtonWrapper, Icon } from './button.style'
 
-function Button({ label }) {
-  var name = 'tmauccc';
+function Button({ label, href, legend }) {
 
   return (
     <ButtonWrapper
-      href={'mailto:' + name + '@gmail.com'}
+      href={href}
       type="button"
+      target="_blank"
     >
-      < Icon >
+      <Icon>
         <RiSendPlaneFill />
-      </Icon >
+      </Icon>
       {label}
-    </ButtonWrapper >
+    </ButtonWrapper>
   )
 }
 

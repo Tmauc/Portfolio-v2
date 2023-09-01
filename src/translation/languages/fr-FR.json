@@ -2,7 +2,9 @@
   "activeBar": "Changer de personnage",
   "button": {
     "contact": "Envie de papoter ?",
-    "project": "Un projet ?"
+    "discord": "Contact moi sur Discord",
+    "project": "Un projet ?",
+    "pseudo": "Pseudo : Mauc"
   },
   "contact": {
     "email": "Email",
@@ -29,6 +31,7 @@
     "about": "A propos",
     "contact": "Contact",
     "language": "Langue : ",
+    "obs": "OBS",
     "photography": "Photographie",
     "projects": "Projets",
     "resume": "Expériences",
@@ -63,15 +66,28 @@
       "podcastPublications": "- Publication de <1>podcasts</1> sur les différentes plateformes.",
       "photographer": "- Photographe et modèle photos 📸",
       "joinCommunity": "Rejoins la communauté 🌸"
+    },
+    "obs": {
+      "troubleOBS": "Un souci avec ton OBS ?",
+      "problem": "Des problèmes pour configurer ton bot en ligne ?",
+      "experience": "Je te propose mon expérience et mon expertise sur les différents outils de streaming 🎥",
+      "cleanWorkingEnvironment": "Un environnement de travail <1>propre et adapté</1> à toi :",
+      "OBS": "- Mise en place / restructuration de ton <1>OBS</1> (plugins, scènes, audio, multiplateformes etc).",
+      "streamdeck": "- Profil <1>streamdeck</1> customisé et adapté au OBS.",
+      "effect": "- Création <1>d'effet</1> personnalisé pour votre stream.",
+      "botTwitch": "- Mise en place d'un <1>bot Twitch</1> complètement custom.",
+      "animations": "Besoin de nouvelles <1>animations / assets</1> ?",
+      "collabZaack": "Je travaille en collaboration avec <1>Zaack</1> qui pourra vous créer des animations customs low-cost type Wallpaper Engine 🖼️",
+      "imagination": "Ma seule limite est votre <1>imagination</1> ! 🧠"
     }
   },
   "skills": {
-    "web": "Web :",
-    "object": "Objets :",
-    "mobile": "Mobiles :",
-    "functional": "Fonctionnels :",
-    "os": "OS :",
-    "other": "Autres :"
+    "web": "Web",
+    "object": "Objets",
+    "mobile": "Mobiles",
+    "functional": "Fonctionnels",
+    "os": "OS",
+    "other": "Autres"
   },
   "smallPostIt": {
     "itsMe": "C'est moi 👀",

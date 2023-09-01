@@ -14,7 +14,7 @@ function useActiveNavbarLink(navbarRef) {
         sections.forEach((section) => {
           const sectionTop = section.offsetTop;
 
-          if (mainSection.scrollTop >= sectionTop - 300) {
+          if (mainSection.scrollTop >= sectionTop - 500) {
             setActiveSection(section.getAttribute('id'));
           }
         });

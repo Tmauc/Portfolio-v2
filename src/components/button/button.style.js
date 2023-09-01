@@ -6,8 +6,8 @@ export const Icon = styled.div`
   justify-content: center;
   align-items: center;
 
-  width: 30px;
-  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
 
   border-radius: 50%;
   background-color: ${p => p.theme.transparent.white02};
@@ -65,6 +65,6 @@ export const ButtonWrapper = styled.a`
   }
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
-    padding: 10px 15px;
+    padding: 10px 10px;
   }
 `;

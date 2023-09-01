@@ -3,26 +3,18 @@ import { TABLET_WIDTH } from 'constants/constants';
 
 export const LiveWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     flex-direction: column;
   }
 `;
 
-export const SideWrapper = styled.div`
-  border-radius: 0px;
-  background: ${(p) => p.theme.secondaryBackground};
-  padding: 10px;
-  & > *:not(:last-child) {
-    margin-bottom: 5px;
-  }
-  width: fit-content;
-`;
-
 export const TwitchPlayerStyle = styled.div`
-  height: 300px;
-  width: 25vw;
+  height: auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
-    height: 170px;
+    height: auto;
     width: 100%;
   }
 `;

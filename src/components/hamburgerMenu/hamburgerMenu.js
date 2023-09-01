@@ -49,7 +49,6 @@ function HamburgerMenu({ navbarItems }) {
       </SpanMenu>
       <Wrapper id="wrapper" ref={navbarRef}>
         <Ul>
-          <SwitchLang isMobile={true} />
           {navbarItems.map((item, index) => (
             <Li key={index}>
               <A
@@ -63,6 +62,7 @@ function HamburgerMenu({ navbarItems }) {
               </A>
             </Li>
           ))}
+          <SwitchLang isMobile={true} />
         </Ul>
         <NetworksWrapper>
           <Networks networkItems={networkItems} />

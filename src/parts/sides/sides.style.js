@@ -53,6 +53,14 @@ export const ContactWrapper = styled.div`
   padding: 10px 0;
 `;
 
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  & > *:not(:last-child) {
+    margin-bottom: 5px;
+  }
+`;
+
 export const Center = styled.div`
   display: flex;
   justify-content: center;
@@ -82,6 +90,24 @@ export const P = styled.p`
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     font-size: 15px;
+  }
+`;
+
+export const Legend = styled.p`
+  font-size: 12px;
+  font-style: italic;
+  text-align: end;
+
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    font-size: 10px;
+  }
+`;
+
+export const JumpLine = styled.p`
+  height: 24px;
+
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    height: 15px;
   }
 `;
 

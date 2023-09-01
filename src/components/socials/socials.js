@@ -4,16 +4,14 @@ import {
   NETWORK_ITEMS as networkItems,
 } from 'data/networkData';
 
-import { AiOutlineGlobal } from 'react-icons/ai';
-
-import { MainBack, Main, Wrapper, WrapperBack, Icon, Text, Card } from './socials.style'
+import { Main, Wrapper, Card } from './socials.style'
 
 function Socials() {
 
   return (
     <Wrapper className="socialWrapper">
       <Main>
-        {networkItems.map(({ name, color, url, icon: Icon, className }) => (
+        {networkItems.map(({ name, color, url, icon: Icon }) => (
           <Card
             key={name + 'key'}
             href={url}
@@ -26,11 +24,6 @@ function Socials() {
             {Icon}
           </Card>
         ))}
-        <WrapperBack>
-          <Icon><AiOutlineGlobal /></Icon>
-          <Text>Hover me</Text>
-        </WrapperBack>
-        <MainBack />
       </Main>
     </Wrapper>
   )

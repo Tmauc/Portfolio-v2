@@ -84,8 +84,8 @@ export const Ul = styled.ul`
   display: flex;
   width: 100%;
   height: 100%;
-  flex-direction: column-reverse;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: flex-start;
 
   padding: 0px 10%;
   margin: 10px;

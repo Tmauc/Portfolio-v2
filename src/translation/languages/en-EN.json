@@ -2,7 +2,9 @@
   "activeBar": "Swap character",
   "button": {
     "contact": "Want to talk?",
-    "project": "A project?"
+    "discord": "Contact me on Discord",
+    "project": "A project?",
+    "pseudo": "Pseudo: Mauc"
   },
   "contact": {
     "email": "Email",
@@ -29,6 +31,7 @@
     "about": "About",
     "contact": "Contact",
     "language": "Language: ",
+    "obs": "OBS",
     "photography": "Photography",
     "projects": "Projects",
     "resume": "Resume",
@@ -63,15 +66,28 @@
       "podcastPublications": "- Publication of <1>podcasts</1> on various platforms.",
       "photographer": "- Photographer and photo model 📸",
       "joinCommunity": "Join the community 🌸"
+    },
+    "obs": {
+      "troubleOBS": "Trouble with your OBS?",
+      "problem": "Problems configuring your online bot?",
+      "experience": "I offer you my experience and expertise on different streaming tools 🎥",
+      "cleanWorkingEnvironment": "A <1>clean and suitable</1> working environment for you:",
+      "OBS":"- Setting up / restructuring your <1>OBS</1> (plugins, scenes, audio, cross-platform etc).",
+      "streamdeck": "- Profile <1>streamdeck</1> customized and adapted to OBS.",
+      "effect": "- <1>Effect</1> creation customized for your stream.",
+      "botTwitch": "- Set up a <1>Twitch bot</1> completely custom.",
+      "animations": "Need new <1>animations / assets</1> ?",
+      "collabZaack": "I'm working in collaboration with <1>Zaack</1> who will be able to create low-cost Wallpaper Engine type custom animations for you 🖼️",
+      "imagination": "My only limit is your <1>imagination</1>! 🧠"
     }
   },
   "skills": {
-    "web": "Web :",
-    "object": "Objects :",
-    "mobile": "Mobiles :",
-    "functional": "Functionals :",
-    "os": "OS :",
-    "other": "Other :"
+    "web": "Web",
+    "object": "Objects",
+    "mobile": "Mobiles",
+    "functional": "Functionals",
+    "os": "OS",
+    "other": "Other"
   },
   "smallPostIt": {
     "itsMe": "It's me 👀",

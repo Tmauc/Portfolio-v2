@@ -29,12 +29,12 @@ export const WEB_ITEMS = [
   {
     name: 'React',
     icon: <SiReact />,
-    color: 'hsl(192, 95%, 68%)',
+    color: 'hsl(192, 45%, 47%)',
   },
   {
     name: 'Java Script',
     icon: <SiJavascript />,
-    color: 'hsl(52, 84%, 63%)',
+    color: 'hsl(45, 87%, 59%)',
   },
   {
     name: 'HTML',
@@ -54,12 +54,12 @@ export const WEB_ITEMS = [
   {
     name: 'Redux',
     icon: <SiRedux />,
-    color: 'hsl(192, 95%, 68%)',
+    color: 'hsl(192, 45%, 47%)',
   },
   {
     name: 'Express',
     icon: <SiExpress />,
-    color: 'hsl(52, 84%, 63%)',
+    color: 'hsl(45, 87%, 59%)',
   },
   {
     name: 'Vue.js',
@@ -90,7 +90,7 @@ export const MOBILE_ITEMS = [
   {
     name: 'React native',
     icon: <FaReact />,
-    color: 'hsl(192, 95%, 68%)',
+    color: 'hsl(192, 45%, 47%)',
   },
   {
     name: 'SwiftUI',

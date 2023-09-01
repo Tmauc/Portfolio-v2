@@ -6,6 +6,7 @@ export const NAVBAR_SKILLS = 'skills';
 export const NAVBAR_RESUME = 'resume';
 export const NAVBAR_PROJECTS = 'projects';
 export const NAVBAR_TWITCH = 'twitch';
+export const NAVBAR_OBS = 'obs';
 export const NAVBAR_PHOTOGRAPHY = 'photography';
 
 export const TABLET_WIDTH = 768;
@@ -18,6 +19,7 @@ export const PURPLE_COLOR = 'purple';
 
 export const THOMAS = 'thomas';
 export const MAUC = 'mauc';
+export const MAIL_NAME = 'tmauccc';
 
 export const ITSME_ARROW = 0;
 export const WATCH_ARROW = 1;
