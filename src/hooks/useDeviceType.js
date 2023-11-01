@@ -3,6 +3,7 @@ import { TABLET_WIDTH } from 'constants/constants';
 
 function useDeviceType() {
   const [isMobile, setIsMobile] = useState(false);
+  const [isVertical, setIsVertical] = useState(false);
   const [screenSize, setScreenSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -19,6 +20,11 @@ function useDeviceType() {
     mediaQuery.addEventListener('change', handleChange);
 
     const handleResize = () => {
+      if (window.innerHeight > window.innerWidth) {
+        setIsVertical(true);
+      } else {
+        setIsVertical(false);
+      }
       setScreenSize({
         width: window.innerWidth,
         height: window.innerHeight,
@@ -33,7 +39,7 @@ function useDeviceType() {
     };
   }, []);
 
-  return { isMobile, screenSize };
+  return { isMobile, isVertical, screenSize };
 }
 
 export default useDeviceType;

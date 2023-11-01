@@ -12,9 +12,10 @@ export const Background = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
 
-  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+  @media only screen and (max-width: ${TABLET_WIDTH}px), only screen and (orientation:portrait) {
     background-position: center center;
   }
+
   &,
   * {
     &::selection {
@@ -34,6 +35,7 @@ export const Img = styled.img`
   min-height: 100dvh;
   height: 1000px;
   overflow: hidden;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 1));
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     object-fit: contain;
     object-position: bottom;
@@ -239,7 +241,7 @@ export const MainWrapper = styled.div`
     margin-bottom: 150px;
   }
 
-  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+  @media only screen and (max-width: ${TABLET_WIDTH}px), only screen and (orientation:portrait) {
     max-width: 100vw;
   }
 `;

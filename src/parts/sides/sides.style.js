@@ -3,7 +3,7 @@ import { TABLET_WIDTH } from 'constants/constants';
 
 export const AboutWrapper = styled.div`
   & > *:not(:last-child) {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -26,7 +26,7 @@ const sketchStyle = css`
 export const Section = styled.section`
   border-radius: 0px;
   background: ${(p) => p.theme.secondaryBackground};
-  padding: 10px;
+  padding: 20px;
   & > *:not(:last-child) {
     margin-bottom: 20px;
   }
@@ -79,6 +79,7 @@ export const H2 = styled.h2`
 export const Italic = styled.p`
   font-style: italic;
   font-size: 12px;
+  margin-bottom: 30px !important;
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     font-size: 10px;

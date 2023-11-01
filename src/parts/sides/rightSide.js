@@ -50,7 +50,7 @@ function RightSide() {
         </AboutWrapper>
       </Section>
       <Section id='obs'>
-      <AboutWrapper>
+        <AboutWrapper>
           <P>{t('right.obs.troubleOBS')}</P>
           <P>{t('right.obs.problem')}</P>
           <JumpLine />
@@ -83,17 +83,23 @@ function RightSide() {
         </AboutWrapper>
         <ContactWrapper>
           <ButtonWrapper>
-          <Button label={t('button.discord')} href="https://discord.com/users/270954271933988864"/>
-          <Legend>{t('button.pseudo')}</Legend>
+            <Button label={t('button.discord')} href="https://discord.com/users/270954271933988864" />
+            <Legend>{t('button.pseudo')}</Legend>
           </ButtonWrapper>
         </ContactWrapper>
-        <Carrousel items={OBS_CARROUSEL_ITEMS}/>
+        <Carrousel items={OBS_CARROUSEL_ITEMS} />
       </Section>
       <Section id='twitch'>
+        <P><Trans i18nKey="right.twitch.whatIsTwitch" components={{ 1: <HighlightRect /> }} /></P>
+        <P><Trans i18nKey="right.twitch.concepts" components={{ 1: <HighlightLine /> }} /></P>
+        <P><Trans i18nKey="right.twitch.discover" components={{ 1: <HighlightLine /> }} /></P>
+        <P><Trans i18nKey="right.twitch.justChatting" components={{ 1: <HighlightLine /> }} /></P>
+        <P><Trans i18nKey="right.twitch.interview" components={{ 1: <HighlightLine /> }} /></P>
+        <P><Trans i18nKey="right.twitch.competition" components={{ 1: <HighlightLine /> }} /></P>
         <ChannelLive channelId="256677231" />
       </Section>
       <Center>
-        <Button label={t('button.contact')} href={'mailto:' + MAIL_NAME + '@gmail.com'}/>
+        <Button label={t('button.contact')} href={'mailto:' + MAIL_NAME + '@gmail.com'} />
       </Center>
     </>
   );

@@ -15,6 +15,12 @@ export const NAVBAR_ITEMS_LEFT = [
     tabIndex: 0,
   },
   {
+    href: '#projects',
+    label: 'navbar.projects',
+    activeConstant: NAVBAR_PROJECTS,
+    tabIndex: 0,
+  },
+  {
     href: '#skills',
     label: 'navbar.skills',
     activeConstant: NAVBAR_SKILLS,
@@ -24,13 +30,6 @@ export const NAVBAR_ITEMS_LEFT = [
     href: '#resume',
     label: 'navbar.resume',
     activeConstant: NAVBAR_RESUME,
-    tabIndex: 0,
-  },
-  {
-    href: '#projects',
-    label: 'navbar.projects',
-    activeConstant: NAVBAR_PROJECTS,
-    disabled: true,
     tabIndex: 0,
   },
 ];

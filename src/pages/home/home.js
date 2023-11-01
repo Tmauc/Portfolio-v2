@@ -50,7 +50,7 @@ import {
 function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const { isMobile } = useDeviceType();
+  const { isMobile, isVertical } = useDeviceType();
   const { itsMeArrow, smallArrow, backgroundCharacter } = useTheme();
   const [t] = useTranslation();
   const mainRef = useRef(null);
@@ -83,7 +83,7 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
       <Img activeSide={activeSide} alt="An image to represent me in the current side" src={backgroundCharacter} />
       <Main>
         <PageWrapper>
-          {!isMobile &&
+          {!isMobile && !isVertical &&
             <div id='smallPostIt-Wrapper'>
               <SmallPostIt svgSRC={itsMeArrow} type={ITSME_ARROW} activeSide={activeSide} />
               {activeSide === LEFT_SIDE && <SmallPostIt svgSRC={smallArrow} type={WATCH_ARROW} />}

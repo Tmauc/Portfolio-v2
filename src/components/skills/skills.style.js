@@ -6,7 +6,7 @@ export const MainWrapper = styled.div`
   flex-direction: column;
 
   & > *:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
@@ -19,6 +19,10 @@ export const MainWrapper = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+
+  & > *:not(:last-child) {
+    margin-bottom: 8px;
+  }
 `;
 
 export const SkillsWrapper = styled.div`

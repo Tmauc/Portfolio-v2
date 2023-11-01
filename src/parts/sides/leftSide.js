@@ -5,7 +5,7 @@ import { MAIL_NAME } from 'constants/constants';
 
 import Skills from 'components/skills/skills';
 import Resume from 'components/resume/resume';
-//import Projects from 'components/projects/projects';
+import Projects from 'components/projects/projects';
 import Button from 'components/button/button';
 
 import {
@@ -43,8 +43,12 @@ function LeftSide() {
           </P>
         </AboutWrapper>
         <ContactWrapper>
-          <Button label={t('button.project')} href={'mailto:' + MAIL_NAME + '@gmail.com'}/>
+          <Button label={t('button.project')} href={'mailto:' + MAIL_NAME + '@gmail.com'} />
         </ContactWrapper>
+      </Section>
+      <Section id='projects'>
+        <P><Trans i18nKey="left.projects" components={{ 1: <HighlightRect /> }} /></P>
+        <Projects />
       </Section>
       <Section id='skills'>
         <P><Trans i18nKey="left.skills" components={{ 1: <HighlightRect /> }} /></P>
@@ -55,7 +59,7 @@ function LeftSide() {
         <Resume />
       </Section >
       <Center>
-        <Button label={t('button.contact')} href={'mailto:' + MAIL_NAME + '@gmail.com'}/>
+        <Button label={t('button.contact')} href={'mailto:' + MAIL_NAME + '@gmail.com'} />
       </Center>
     </>
   );

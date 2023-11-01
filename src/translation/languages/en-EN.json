@@ -3,6 +3,8 @@
   "button": {
     "contact": "Want to talk?",
     "discord": "Contact me on Discord",
+    "github": "Github",
+    "moreProjects": "More projects here!",
     "project": "A project?",
     "pseudo": "Pseudo: Mauc"
   },
@@ -24,6 +26,7 @@
       "passions": "I am keen on WebDesign and WebDev.",
       "qualities": "My <1>best qualities</1> are: independence, thoroughness, and curiosity."
     },
+    "projects": "Here are <1>some projects</1> I've been able to complete:",
     "resume": "Since I started studying at <1>Epitech</1> school in 2017, I have been learning and improving my skills through several <1>professional</1> experiences:",
     "skills": "Throughout the years, I have <1>developed</1> various skills:"
   },
@@ -38,6 +41,10 @@
     "skills": "Skills",
     "twitch": "Twitch"
   },
+  "projects": {
+    "tktDescription": "TE KI TOA - The purpose of this project is to create a website to showcase my twitch show TE KI TOA. The site aims to showcase the various streamers who are/will be appearing on the show!",
+    "maskottDescription": "For 2 years I created an interactive exercise player for Maskott. This player displays, performs and corrects dozens of different exercises."
+  },
   "resume": {
     "baccalaureate": "Scientific Baccalaureate",
     "baccalaureateDesc": "Pretty good awarded.",
@@ -48,7 +55,7 @@
     "frontDev": "Front End Developer",
     "ibaniDesc": "Ibani: Company managing the exchange of money. MtPelerin: Company (future bank) which aims at the creation of digital account safe, free, fast. Improvement of the admin site. Update of the mobile application.Tools: Vue.js / React Native, Javascript / MacOS",
     "inattenduDesc": "Event enterprise in presence and virtual. Site management (Vue.js). ZOOM master. Sound, video and light management.",
-    "maskottDesc": "Recreate a webapp in react.",
+    "maskottDesc": "At Maskott, I was in charge of redesigning one of Tactileo's web applications, the player. This application was an exercise player for students. This experience enabled me to master the React language, develop my skills as a Lead Dev and, above all, learn how to manage such a gray and technological project.",
     "master": "Master",
     "masterDesc": "The Grande Ecole program is Epitech's historical curriculum. It lasts 5 years and trains experts in computer science. It offers a dense and varied technical content, including a diversity of programming projects, and covering many languages that will allow the student to approach all new technologies with serenity.",
     "months": "{{num}} months",
@@ -72,13 +79,21 @@
       "problem": "Problems configuring your online bot?",
       "experience": "I offer you my experience and expertise on different streaming tools 🎥",
       "cleanWorkingEnvironment": "A <1>clean and suitable</1> working environment for you:",
-      "OBS":"- Setting up / restructuring your <1>OBS</1> (plugins, scenes, audio, cross-platform etc).",
+      "OBS": "- Setting up / restructuring your <1>OBS</1> (plugins, scenes, audio, cross-platform etc).",
       "streamdeck": "- Profile <1>streamdeck</1> customized and adapted to OBS.",
       "effect": "- <1>Effect</1> creation customized for your stream.",
       "botTwitch": "- Set up a <1>Twitch bot</1> completely custom.",
       "animations": "Need new <1>animations / assets</1> ?",
       "collabZaack": "I'm working in collaboration with <1>Zaack</1> who will be able to create low-cost Wallpaper Engine type custom animations for you 🖼️",
       "imagination": "My only limit is your <1>imagination</1>! 🧠"
+    },
+    "twitch": {
+      "whatIsTwitch": "Twitch is a <1>live streaming platform 🟣</1>",
+      "concepts": "I offer different concepts here:",
+      "discover": "- Discovery / let's play of <1>video game</1> 🎮",
+      "justChatting": "- Free airplay / <1>Just Chatting</1> 💬",
+      "interview": "- <1>Interview</1> from other streamer 🎥",
+      "competition": "- <1>Competition</1> of multiplayer video game 🏆"
     }
   },
   "skills": {

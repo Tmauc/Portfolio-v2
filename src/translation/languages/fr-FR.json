@@ -3,6 +3,8 @@
   "button": {
     "contact": "Envie de papoter ?",
     "discord": "Contact moi sur Discord",
+    "github": "Github",
+    "moreProjects": "Plus de projet par ici !",
     "project": "Un projet ?",
     "pseudo": "Pseudo : Mauc"
   },
@@ -24,6 +26,7 @@
       "passions": "Je suis passionné de WebDesign et WebDev.",
       "qualities": "Mes <1>meilleures qualités</1> sont : <2>l'autonomie, la rigueur et la curiosité.</2>"
     },
+    "projects": "Voici <1>quelques projets</1> que j'ai pu réaliser :",
     "resume": "Depuis mon entrée à l'école <1>Epitech</1> en 2017, je me forme et améliore mes compétences à travers plusieurs expériences <1>professionnelles</1> :",
     "skills": "Au fil des années d'études et de travail, j'ai <1>développé</1> diverses compétences :"
   },
@@ -38,6 +41,10 @@
     "skills": "Compétences",
     "twitch": "Twitch"
   },
+  "projects": {
+    "tktDescription": "Le but de ce projet est de créer un site internet pour présenter mon émission sur twitch TE KI TOA. Le site a pour but de mettre en avant les différents streamers qui sont / vont passer dans l'émission !",
+    "maskottDescription": "Pendant 2 ans j'ai réalisé la création d'un player interactif d'exercice pour Maskott. Ce player permet d'afficher, de réaliser et de corriger des dizaines d'exercices différents."
+  },
   "resume": {
     "baccalaureate": "Baccalauréat Scientifique",
     "baccalaureateDesc": "Mention assez bien obtenue.",
@@ -48,7 +55,7 @@
     "frontDev": "Dev Front End",
     "ibaniDesc": "Ibani : Société gérant l'échange d'argent. MtPelerin : Société (future banque) qui vise à la création de compte numérique sécurisé, gratuit, rapide. Amélioration du site d'administration. Mise à jour de l'application mobile : Vue.js / React Native, Javascript / MacOS.",
     "inattenduDesc": "Entreprise événementielle en présence et virtuelle. Gestion du site (Vue.js). ZOOM master. Gestion du son, de la vidéo et de la lumière.",
-    "maskottDesc": "Recréer une webapp en react.",
+    "maskottDesc": "Chez Maskott j'ai été chargé de faire une refonte d'une des applications web de Tactileo, le player. Cette application était une player d'exercice pour élève. Cette expérience m'a permis de maîtriser le language React, de développer mes compétences de Lead Dev et surtout d'apprendre à mener à bien un projet aussi gris et technologique.",
     "master": "Master",
     "masterDesc": "Le programme Grande École est le cursus historique d'Epitech. Il dure 5 ans et forme des experts en informatique. Il offre un contenu technique dense et varié, incluant une diversité de projets de programmation, et couvrant de nombreux langages qui permettront à l'étudiant d'aborder toutes les nouvelles technologies avec sérénité.",
     "months": "{{num}} mois",
@@ -79,6 +86,14 @@
       "animations": "Besoin de nouvelles <1>animations / assets</1> ?",
       "collabZaack": "Je travaille en collaboration avec <1>Zaack</1> qui pourra vous créer des animations customs low-cost type Wallpaper Engine 🖼️",
       "imagination": "Ma seule limite est votre <1>imagination</1> ! 🧠"
+    },
+    "twitch": {
+      "whatIsTwitch": "Twitch est une platforme de <1>diffusion en direct 🟣</1>",
+      "concepts": "J'y propose différents concepts :",
+      "discover": "- Découverte / let's play de <1>jeu vidéo</1> 🎮",
+      "justChatting": "- Libre antenne / <1>Just Chatting</1> 💬",
+      "interview": "- <1>Interview</1> d'autre streamer 🎥",
+      "competition": "- <1>Compétition</1> de jeu vidéo multijoueur 🏆"
     }
   },
   "skills": {

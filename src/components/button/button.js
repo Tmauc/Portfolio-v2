@@ -3,7 +3,7 @@ import { RiSendPlaneFill } from 'react-icons/ri';
 
 import { ButtonWrapper, Icon } from './button.style'
 
-function Button({ label, href, legend }) {
+function Button({ label, href, CustomIcon }) {
 
   return (
     <ButtonWrapper
@@ -12,7 +12,11 @@ function Button({ label, href, legend }) {
       target="_blank"
     >
       <Icon>
-        <RiSendPlaneFill />
+        {CustomIcon ?
+          <CustomIcon />
+          :
+          <RiSendPlaneFill />
+        }
       </Icon>
       {label}
     </ButtonWrapper>
