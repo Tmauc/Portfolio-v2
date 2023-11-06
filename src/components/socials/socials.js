@@ -19,7 +19,7 @@ function Socials() {
             rel="noopener noreferrer"
             color={color}
             aria-label={'Social external link for navigate to ' + name}
-            className="card"
+            className="card clickable"
           >
             {Icon}
           </Card>

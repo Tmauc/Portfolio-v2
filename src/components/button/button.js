@@ -10,6 +10,7 @@ function Button({ label, href, CustomIcon }) {
       href={href}
       type="button"
       target="_blank"
+      className='clickable'
     >
       <Icon>
         {CustomIcon ?

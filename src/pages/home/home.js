@@ -11,6 +11,7 @@ import Loader from 'components/loader/loader';
 import ScrollIndicator from 'components/scrollIndicator/scrollIndicator';
 import SmallPostIt from 'components/SmallPostIt/smallPostIt';
 import Socials from 'components/socials/socials';
+import AnimatedCursor from 'components/MouseCircle/mouseCircle';
 
 import {
   LEFT_SIDE,
@@ -80,6 +81,7 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
 
   return (
     <Background>
+      <AnimatedCursor />
       <Img activeSide={activeSide} alt="An image to represent me in the current side" src={backgroundCharacter} />
       <Main>
         <PageWrapper>
@@ -97,6 +99,7 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
                 aria-label={`Go to ${activeSide === LEFT_SIDE ? THOMAS : MAUC
                   }'s side page`}
                 tabIndex={0}
+                className='clickable'
               >
                 {activeSide === LEFT_SIDE ? THOMAS : MAUC}
               </ColorGradient>

@@ -33,7 +33,7 @@ function SwitchLang({ isMobile }) {
       {!isMobile ?
         <Wrapper>
           <Separator />
-          <LangDesktop onClick={handleToggle}>
+          <LangDesktop onClick={handleToggle} className="clickable">
             {lang === LANG_FR ? 'FR' : 'EN'}
           </LangDesktop>
         </Wrapper>

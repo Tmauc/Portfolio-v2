@@ -18,7 +18,7 @@ function SwitchDarkMode({ isDarkMode, setIsDarkMode, setLoading }) {
   }, [setIsDarkMode, setLoading]);
 
   return (
-    <ToggleWrapper>
+    <ToggleWrapper className="clickable">
       <Input
         type="checkbox"
         title="Toggle dark mode"

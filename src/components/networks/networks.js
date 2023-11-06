@@ -10,10 +10,9 @@ function Networks({ networkItems }) {
         <IconWrapper
           key={className}
           onClick={() => window.open(url, '_blank')}
-          className={className}
           color={color}
         >
-          <Span color={color}>
+          <Span color={color} className='clickable'>
             {icon}
           </Span>
         </IconWrapper>

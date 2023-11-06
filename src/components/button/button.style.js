@@ -18,6 +18,7 @@ export const Icon = styled.div`
 
   svg {
     transition: all 0.3s;
+    pointer-events: none;
   }
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {

@@ -10,7 +10,7 @@ function ScrollIndicator({ mainRef }) {
   return (
     <Wrapper>
       {isScrollBottom ?
-        <SpanGoToTop onClick={scrollToTop} />
+        <SpanGoToTop onClick={scrollToTop} className='clickable' />
         :
         <SpanScroll />
       }

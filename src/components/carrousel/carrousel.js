@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 import { CarrouselWrapper, CarrouselBtn, GiftIMG } from './carrousel.style'
 import { Italic } from 'parts/sides/sides.style';
@@ -12,12 +12,12 @@ function Carrousel({ items }) {
 
   const nextGif = () => {
     if (!lastItem)
-    setCarrouselIndex(carrouselIndex => carrouselIndex + 1);
+      setCarrouselIndex(carrouselIndex => carrouselIndex + 1);
   }
 
   const previousGif = () => {
     if (!firstItem)
-    setCarrouselIndex(carrouselIndex => carrouselIndex - 1);
+      setCarrouselIndex(carrouselIndex => carrouselIndex - 1);
   }
 
   return (
@@ -27,8 +27,8 @@ function Carrousel({ items }) {
         <GiftIMG alt={activeGif.alt} src={activeGif.gif} />
       </div>
       <div>
-        <CarrouselBtn onClick={nextGif} lastItem={lastItem}>{'>'}</CarrouselBtn>
-        <CarrouselBtn onClick={previousGif} firstItem={firstItem}>{'<'}</CarrouselBtn>
+        <CarrouselBtn className='clickable' onClick={nextGif} lastItem={lastItem}>{'>'}</CarrouselBtn>
+        <CarrouselBtn className='clickable' onClick={previousGif} firstItem={firstItem}>{'<'}</CarrouselBtn>
       </div>
     </CarrouselWrapper >
   )

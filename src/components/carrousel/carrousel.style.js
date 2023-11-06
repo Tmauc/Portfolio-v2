@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 import { TABLET_WIDTH } from 'constants/constants';
 
 export const CarrouselWrapper = styled.div`
@@ -20,12 +20,12 @@ export const CarrouselBtn = styled.button`
 
   &:hover {
     ${p => {
-      if (!p.lastItem && !p.firstItem) {
-        return css`
+    if (!p.lastItem && !p.firstItem) {
+      return css`
           transform: scale(1.2);
         `
-      }
-    }}
+    }
+  }}
   }
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {

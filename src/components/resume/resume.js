@@ -54,6 +54,7 @@ function ResumeGroup({ items, titleSection }) {
             isOpenSection={openSection}
             isOpen={openSection === item.id}
             onClick={() => handleResumeClick(item.id)}
+            className="clickable"
           >
             <ResumeHeader>
               <InfoWrapper>
