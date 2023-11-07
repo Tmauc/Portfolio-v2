@@ -18,4 +18,3 @@ export const TwitchPlayerStyle = styled.div`
     width: 100%;
   }
 `;
-

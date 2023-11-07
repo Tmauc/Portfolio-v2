@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding-right: 10px;
-`
+`;
 
 export const LangButton = styled(LargeText).attrs({
   as: 'button',
@@ -46,5 +46,5 @@ export const LangDesktop = styled.button`
 export const Separator = styled.div`
   width: 30px;
   height: 1px;
-  background-color: ${p => p.theme.tertiary};
-`
+  background-color: ${(p) => p.theme.tertiary};
+`;

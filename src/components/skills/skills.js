@@ -10,7 +10,15 @@ import {
   OTHER_ITEMS as otherItems,
 } from 'data/skillsData';
 
-import { MainWrapper, Wrapper, SkillsWrapper, SkillWrapper, Title, Span, P } from './skills.style';
+import {
+  MainWrapper,
+  Wrapper,
+  SkillsWrapper,
+  SkillWrapper,
+  Title,
+  Span,
+  P,
+} from './skills.style';
 
 function SkillsGroup({ items, title }) {
   return (

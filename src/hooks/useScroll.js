@@ -11,7 +11,8 @@ function useScroll(ref) {
     if (!isScrollable) return;
 
     const handleScroll = () => {
-      const scrollBottom = element.scrollHeight - element.scrollTop - element.clientHeight;
+      const scrollBottom =
+        element.scrollHeight - element.scrollTop - element.clientHeight;
       setIsScrollBottom(scrollBottom <= 10);
     };
 

@@ -12,7 +12,8 @@ export const Background = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
 
-  @media only screen and (max-width: ${TABLET_WIDTH}px), only screen and (orientation:portrait) {
+  @media only screen and (max-width: ${TABLET_WIDTH}px),
+    only screen and (orientation: portrait) {
     background-position: center center;
   }
 
@@ -64,7 +65,7 @@ export const PageWrapper = styled.div`
   margin: 10px;
   margin-left: 50px;
   padding: 50px;
-  background-image: url("${(p) => p.theme.backgroundUrl}");
+  background-image: url('${(p) => p.theme.backgroundUrl}');
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     padding: 50px 8%;
@@ -213,14 +214,19 @@ export const MainSection = styled.div`
   margin-top: 20px;
 
   &::-webkit-scrollbar {
-      width:30px; // manage scrollbar width here
-    }
-    &::-webkit-scrollbar * {
-      background:transparent; // manage scrollbar background color here
-    }
-    &::-webkit-scrollbar-thumb {
-      background:rgba(255,0,0,0) !important; // manage scrollbar thumb background color here
-    }
+    width: 30px; // manage scrollbar width here
+  }
+  &::-webkit-scrollbar * {
+    background: transparent; // manage scrollbar background color here
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(
+      255,
+      0,
+      0,
+      0
+    ) !important; // manage scrollbar thumb background color here
+  }
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     display: flex;
@@ -241,7 +247,8 @@ export const MainWrapper = styled.div`
     margin-bottom: 150px;
   }
 
-  @media only screen and (max-width: ${TABLET_WIDTH}px), only screen and (orientation:portrait) {
+  @media only screen and (max-width: ${TABLET_WIDTH}px),
+    only screen and (orientation: portrait) {
     max-width: 100vw;
   }
 `;

@@ -20,7 +20,7 @@ function SwitchLang({ isMobile }) {
     setTimeout(() => {
       setLang(lang === LANG_FR ? LANG_EN : LANG_FR);
     }, 200);
-    i18n.changeLanguage(lang)
+    i18n.changeLanguage(lang);
   }, [lang]);
 
   useEffect(() => {
@@ -30,18 +30,18 @@ function SwitchLang({ isMobile }) {
 
   return (
     <>
-      {!isMobile ?
+      {!isMobile ? (
         <Wrapper>
           <Separator />
-          <LangDesktop onClick={handleToggle} className="clickable">
+          <LangDesktop onClick={handleToggle}>
             {lang === LANG_FR ? 'FR' : 'EN'}
           </LangDesktop>
         </Wrapper>
-        :
+      ) : (
         <LangButton onClick={handleToggle} mobile>
           {t('navbar.language')} {lang === LANG_FR ? 'FR' : 'EN'}
         </LangButton>
-      }
+      )}
     </>
   );
 }

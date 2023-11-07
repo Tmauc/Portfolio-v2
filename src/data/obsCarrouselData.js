@@ -1,5 +1,5 @@
-import backgroundGIF from 'assets/gifs/background.gif'
-import brbGIF from 'assets/gifs/brbEffect.gif'
+import backgroundGIF from 'assets/gifs/background.gif';
+import brbGIF from 'assets/gifs/brbEffect.gif';
 
 export const OBS_CARROUSEL_ITEMS = [
   {

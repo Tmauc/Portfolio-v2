@@ -42,7 +42,7 @@ export const SkillWrapper = styled.div`
 `;
 
 export const Title = styled.h3`
-  color: ${p => p.theme.tertiary};
+  color: ${(p) => p.theme.tertiary};
   white-space: nowrap;
 `;
 
@@ -55,8 +55,8 @@ export const Span = styled.span`
   align-items: center;
 
   border-radius: 50%;
-  background-color: ${p => p.color};
-  color: ${p => p.theme.text.white};
+  background-color: ${(p) => p.color};
+  color: ${(p) => p.theme.text.white};
 
   svg {
     color: currentColor;
@@ -70,11 +70,10 @@ export const Span = styled.span`
 
 export const P = styled.p`
   margin-left: 10px;
-  color: ${p => p.theme.tertiary};
+  color: ${(p) => p.theme.tertiary};
   white-space: nowrap;
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     margin-left: 5px;
   }
-
 `;

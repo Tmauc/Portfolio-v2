@@ -20,19 +20,21 @@ import {
   Center,
 } from './sides.style';
 
-
 function LeftSide() {
   const [t] = useTranslation();
   return (
     <>
-      <Section id='about'>
+      <Section id="about">
         <AboutWrapper>
           <H2>
             <b>{t('left.about.hello')}</b>
           </H2>
           <Italic>{t('left.about.job')}</Italic>
           <P>
-            <Trans i18nKey="left.about.certificate" components={{ 1: <HighlightRect /> }} />
+            <Trans
+              i18nKey="left.about.certificate"
+              components={{ 1: <HighlightRect /> }}
+            />
           </P>
           <P>{t('left.about.passions')}</P>
           <P>
@@ -43,23 +45,38 @@ function LeftSide() {
           </P>
         </AboutWrapper>
         <ContactWrapper>
-          <Button label={t('button.project')} href={'mailto:' + MAIL_NAME + '@gmail.com'} />
+          <Button
+            label={t('button.project')}
+            href={'mailto:' + MAIL_NAME + '@gmail.com'}
+          />
         </ContactWrapper>
       </Section>
-      <Section id='projects'>
-        <P><Trans i18nKey="left.projects" components={{ 1: <HighlightRect /> }} /></P>
+      <Section id="projects">
+        <P>
+          <Trans
+            i18nKey="left.projects"
+            components={{ 1: <HighlightRect /> }}
+          />
+        </P>
         <Projects />
       </Section>
-      <Section id='skills'>
-        <P><Trans i18nKey="left.skills" components={{ 1: <HighlightRect /> }} /></P>
+      <Section id="skills">
+        <P>
+          <Trans i18nKey="left.skills" components={{ 1: <HighlightRect /> }} />
+        </P>
         <Skills />
-      </Section >
-      <Section id='resume'>
-        <P><Trans i18nKey="left.resume" components={{ 1: <HighlightRect /> }} /></P>
+      </Section>
+      <Section id="resume">
+        <P>
+          <Trans i18nKey="left.resume" components={{ 1: <HighlightRect /> }} />
+        </P>
         <Resume />
-      </Section >
+      </Section>
       <Center>
-        <Button label={t('button.contact')} href={'mailto:' + MAIL_NAME + '@gmail.com'} />
+        <Button
+          label={t('button.contact')}
+          href={'mailto:' + MAIL_NAME + '@gmail.com'}
+        />
       </Center>
     </>
   );

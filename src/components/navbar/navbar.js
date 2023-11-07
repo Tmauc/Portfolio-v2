@@ -23,7 +23,7 @@ function Navbar({ navbarItems }) {
               disabled={item.disabled}
               tabIndex={item.tabIndex}
             >
-              <Span className='clickable'>{t(item.label)}</Span>
+              <Span>{t(item.label)}</Span>
             </NavLink>
           </NavItem>
         ))}

@@ -11,7 +11,7 @@ import Loader from 'components/loader/loader';
 import ScrollIndicator from 'components/scrollIndicator/scrollIndicator';
 import SmallPostIt from 'components/SmallPostIt/smallPostIt';
 import Socials from 'components/socials/socials';
-import AnimatedCursor from 'components/MouseCircle/mouseCircle';
+import CustomCursor from 'components/customCursor/customCursor';
 
 import {
   LEFT_SIDE,
@@ -25,10 +25,7 @@ import {
   REYES_PULL,
 } from 'constants/constants';
 
-import {
-  NAVBAR_ITEMS_LEFT,
-  NAVBAR_ITEMS_RIGHT,
-} from 'data/navbarData';
+import { NAVBAR_ITEMS_LEFT, NAVBAR_ITEMS_RIGHT } from 'data/navbarData';
 
 import LeftSide from 'parts/sides/leftSide';
 import RightSide from 'parts/sides/rightSide';
@@ -62,44 +59,51 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
     setTimeout(() => {
       navigate(activeSide === LEFT_SIDE ? '/mauc' : '/thomas');
       document.title =
-        activeSide === LEFT_SIDE
-          ? t('title.mauc')
-          : t('title.thomas');
+        activeSide === LEFT_SIDE ? t('title.mauc') : t('title.thomas');
       const checkbox = document.querySelector('input[type="checkbox"]');
       checkbox.checked = false;
     }, 500);
   }, [activeSide, navigate, t]);
 
   useEffect(() => {
-    setSelectedTheme(
-      activeSide === LEFT_SIDE ? ORANGE_COLOR : PURPLE_COLOR
-    );
-  }, [activeSide, setSelectedTheme])
+    setSelectedTheme(activeSide === LEFT_SIDE ? ORANGE_COLOR : PURPLE_COLOR);
+  }, [activeSide, setSelectedTheme]);
 
   const navbarItems =
     activeSide === LEFT_SIDE ? NAVBAR_ITEMS_LEFT : NAVBAR_ITEMS_RIGHT;
 
   return (
     <Background>
-      <AnimatedCursor />
-      <Img activeSide={activeSide} alt="An image to represent me in the current side" src={backgroundCharacter} />
+      {!isMobile && <CustomCursor />}
+      <Img
+        activeSide={activeSide}
+        alt="An image to represent me in the current side"
+        src={backgroundCharacter}
+      />
       <Main>
         <PageWrapper>
-          {!isMobile && !isVertical &&
-            <div id='smallPostIt-Wrapper'>
-              <SmallPostIt svgSRC={itsMeArrow} type={ITSME_ARROW} activeSide={activeSide} />
-              {activeSide === LEFT_SIDE && <SmallPostIt svgSRC={smallArrow} type={WATCH_ARROW} />}
-              {activeSide === RIGHT_SIDE && <SmallPostIt svgSRC={smallArrow} type={REYES_PULL} />}
+          {!isMobile && !isVertical && (
+            <div id="smallPostIt-Wrapper">
+              <SmallPostIt
+                svgSRC={itsMeArrow}
+                type={ITSME_ARROW}
+                activeSide={activeSide}
+              />
+              {activeSide === LEFT_SIDE && (
+                <SmallPostIt svgSRC={smallArrow} type={WATCH_ARROW} />
+              )}
+              {activeSide === RIGHT_SIDE && (
+                <SmallPostIt svgSRC={smallArrow} type={REYES_PULL} />
+              )}
             </div>
-          }
-          <Header id='header'>
+          )}
+          <Header id="header">
             <GradientWrapper>
               <ColorGradient
                 onClick={handleClick}
                 aria-label={`Go to ${activeSide === LEFT_SIDE ? THOMAS : MAUC
                   }'s side page`}
                 tabIndex={0}
-                className='clickable'
               >
                 {activeSide === LEFT_SIDE ? THOMAS : MAUC}
               </ColorGradient>
@@ -123,19 +127,12 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
           </Header>
           <MainSection id="mainSection" ref={mainRef}>
             <MainWrapper>
-              {activeSide === LEFT_SIDE ? (
-                <LeftSide />
-              ) : (
-                <RightSide />
-              )}
+              {activeSide === LEFT_SIDE ? <LeftSide /> : <RightSide />}
             </MainWrapper>
           </MainSection>
         </PageWrapper>
         {isMobile ? (
-          <HamburgerMenu
-            navbarItems={navbarItems}
-          />
-
+          <HamburgerMenu navbarItems={navbarItems} />
         ) : (
           <Navbar navbarItems={navbarItems} />
         )}

@@ -4,7 +4,6 @@ import { FaArrowLeft } from 'react-icons/fa';
 
 import { AlignWrapper, WrapperActiveBar, Scroll } from './activeBar.style';
 
-
 function ActiveBar() {
   const [t] = useTranslation();
 

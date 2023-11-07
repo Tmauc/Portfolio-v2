@@ -3,18 +3,15 @@ import React from 'react';
 import { Wrapper, IconWrapper, Span } from './networks.style';
 
 function Networks({ networkItems }) {
-
   return (
-    <Wrapper isMobile >
+    <Wrapper isMobile>
       {networkItems.map(({ color, url, icon, className }) => (
         <IconWrapper
           key={className}
           onClick={() => window.open(url, '_blank')}
           color={color}
         >
-          <Span color={color} className='clickable'>
-            {icon}
-          </Span>
+          <Span color={color}>{icon}</Span>
         </IconWrapper>
       ))}
     </Wrapper>

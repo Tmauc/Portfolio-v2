@@ -1,6 +1,4 @@
-import {
-  FaReact,
-} from 'react-icons/fa';
+import { FaReact } from 'react-icons/fa';
 
 import {
   SiReact,
@@ -96,7 +94,7 @@ export const MOBILE_ITEMS = [
     name: 'SwiftUI',
     icon: <SiSwift />,
     color: 'hsl(180, 89%, 52%)',
-  }
+  },
 ];
 
 export const FUNCTIONAL_ITEMS = [
@@ -122,9 +120,8 @@ export const OS_ITEMS = [
     name: 'MacOS',
     icon: <SiMacos />,
     color: 'hsl(202, 83%, 51%)',
-  }
+  },
 ];
-
 
 export const OTHER_ITEMS = [
   {

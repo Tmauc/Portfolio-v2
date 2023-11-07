@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { HiCursorClick } from 'react-icons/hi';
@@ -19,7 +19,7 @@ import {
   SelectedIMG,
   SkillsWrapper,
   Skill,
-  ProjectIMG
+  ProjectIMG,
 } from './projects.style';
 
 function Images({ title, description, images, skills }) {
@@ -28,7 +28,7 @@ function Images({ title, description, images, skills }) {
 
   const onClickIMG = (targetIMGIndex) => {
     setSelectedIMG(targetIMGIndex);
-  }
+  };
 
   return (
     <ProjectWrapper>
@@ -49,18 +49,17 @@ function Images({ title, description, images, skills }) {
       </MiddleWrapper>
       <Description>{t(description)}</Description>
     </ProjectWrapper>
-  )
+  );
 }
 
 function ProjectSkills({ title, skills }) {
-
   return (
     <SkillsWrapper>
       {skills.map((skill, index) => (
         <Skill key={'skill' + title + index}>{skill}</Skill>
       ))}
     </SkillsWrapper>
-  )
+  );
 }
 
 function Projects() {
@@ -72,9 +71,14 @@ function Projects() {
         return (
           <ContentWrapper key={'keyProject' + index}>
             <h3>{title} :</h3>
-            <Images title={title} description={description} images={images} skills={skills} />
+            <Images
+              title={title}
+              description={description}
+              images={images}
+              skills={skills}
+            />
           </ContentWrapper>
-        )
+        );
       })}
       <ContactWrapper>
         <ButtonWrapper>
@@ -86,9 +90,8 @@ function Projects() {
           <Legend>{t('button.moreProjects')}</Legend>
         </ButtonWrapper>
       </ContactWrapper>
-
     </MainWrapper>
-  )
+  );
 }
 
-export default Projects
+export default Projects;

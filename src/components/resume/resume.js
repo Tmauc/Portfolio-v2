@@ -2,7 +2,11 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { TiCalendar } from 'react-icons/ti';
-import { BiTimeFive, BiChevronDownCircle, BiChevronUpCircle } from 'react-icons/bi';
+import {
+  BiTimeFive,
+  BiChevronDownCircle,
+  BiChevronUpCircle,
+} from 'react-icons/bi';
 
 import {
   EDUCATIONAL_ITEMS as educationalItems,
@@ -29,16 +33,19 @@ import {
 function ResumeGroup({ items, titleSection }) {
   const [t] = useTranslation();
   const [openSection, setOpenSection] = useState(null);
-  const [isOpen, setIsOpen] = useState(null)
+  const [isOpen, setIsOpen] = useState(null);
 
-  const handleResumeClick = useCallback((id) => {
-    if (openSection === id) {
-      setOpenSection(null);
-    } else {
-      setOpenSection(id);
-    }
-    setIsOpen(false);
-  }, [openSection])
+  const handleResumeClick = useCallback(
+    (id) => {
+      if (openSection === id) {
+        setOpenSection(null);
+      } else {
+        setOpenSection(id);
+      }
+      setIsOpen(false);
+    },
+    [openSection]
+  );
 
   useEffect(() => {
     setIsOpen(true);
@@ -54,7 +61,6 @@ function ResumeGroup({ items, titleSection }) {
             isOpenSection={openSection}
             isOpen={openSection === item.id}
             onClick={() => handleResumeClick(item.id)}
-            className="clickable"
           >
             <ResumeHeader>
               <InfoWrapper>
@@ -71,17 +77,19 @@ function ResumeGroup({ items, titleSection }) {
               <BigText>{item.name}</BigText>
               <P>{t(item.title)}</P>
               <ChevronWrapper>
-                {openSection === item.id ? <BiChevronUpCircle /> : <BiChevronDownCircle />}
+                {openSection === item.id ? (
+                  <BiChevronUpCircle />
+                ) : (
+                  <BiChevronDownCircle />
+                )}
               </ChevronWrapper>
             </ResumeHeader>
-            {openSection === item.id &&
+            {openSection === item.id && (
               <DescWrapper>
                 <DescSeparator />
-                <Desc isOpen={isOpen}>
-                  {t(item.desc)}
-                </Desc>
+                <Desc isOpen={isOpen}>{t(item.desc)}</Desc>
               </DescWrapper>
-            }
+            )}
           </ResumeWrapper>
         ))}
       </ResumesWrapper>
@@ -89,13 +97,18 @@ function ResumeGroup({ items, titleSection }) {
   );
 }
 
-
 function Resume() {
   const [t] = useTranslation();
   return (
     <MainWrapper>
-      <ResumeGroup items={educationalItems} titleSection={t('resume.education')} />
-      <ResumeGroup items={professionalItems} titleSection={t('resume.experiences')} />
+      <ResumeGroup
+        items={educationalItems}
+        titleSection={t('resume.education')}
+      />
+      <ResumeGroup
+        items={professionalItems}
+        titleSection={t('resume.experiences')}
+      />
     </MainWrapper>
   );
 }

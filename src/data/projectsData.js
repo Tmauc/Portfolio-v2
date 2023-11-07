@@ -13,12 +13,12 @@ export const PROJECTS_ITEMS = [
     title: 'TEKITOA',
     description: 'projects.tktDescription',
     images: [homeTKT, calendarTKT, browserTKT, streamerTKT],
-    skills: ['React', 'js', 'HTML/CSS']
+    skills: ['React', 'js', 'HTML/CSS'],
   },
   {
     title: 'Maskott Player',
     description: 'projects.maskottDescription',
     images: [maskott1, maskott2, maskott3, maskott4],
-    skills: ['React', 'Typescript', 'js', 'HTML/CSS']
+    skills: ['React', 'Typescript', 'js', 'HTML/CSS'],
   },
 ];

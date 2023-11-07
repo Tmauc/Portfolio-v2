@@ -74,9 +74,8 @@ export const Wrapper = styled.div`
 `;
 
 export const NetworksWrapper = styled.div`
-    -webkit-transition: 0s 0.2s ease-in-out;
+  -webkit-transition: 0s 0.2s ease-in-out;
   transition: 0s 0.2s ease-in-out;
-
 `;
 
 export const Ul = styled.ul`

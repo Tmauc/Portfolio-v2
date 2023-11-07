@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { NAVBAR_ABOUT } from 'constants/constants';
 
 function useActiveNavbarLink(navbarRef) {
-  const mainSection = document.querySelector("div#mainSection");
+  const mainSection = document.querySelector('div#mainSection');
   const [activeSection, setActiveSection] = useState(NAVBAR_ABOUT);
 
   useEffect(() => {
@@ -29,6 +29,5 @@ function useActiveNavbarLink(navbarRef) {
   }, [activeSection, mainSection, navbarRef]);
   return activeSection;
 }
-
 
 export default useActiveNavbarLink;

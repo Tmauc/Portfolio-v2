@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   align-items: center;
   bottom: 30px;
   right: 30px;
-`
+`;
 
 export const Main = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ export const Main = styled.div`
   cursor: pointer;
 
   &:hover .card {
-    margin: .2em;
+    margin: 0.2em;
     border-radius: 10px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     background: rgba(255, 255, 255, 0.2);
@@ -27,14 +27,15 @@ export const Main = styled.div`
       opacity: 1;
     }
   }
-`
+`;
 
 export const Card = styled.a`
   width: 30px;
   height: 30px;
   border-top-left-radius: 10px;
   background: lightgrey;
-  transition: .4s ease-in-out, .2s background-color ease-in-out, .2s background-image ease-in-out;
+  transition: 0.4s ease-in-out, 0.2s background-color ease-in-out,
+    0.2s background-image ease-in-out;
   backdrop-filter: 5px;
   border: 1px solid transparent;
   -webkit-backdrop-filter: 5px;
@@ -43,9 +44,9 @@ export const Card = styled.a`
   justify-content: center;
 
   text-decoration: none;
-  background-color: ${p => p.theme.secondary};
+  background-color: ${(p) => p.theme.secondary};
   background: rgba(255, 255, 255, 0.2);
-  color: ${p => p.theme.text.white};
+  color: ${(p) => p.theme.text.white};
 
   svg {
     opacity: 1;
@@ -75,6 +76,6 @@ export const Card = styled.a`
   }
 
   &:hover {
-    background-color: ${p => p.color} !important;
+    background-color: ${(p) => p.color} !important;
   }
 `;

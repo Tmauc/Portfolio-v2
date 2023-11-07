@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { TABLET_WIDTH } from 'constants/constants';
 
 export const Icon = styled.div`
@@ -10,7 +10,7 @@ export const Icon = styled.div`
   min-height: 30px;
 
   border-radius: 50%;
-  background-color: ${p => p.theme.transparent.white02};
+  background-color: ${(p) => p.theme.transparent.white02};
 
   margin-right: 20px;
 
@@ -24,7 +24,7 @@ export const Icon = styled.div`
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     margin-right: 10px;
   }
-`
+`;
 
 export const ButtonWrapper = styled.a`
   position: relative;
@@ -32,7 +32,7 @@ export const ButtonWrapper = styled.a`
   justify-content: center;
   align-items: center;
   width: fit-content;
-  
+
   padding: 10px 20px;
 
   border: 0;
@@ -48,18 +48,18 @@ export const ButtonWrapper = styled.a`
   letter-spacing: 4px;
   text-decoration: none;
   text-transform: uppercase;
-  
+
   overflow: hidden;
-  
+
   transition: 0.5s;
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0px 8px 15px ${p => p.theme.transparent.black03};
+    box-shadow: 0px 8px 15px ${(p) => p.theme.transparent.black03};
   }
 
   &:hover ${Icon} {
-    background-color: ${p => p.theme.transparent.white05};
+    background-color: ${(p) => p.theme.transparent.white05};
     svg {
       transform: rotate(45deg);
     }

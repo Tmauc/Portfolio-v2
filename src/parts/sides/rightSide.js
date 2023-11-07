@@ -27,7 +27,7 @@ function RightSide() {
   const [t] = useTranslation();
   return (
     <>
-      <Section id='about'>
+      <Section id="about">
         <AboutWrapper>
           <H2>
             <b>{t('right.about.hello')}</b>
@@ -35,13 +35,22 @@ function RightSide() {
           <Italic>{t('right.about.job')}</Italic>
           <P>{t('right.about.startContent')}</P>
           <P>
-            <Trans i18nKey="right.about.streamBroadcasts" components={{ 1: <HighlightRect /> }} />
+            <Trans
+              i18nKey="right.about.streamBroadcasts"
+              components={{ 1: <HighlightRect /> }}
+            />
           </P>
           <P>
-            <Trans i18nKey="right.about.videosCreation" components={{ 1: <HighlightRect /> }} />
+            <Trans
+              i18nKey="right.about.videosCreation"
+              components={{ 1: <HighlightRect /> }}
+            />
           </P>
           <P>
-            <Trans i18nKey="right.about.podcastPublications" components={{ 1: <HighlightRect /> }} />
+            <Trans
+              i18nKey="right.about.podcastPublications"
+              components={{ 1: <HighlightRect /> }}
+            />
           </P>
           <P>{t('right.about.photographer')}</P>
           <P>
@@ -49,7 +58,7 @@ function RightSide() {
           </P>
         </AboutWrapper>
       </Section>
-      <Section id='obs'>
+      <Section id="obs">
         <AboutWrapper>
           <P>{t('right.obs.troubleOBS')}</P>
           <P>{t('right.obs.problem')}</P>
@@ -57,49 +66,111 @@ function RightSide() {
           <P>{t('right.obs.experience')}</P>
           <JumpLine />
           <P>
-            <Trans i18nKey="right.obs.cleanWorkingEnvironment" components={{ 1: <HighlightRect /> }} />
+            <Trans
+              i18nKey="right.obs.cleanWorkingEnvironment"
+              components={{ 1: <HighlightRect /> }}
+            />
           </P>
           <P>
-            <Trans i18nKey="right.obs.OBS" components={{ 1: <HighlightLine /> }} />
+            <Trans
+              i18nKey="right.obs.OBS"
+              components={{ 1: <HighlightLine /> }}
+            />
           </P>
           <P>
-            <Trans i18nKey="right.obs.streamdeck" components={{ 1: <HighlightLine /> }} />
+            <Trans
+              i18nKey="right.obs.streamdeck"
+              components={{ 1: <HighlightLine /> }}
+            />
           </P>
           <P>
-            <Trans i18nKey="right.obs.effect" components={{ 1: <HighlightLine /> }} />
+            <Trans
+              i18nKey="right.obs.effect"
+              components={{ 1: <HighlightLine /> }}
+            />
           </P>
           <P>
-            <Trans i18nKey="right.obs.botTwitch" components={{ 1: <HighlightLine /> }} />
+            <Trans
+              i18nKey="right.obs.botTwitch"
+              components={{ 1: <HighlightLine /> }}
+            />
           </P>
           <JumpLine />
           <P>
-            <Trans i18nKey="right.obs.animations" components={{ 1: <HighlightRect /> }} />
+            <Trans
+              i18nKey="right.obs.animations"
+              components={{ 1: <HighlightRect /> }}
+            />
           </P>
-          <P><Trans i18nKey="right.obs.collabZaack" components={{ 1: <HighlightLine /> }} /></P>
+          <P>
+            <Trans
+              i18nKey="right.obs.collabZaack"
+              components={{ 1: <HighlightLine /> }}
+            />
+          </P>
           <JumpLine />
           <P>
-            <Trans i18nKey="right.obs.imagination" components={{ 1: <HighlightLine /> }} />
+            <Trans
+              i18nKey="right.obs.imagination"
+              components={{ 1: <HighlightLine /> }}
+            />
           </P>
         </AboutWrapper>
         <ContactWrapper>
           <ButtonWrapper>
-            <Button label={t('button.discord')} href="https://discord.com/users/270954271933988864" />
+            <Button
+              label={t('button.discord')}
+              href="https://discord.com/users/270954271933988864"
+            />
             <Legend>{t('button.pseudo')}</Legend>
           </ButtonWrapper>
         </ContactWrapper>
         <Carrousel items={OBS_CARROUSEL_ITEMS} />
       </Section>
-      <Section id='twitch'>
-        <P><Trans i18nKey="right.twitch.whatIsTwitch" components={{ 1: <HighlightRect /> }} /></P>
-        <P><Trans i18nKey="right.twitch.concepts" components={{ 1: <HighlightLine /> }} /></P>
-        <P><Trans i18nKey="right.twitch.discover" components={{ 1: <HighlightLine /> }} /></P>
-        <P><Trans i18nKey="right.twitch.justChatting" components={{ 1: <HighlightLine /> }} /></P>
-        <P><Trans i18nKey="right.twitch.interview" components={{ 1: <HighlightLine /> }} /></P>
-        <P><Trans i18nKey="right.twitch.competition" components={{ 1: <HighlightLine /> }} /></P>
+      <Section id="twitch">
+        <P>
+          <Trans
+            i18nKey="right.twitch.whatIsTwitch"
+            components={{ 1: <HighlightRect /> }}
+          />
+        </P>
+        <P>
+          <Trans
+            i18nKey="right.twitch.concepts"
+            components={{ 1: <HighlightLine /> }}
+          />
+        </P>
+        <P>
+          <Trans
+            i18nKey="right.twitch.discover"
+            components={{ 1: <HighlightLine /> }}
+          />
+        </P>
+        <P>
+          <Trans
+            i18nKey="right.twitch.justChatting"
+            components={{ 1: <HighlightLine /> }}
+          />
+        </P>
+        <P>
+          <Trans
+            i18nKey="right.twitch.interview"
+            components={{ 1: <HighlightLine /> }}
+          />
+        </P>
+        <P>
+          <Trans
+            i18nKey="right.twitch.competition"
+            components={{ 1: <HighlightLine /> }}
+          />
+        </P>
         <ChannelLive channelId="256677231" />
       </Section>
       <Center>
-        <Button label={t('button.contact')} href={'mailto:' + MAIL_NAME + '@gmail.com'} />
+        <Button
+          label={t('button.contact')}
+          href={'mailto:' + MAIL_NAME + '@gmail.com'}
+        />
       </Center>
     </>
   );

@@ -22,8 +22,8 @@ export const SpanScroll = styled.span`
   display: block;
   width: 15px;
   height: 15px;
-  border-left: 1px solid ${p => p.theme.tertiary};
-  border-bottom: 1px solid ${p => p.theme.tertiary};
+  border-left: 1px solid ${(p) => p.theme.tertiary};
+  border-bottom: 1px solid ${(p) => p.theme.tertiary};
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   -webkit-animation: ${scrollFade} 1.5s infinite;
@@ -35,8 +35,8 @@ export const SpanGoToTop = styled.span`
   display: block;
   width: 15px;
   height: 15px;
-  border-left: 1px solid ${p => p.theme.tertiary};
-  border-bottom: 1px solid ${p => p.theme.tertiary};
+  border-left: 1px solid ${(p) => p.theme.tertiary};
+  border-bottom: 1px solid ${(p) => p.theme.tertiary};
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg);
   -webkit-animation: ${scrollTopFade} 3s infinite;

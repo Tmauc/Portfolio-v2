@@ -6,7 +6,7 @@ import {
   FaTwitter,
   FaInstagram,
   FaTiktok,
-  FaDiscord
+  FaDiscord,
 } from 'react-icons/fa';
 
 import { MdBento } from 'react-icons/md';

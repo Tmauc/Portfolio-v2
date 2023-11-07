@@ -7,7 +7,6 @@ export const AboutWrapper = styled.div`
   }
 `;
 
-
 const sketchStyle = css`
   content: '';
   position: absolute;
@@ -32,11 +31,11 @@ export const Section = styled.section`
   }
   width: 100%;
 
-  ${p => {
+  ${(p) => {
     if (p.scrollIndicator) {
       return css`
         margin-bottom: 10px !important;
-      `
+      `;
     }
   }};
 `;

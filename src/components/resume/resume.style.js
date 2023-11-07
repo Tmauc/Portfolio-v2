@@ -53,30 +53,30 @@ export const ResumesWrapper = styled.div`
 `;
 
 export const ResumeWrapper = styled.div`
-  border-bottom: 1px solid ${p => p.theme.bottomBorder};
+  border-bottom: 1px solid ${(p) => p.theme.bottomBorder};
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 
-  ${p => {
+  ${(p) => {
     if (p.isOpen) {
       return css`
         padding-bottom: 10px;
-      `
+      `;
     } else if (p.isOpenSection) {
       return css`
-        opacity: .1;
-      `
+        opacity: 0.1;
+      `;
     }
   }}
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
-    ${p => {
-    if (p.isOpen) {
-      return css`
+    ${(p) => {
+      if (p.isOpen) {
+        return css`
           padding-bottom: 20px;
-        `
-    }
-  }}
+        `;
+      }
+    }}
   }
 `;
 
@@ -86,15 +86,15 @@ export const ChevronWrapper = styled.div`
   align-items: center;
 
   svg {
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     width: 25px;
     height: 25px;
   }
-`
+`;
 
 export const ResumeHeader = styled.div`
   display: grid;
-  grid-template-columns: 1.2fr 2fr 1fr .3fr;
+  grid-template-columns: 1.2fr 2fr 1fr 0.3fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -117,16 +117,16 @@ export const ResumeHeader = styled.div`
   }
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
-    grid-template-columns: 2fr 2fr 1.5fr .3fr;
+    grid-template-columns: 2fr 2fr 1.5fr 0.3fr;
     min-height: 60px;
     &:hover {
       ${ChevronWrapper} {
-      svg {
-        width: 25px;
-        height: 25px;
+        svg {
+          width: 25px;
+          height: 25px;
+        }
       }
     }
-    };
   }
 `;
 
@@ -161,7 +161,7 @@ export const DescWrapper = styled.div`
 export const DescSeparator = styled.div`
   width: 100px;
   height: 1px;
-  background-color: ${p => p.theme.tertiary};
+  background-color: ${(p) => p.theme.tertiary};
 
   margin-bottom: 10px;
 `;
@@ -172,12 +172,12 @@ export const Desc = styled.p`
   height: 0;
   transition: all 0.4s ease-in-out;
 
-  ${p => {
+  ${(p) => {
     if (p.isOpen) {
       return css`
         opacity: 1;
         height: auto;
-      `
+      `;
     }
   }};
 `;

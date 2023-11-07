@@ -1,13 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-import {
-  NETWORK_ITEMS as networkItems,
-} from 'data/networkData';
+import { NETWORK_ITEMS as networkItems } from 'data/networkData';
 
-import { Main, Wrapper, Card } from './socials.style'
+import { Main, Wrapper, Card } from './socials.style';
 
 function Socials() {
-
   return (
     <Wrapper className="socialWrapper">
       <Main>
@@ -19,14 +16,14 @@ function Socials() {
             rel="noopener noreferrer"
             color={color}
             aria-label={'Social external link for navigate to ' + name}
-            className="card clickable"
+            className="card"
           >
             {Icon}
           </Card>
         ))}
       </Main>
     </Wrapper>
-  )
+  );
 }
 
-export default Socials
+export default Socials;
