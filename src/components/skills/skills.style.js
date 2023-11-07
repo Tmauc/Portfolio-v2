@@ -58,6 +58,10 @@ export const Span = styled.span`
   background-color: ${(p) => p.color};
   color: ${(p) => p.theme.text.white};
 
+  &:hover {
+    mix-blend-mode: luminosity;
+  }
+
   svg {
     color: currentColor;
   }

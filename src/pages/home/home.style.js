@@ -65,7 +65,7 @@ export const PageWrapper = styled.div`
   margin: 10px;
   margin-left: 50px;
   padding: 50px;
-  background-image: url('${(p) => p.theme.backgroundUrl}');
+  background-image: url("${(p) => p.theme.backgroundUrl}");
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     padding: 50px 8%;

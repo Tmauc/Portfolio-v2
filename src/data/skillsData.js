@@ -97,7 +97,7 @@ export const MOBILE_ITEMS = [
   },
 ];
 
-export const FUNCTIONAL_ITEMS = [
+export const IMPERATIVE_ITEMS = [
   {
     name: 'C',
     icon: <SiC />,

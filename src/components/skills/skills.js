@@ -5,7 +5,7 @@ import {
   WEB_ITEMS as webItems,
   OBJECT_ITEMS as objectItems,
   MOBILE_ITEMS as mobileItems,
-  FUNCTIONAL_ITEMS as functionalItems,
+  IMPERATIVE_ITEMS as imperativeItems,
   OS_ITEMS as osItems,
   OTHER_ITEMS as otherItems,
 } from 'data/skillsData';
@@ -43,7 +43,7 @@ function Skills() {
       <SkillsGroup items={webItems} title={t('skills.web')} />
       <SkillsGroup items={objectItems} title={t('skills.object')} />
       <SkillsGroup items={mobileItems} title={t('skills.mobile')} />
-      <SkillsGroup items={functionalItems} title={t('skills.functional')} />
+      <SkillsGroup items={imperativeItems} title={t('skills.imperative')} />
       <SkillsGroup items={osItems} title={t('skills.os')} />
       <SkillsGroup items={otherItems} title={t('skills.other')} />
     </MainWrapper>

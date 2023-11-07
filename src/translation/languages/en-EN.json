@@ -100,7 +100,7 @@
     "web": "Web",
     "object": "Objects",
     "mobile": "Mobiles",
-    "functional": "Functionals",
+    "imperative": "Imperatives",
     "os": "OS",
     "other": "Other"
   },

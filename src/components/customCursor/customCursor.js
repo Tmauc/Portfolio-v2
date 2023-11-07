@@ -30,8 +30,9 @@ function CustomCursor() {
   const requestRef = useRef(null);
   const previousTimeRef = useRef(null);
   const [coords, setCoords] = useState({ x: 0, y: 0 });
-  const [isActive, setIsActive] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isClick, setIsClick] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const [isActiveClickable, setIsActiveClickable] = useState(false);
   const endX = useRef(0);
   const endY = useRef(0);
@@ -87,8 +88,8 @@ function CustomCursor() {
   }, []);
 
   // Mouse Events State updates
-  const onMouseDown = useCallback(() => setIsActive(true), []);
-  const onMouseUp = useCallback(() => setIsActive(false), []);
+  const onMouseDown = useCallback(() => setIsClick(true), []);
+  const onMouseUp = useCallback(() => setIsClick(false), []);
   const onMouseEnterViewport = useCallback(() => setIsVisible(true), []);
   const onMouseLeaveViewport = useCallback(() => setIsVisible(false), []);
 
@@ -101,8 +102,8 @@ function CustomCursor() {
   // Cursors Hover/Active State
   useEffect(() => {
     if (isActive) {
-      scaleBySize(cursorInnerRef.current, INNER_SIZE, INNER_SCALE);
-      scaleBySize(cursorOuterRef.current, OUTER_SIZE, OUTER_SCALE);
+      scaleBySize(cursorInnerRef.current, INNER_SIZE, INNER_SCALE * 4);
+      scaleBySize(cursorOuterRef.current, OUTER_SIZE, OUTER_SCALE * 0);
     } else {
       scaleBySize(cursorInnerRef.current, INNER_SIZE, 1);
       scaleBySize(cursorOuterRef.current, OUTER_SIZE, 1);
@@ -112,13 +113,16 @@ function CustomCursor() {
   // Cursors Click States
   useEffect(() => {
     if (isActiveClickable) {
-      scaleBySize(cursorInnerRef.current, INNER_SIZE, INNER_SCALE * 4);
+      scaleBySize(cursorInnerRef.current, INNER_SIZE, INNER_SCALE * 6);
       scaleBySize(cursorOuterRef.current, OUTER_SIZE, OUTER_SCALE * 0);
+    } else if (isClick) {
+      scaleBySize(cursorInnerRef.current, INNER_SIZE, INNER_SCALE);
+      scaleBySize(cursorOuterRef.current, OUTER_SIZE, OUTER_SCALE);
     } else {
       scaleBySize(cursorInnerRef.current, INNER_SIZE, 1);
       scaleBySize(cursorOuterRef.current, OUTER_SIZE, 1);
     }
-  }, [scaleBySize, isActiveClickable]);
+  }, [scaleBySize, isActiveClickable, isClick]);
 
   // Cursor Visibility Statea
   useEffect(() => {
