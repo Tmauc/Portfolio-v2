@@ -64,8 +64,7 @@ export const PageWrapper = styled.div`
   flex-direction: column;
   margin: 10px 10px 10px 50px;
   padding: 50px;
-  //padding-bottom: 100px;
-  background-image: url('${(p) => p.theme.backgroundUrl}');
+  background-image: url("${(p) => p.theme.backgroundUrl}");
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     padding: 50px 8%;

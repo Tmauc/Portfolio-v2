@@ -19,7 +19,7 @@ function Available() {
             d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
           />
         </defs>
-        <text font-size="17">
+        <text fontSize="14">
           <textPath xlinkHref="#circle">
             {isAvailable
               ? t('freelance.available')

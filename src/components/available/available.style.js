@@ -79,11 +79,11 @@ export const Status = styled.div`
 
 export const TextCircle = styled.svg`
   fill: currentColor;
-  height: auto;
   max-width: 30vmin;
   transform-origin: center;
   width: 40px;
   height: 40px;
+  text-transform: uppercase;
 
-  animation: ${spin} 10s infinite linear;
+  animation: ${spin} 30s infinite linear;
 `;
