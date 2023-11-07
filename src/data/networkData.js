@@ -3,13 +3,14 @@ import {
   FaLinkedin,
   FaGithub,
   FaYoutube,
-  FaTwitter,
   FaInstagram,
   FaTiktok,
   FaDiscord,
 } from 'react-icons/fa';
 
 import { MdBento } from 'react-icons/md';
+
+import { FaXTwitter } from 'react-icons/fa6';
 
 export const MAUC_ITEMS = [
   {
@@ -34,11 +35,11 @@ export const MAUC_ITEMS = [
     className: 'instagram',
   },
   {
-    name: 'Twitter',
-    url: 'https://twitter.com/MaucSama',
-    icon: <FaTwitter />,
+    name: 'X',
+    url: 'https://x.com/MaucSama',
+    icon: <FaXTwitter />,
     color: 'hsl(198, 91%, 62%)',
-    className: 'twitter',
+    className: 'x',
   },
   {
     name: 'TikTok',
