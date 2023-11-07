@@ -39,7 +39,7 @@ export const ProjectWrapper = styled.div`
   @media only screen and (max-width: ${TABLET_WIDTH}px),
     only screen and (orientation: portrait) {
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 2fr 1fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
 
     & > *:not(:last-child) {
       margin-bottom: 20px;
@@ -75,7 +75,6 @@ export const ProjectIMG = styled.img`
   object-fit: cover;
 
   transition: all 0.4s;
-  cursor: pointer;
 
   ${(p) => {
     if (p.isSelected) {

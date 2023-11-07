@@ -35,7 +35,6 @@ export const IconWrapper = styled.div`
 
   font-size: 18px;
 
-  cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 

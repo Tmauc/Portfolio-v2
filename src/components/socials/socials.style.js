@@ -12,21 +12,14 @@ export const Wrapper = styled.div`
 export const Main = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 7em;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 
-  &:hover .card {
-    margin: 0.2em;
-    border-radius: 10px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    background: rgba(255, 255, 255, 0.2);
-
-    svg {
-      opacity: 1;
-    }
-  }
+  display: grid;
+  grid-template-columns: repeat(3);
+  grid-template-rows: repeat(3);
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
 `;
 
 export const Card = styled.a`
@@ -44,38 +37,34 @@ export const Card = styled.a`
   justify-content: center;
 
   text-decoration: none;
-  background-color: ${(p) => p.theme.secondary};
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(42, 42, 42, 0.6);
   color: ${(p) => p.theme.text.white};
 
-  svg {
-    opacity: 1;
-  }
-
-  &:nth-child(2),
-  &:nth-child(4),
-  &:nth-child(5),
-  &:nth-child(6),
-  &:nth-child(8) {
-    border-radius: 0px;
-  }
-
-  &:nth-child(3) {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 0px;
-  }
-
-  &:nth-child(7) {
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 0px;
-  }
-
-  &:nth-child(9) {
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 0px;
-  }
+  border-radius: 10px;
 
   &:hover {
     background-color: ${(p) => p.color} !important;
+  }
+
+  &:nth-child(1) {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+  &:nth-child(2) {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  &:nth-child(3) {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+  &:nth-child(4) {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  &:nth-child(5) {
+    grid-area: 3 / 2 / 4 / 3;
+  }
+  &:nth-child(6) {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  &:nth-child(7) {
+    grid-area: 2 / 1 / 3 / 2;
   }
 `;

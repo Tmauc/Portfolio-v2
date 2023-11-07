@@ -31,10 +31,12 @@ export const SpanScroll = styled.span`
   box-sizing: border-box;
 `;
 
-export const SpanGoToTop = styled.span`
+export const SpanGoToTop = styled.button`
   display: block;
   width: 15px;
   height: 15px;
+  border: 0;
+  background-color: transparent;
   border-left: 1px solid ${(p) => p.theme.tertiary};
   border-bottom: 1px solid ${(p) => p.theme.tertiary};
   -webkit-transform: rotate(135deg);
@@ -42,6 +44,4 @@ export const SpanGoToTop = styled.span`
   -webkit-animation: ${scrollTopFade} 3s infinite;
   animation: ${scrollTopFade} 3s infinite;
   box-sizing: border-box;
-
-  cursor: pointer;
 `;

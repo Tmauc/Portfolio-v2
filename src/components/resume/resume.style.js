@@ -52,10 +52,12 @@ export const ResumesWrapper = styled.div`
   -webkit-tap-highlight-color: transparent;
 `;
 
-export const ResumeWrapper = styled.div`
+export const ResumeWrapper = styled.button`
   border-bottom: 1px solid ${(p) => p.theme.bottomBorder};
   transition: all 0.3s ease-in-out;
-  cursor: pointer;
+  background-color: transparent;
+  color: ${(p) => p.theme.tertiary};
+  border: 0;
 
   ${(p) => {
     if (p.isOpen) {

@@ -16,7 +16,6 @@ export const CarrouselBtn = styled.button`
   font-size: 50px;
   color: ${(p) => p.theme.tertiary};
   opacity: ${(p) => (p.lastItem || p.firstItem ? 0.2 : 1)};
-  cursor: pointer;
 
   &:hover {
     ${(p) => {

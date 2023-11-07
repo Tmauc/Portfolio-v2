@@ -6,6 +6,8 @@ import OrangeArrow from 'assets/svg/orangeArrow.svg';
 import PurpleArrow from 'assets/svg/purpleArrow.svg';
 import SmallOrangeArrow from 'assets/svg/smallOrangeArrow.svg';
 import SmallPurpleArrow from 'assets/svg/smallPurpleArrow.svg';
+import { MAUC_ITEMS as maucItems } from 'data/networkData';
+import { THOMAS_ITEMS as thomasItems } from 'data/networkData';
 
 const orangeColors = {
   primary: 'hsl(32, 100%, 50%)',
@@ -19,6 +21,7 @@ const orangeColors = {
   itsMeArrow: OrangeArrow,
   smallArrow: SmallOrangeArrow,
   backgroundCharacter: leftPNG,
+  networkItems: thomasItems,
   backgroundUrl:
     "data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23FF8800FF' stroke-width='1' stroke-dasharray='21%2c 23%2c 11' stroke-dashoffset='37' stroke-linecap='square'/%3e%3c/svg%3e",
 };
@@ -35,6 +38,7 @@ const purpleColors = {
   itsMeArrow: PurpleArrow,
   smallArrow: SmallPurpleArrow,
   backgroundCharacter: rightPNG,
+  networkItems: maucItems,
   backgroundUrl:
     "data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23bb00ffFF' stroke-width='1' stroke-dasharray='21%2c 23%2c 11' stroke-dashoffset='37' stroke-linecap='square'/%3e%3c/svg%3e",
 };

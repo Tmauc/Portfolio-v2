@@ -34,9 +34,12 @@ function Images({ title, description, images, skills }) {
     <ProjectWrapper>
       <IMGWrapper>
         {images.map((image, index) => (
-          <a key={title + index} href={'#projects' + title + index} type="image/png">
+          <a
+            key={title + index}
+            href={'#projects' + title + index}
+            type="image/png"
+          >
             <ProjectIMG
-
               alt={title + index}
               src={image}
               isSelected={index === selectedIMG}

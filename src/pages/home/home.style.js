@@ -62,10 +62,10 @@ export const PageWrapper = styled.div`
   width: calc(100vw - 20px);
   display: flex;
   flex-direction: column;
-  margin: 10px;
-  margin-left: 50px;
+  margin: 10px 10px 10px 50px;
   padding: 50px;
-  background-image: url("${(p) => p.theme.backgroundUrl}");
+  //padding-bottom: 100px;
+  background-image: url('${(p) => p.theme.backgroundUrl}');
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     padding: 50px 8%;
@@ -118,7 +118,6 @@ export const LargeLink = styled(LargeText).attrs({
 
   transition: all 0.2s ease-out;
 
-  cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 
   &:hover {
@@ -214,18 +213,13 @@ export const MainSection = styled.div`
   margin-top: 20px;
 
   &::-webkit-scrollbar {
-    width: 30px; // manage scrollbar width here
+    width: 30px;
   }
   &::-webkit-scrollbar * {
-    background: transparent; // manage scrollbar background color here
+    background: transparent;
   }
   &::-webkit-scrollbar-thumb {
-    background: rgba(
-      255,
-      0,
-      0,
-      0
-    ) !important; // manage scrollbar thumb background color here
+    background: rgba(255, 0, 0, 0) !important;
   }
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
@@ -235,6 +229,10 @@ export const MainSection = styled.div`
     margin-top: 30px;
     max-width: 100vw;
     font-size: 12px;
+  }
+
+  @media only screen and (orientation: portrait) {
+    margin-top: 100px;
   }
 `;
 

@@ -22,7 +22,8 @@ export const LargeText = styled.h1`
     background: ${(p) => p.theme.bottomBorder};
   }
 
-  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+  @media only screen and (max-width: ${TABLET_WIDTH}px),
+    only screen and (orientation: portrait) {
     font-size: 10vw;
   }
 `;

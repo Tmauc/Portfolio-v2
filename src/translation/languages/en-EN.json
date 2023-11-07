@@ -13,6 +13,10 @@
     "message": "Message",
     "send": "Send"
   },
+  "freelance": {
+    "available": "Available for Freelance",
+    "unavailable": "Unavailable for Freelance"
+  },
   "largeText": {
     "contentCreatorPart1": "Content",
     "contentCreatorPart2": "creator",

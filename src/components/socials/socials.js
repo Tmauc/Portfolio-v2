@@ -1,10 +1,11 @@
 import React from 'react';
-
-import { NETWORK_ITEMS as networkItems } from 'data/networkData';
+import { useTheme } from 'styled-components';
 
 import { Main, Wrapper, Card } from './socials.style';
 
 function Socials() {
+  const { networkItems } = useTheme();
+
   return (
     <Wrapper className="socialWrapper">
       <Main>

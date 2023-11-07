@@ -18,7 +18,6 @@ export const SpanMenu = styled.span`
   transition: 0.5s ease-in-out;
   box-shadow: 0 0 0 0 ${(p) => p.theme.secondary},
     0 0 0 0 ${(p) => p.theme.secondary};
-  cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 `;
 export const SpanHamburgerMenu = styled.span`

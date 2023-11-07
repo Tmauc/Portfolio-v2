@@ -1,12 +1,11 @@
 import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from 'styled-components';
 
 import SwitchLang from 'components/switchLang/switchLang';
 import Networks from 'components/networks/networks';
 
 import useActiveNavbarLink from 'hooks/useActiveNavbarLink';
-
-import { NETWORK_MOBILE_ITEMS as networkItems } from 'data/networkData';
 
 import {
   Label,
@@ -22,6 +21,7 @@ import {
 
 function HamburgerMenu({ navbarItems }) {
   const [t] = useTranslation();
+  const { networkItems } = useTheme();
   const handleLinkClick = (event) => {
     event.preventDefault();
 

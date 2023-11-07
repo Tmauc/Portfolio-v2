@@ -12,6 +12,7 @@ import ScrollIndicator from 'components/scrollIndicator/scrollIndicator';
 import SmallPostIt from 'components/SmallPostIt/smallPostIt';
 import Socials from 'components/socials/socials';
 import CustomCursor from 'components/customCursor/customCursor';
+import Available from 'components/available/available';
 
 import {
   LEFT_SIDE,
@@ -101,8 +102,9 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
             <GradientWrapper>
               <ColorGradient
                 onClick={handleClick}
-                aria-label={`Go to ${activeSide === LEFT_SIDE ? THOMAS : MAUC
-                  }'s side page`}
+                aria-label={`Go to ${
+                  activeSide === LEFT_SIDE ? THOMAS : MAUC
+                }'s side page`}
                 tabIndex={0}
               >
                 {activeSide === LEFT_SIDE ? THOMAS : MAUC}
@@ -143,6 +145,7 @@ function Home({ isDarkMode, setIsDarkMode, setSelectedTheme, activeSide }) {
           setLoading={setLoading}
         />
         {!isMobile && <Socials />}
+        <Available />
         <ScrollIndicator mainRef={mainRef} />
         {loading && (
           <Loader

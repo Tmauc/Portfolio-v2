@@ -36,8 +36,6 @@ export const LangDesktop = styled.button`
   margin-top: 20px;
   transform: rotate(-90deg);
 
-  cursor: pointer;
-
   &:hover {
     color: ${(p) => p.theme.primary};
   }

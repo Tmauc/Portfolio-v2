@@ -11,7 +11,6 @@ export const ToggleWrapper = styled.div`
 `;
 
 export const Label = styled.label`
-  cursor: pointer;
   display: inline-block;
   position: relative;
   width: 90px;
