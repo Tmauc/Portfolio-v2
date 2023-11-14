@@ -87,17 +87,17 @@ export const THOMAS_ITEMS = [
     className: 'github',
   },
   {
-    name: 'Twitch',
-    url: 'https://www.twitch.tv/maucsama',
-    icon: <FaTwitch />,
-    color: 'hsl(261, 43%, 45%)',
-    className: 'twitch',
-  },
-  {
     name: 'Discord',
     url: 'https://github.com/Tmauc',
     icon: <FaDiscord />,
     color: 'hsl(224, 60%, 65%)',
     className: 'discord',
+  },
+  {
+    name: 'Twitch',
+    url: 'https://www.twitch.tv/maucsama',
+    icon: <FaTwitch />,
+    color: 'hsl(261, 43%, 45%)',
+    className: 'twitch',
   },
 ];

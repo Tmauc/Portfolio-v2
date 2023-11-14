@@ -68,7 +68,6 @@ export const PageWrapper = styled.div`
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     padding: 50px 8%;
-    padding-right: 0;
     margin-left: 10px;
   }
 `;
@@ -228,6 +227,9 @@ export const MainSection = styled.div`
     margin-top: 30px;
     max-width: 100vw;
     font-size: 12px;
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
   }
 
   @media only screen and (orientation: portrait) {
@@ -247,5 +249,6 @@ export const MainWrapper = styled.div`
   @media only screen and (max-width: ${TABLET_WIDTH}px),
     only screen and (orientation: portrait) {
     max-width: 100vw;
+    width: 100%
   }
 `;

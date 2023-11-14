@@ -60,8 +60,8 @@ export const IMGWrapper = styled.div`
   @media only screen and (max-width: ${TABLET_WIDTH}px),
     only screen and (orientation: portrait) {
     flex-direction: row;
-    max-height: 60px;
-    min-height: 60px;
+    //max-width: 70vw;
+    min-height: 70px;
 
     & > *:not(:last-child) {
       margin-right: 20px;
@@ -71,7 +71,8 @@ export const IMGWrapper = styled.div`
 `;
 
 export const ProjectIMG = styled.img`
-  width: 100px;
+  min-width: 100px;
+  aspect-ratio: 16/9;
   object-fit: cover;
 
   transition: all 0.4s;
@@ -90,6 +91,10 @@ export const ProjectIMG = styled.img`
   }
 `;
 
+export const StyledA = styled.a`
+  height: fit-content;
+`
+
 export const MiddleWrapper = styled.div``;
 
 export const SelectedIMG = styled.img`
@@ -99,7 +104,7 @@ export const SelectedIMG = styled.img`
 
   @media only screen and (max-width: ${TABLET_WIDTH}px),
     only screen and (orientation: portrait) {
-    width: 100%;
+    width: 70vw;
     max-width: fit-content;
     aspect-ratio: 16/9;
   }
@@ -111,6 +116,12 @@ export const SkillsWrapper = styled.div`
 
   & > *:not(:last-child) {
     margin-right: 20px;
+  }
+
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    & > *:not(:last-child) {
+      margin-right: 20px;
+    }
   }
 `;
 
@@ -133,8 +144,11 @@ export const Skill = styled.span`
     color: ${(p) => p.theme.secondary};
     border-color: ${(p) => p.theme.primary};
   }
+
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    font-size: 8px;
+  }
 `;
 
 export const Description = styled.div`
-  overflow-y: auto;
 `;

@@ -20,6 +20,7 @@ import {
   SkillsWrapper,
   Skill,
   ProjectIMG,
+  StyledA,
 } from './projects.style';
 
 function Images({ title, description, images, skills }) {
@@ -34,7 +35,7 @@ function Images({ title, description, images, skills }) {
     <ProjectWrapper>
       <IMGWrapper>
         {images.map((image, index) => (
-          <a
+          <StyledA
             key={title + index}
             href={'#projects' + title + index}
             type="image/png"
@@ -45,7 +46,7 @@ function Images({ title, description, images, skills }) {
               isSelected={index === selectedIMG}
               onClick={() => onClickIMG(index)}
             />
-          </a>
+          </StyledA>
         ))}
       </IMGWrapper>
       <MiddleWrapper>
