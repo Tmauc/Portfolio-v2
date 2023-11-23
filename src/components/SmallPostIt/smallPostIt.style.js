@@ -9,31 +9,31 @@ import {
 } from 'constants/constants';
 
 export const Wrapper = styled.div`
-  position: fixed;
+  position: absolute;
   opacity: 0.5;
 
   ${(p) => {
     if (p.type === ITSME_ARROW) {
       if (p.activeSide === LEFT_SIDE) {
         return css`
-          top: 135px;
-          right: 70px;
+          bottom: 660px;
+          right: 60px;
         `;
       } else if (p.activeSide === RIGHT_SIDE) {
         return css`
-          top: 150px;
-          right: 350px;
+          bottom: 670px;
+          right: 290px;
         `;
       }
     } else if (p.type === WATCH_ARROW) {
       return css`
-        top: 500px;
-        right: 385px;
+        bottom: 360px;
+        right: 340px;
       `;
     } else if (p.type === REYES_PULL) {
       return css`
-        top: 285px;
-        right: 35px;
+        bottom: 580px;
+        right: 50px;
       `;
     }
   }};
@@ -68,9 +68,9 @@ export const Text = styled.p`
     if (p.type === ITSME_ARROW) {
       if (p.activeSide === LEFT_SIDE) {
         return css`
-          font-size: 20px;
-          top: 17px;
-          right: -25px;
+          font-size: 16px;
+          top: 10px;
+          right: -30px;
           transform: rotate(-12deg);
         `;
       } else if (p.activeSide === RIGHT_SIDE) {

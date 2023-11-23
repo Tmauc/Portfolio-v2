@@ -83,7 +83,6 @@ select {
   body {
     color: ${(p) => p.theme.textColor};
     font-family: 'TT Firs Neue Trl Regular';
-    overflow: hidden;
 
     .button {
       transition: all 0.2s ease-in-out;

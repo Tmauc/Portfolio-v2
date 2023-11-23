@@ -4,7 +4,7 @@ import { useEventListener } from 'hooks/useEventListener';
 
 import { CursorInner, CursorOuter } from './customCursor.style';
 
-const TRAILING_SPEED = 8;
+const TRAILING_SPEED = 5;
 const INNER_SIZE = 4;
 const INNER_SCALE = 1;
 const OUTER_SIZE = 50;

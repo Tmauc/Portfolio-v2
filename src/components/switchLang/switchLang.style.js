@@ -4,10 +4,10 @@ import { LargeText } from 'assets/styles/common.style';
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-right: 10px;
+  height: fit-content;
 `;
 
 export const LangButton = styled(LargeText).attrs({
@@ -33,16 +33,13 @@ export const LangDesktop = styled.button`
   margin: 0;
   padding: 0;
 
-  margin-top: 20px;
-  transform: rotate(-90deg);
-
   &:hover {
     color: ${(p) => p.theme.primary};
   }
 `;
 
 export const Separator = styled.div`
-  width: 30px;
-  height: 1px;
+  width: 1px;
+  height: 30px;
   background-color: ${(p) => p.theme.tertiary};
 `;

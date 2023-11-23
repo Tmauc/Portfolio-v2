@@ -16,8 +16,8 @@ function SmallPostIt({ svgSRC, type, activeSide }) {
             {t('smallPostIt.itsMe')}
           </Text>
           <Img
-            width="100px"
-            height="100px"
+            width="80px"
+            height="80px"
             activeSide={activeSide}
             alt="Arrow SVG to point my picture"
             src={svgSRC}

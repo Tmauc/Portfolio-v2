@@ -4,8 +4,8 @@ import { TABLET_WIDTH } from 'constants/constants';
 
 export const Wrapper = styled.div`
   position: fixed;
-  bottom: 40px;
-  left: 70px;
+  bottom: 20px;
+  left: 50%;
 
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     display: flex;

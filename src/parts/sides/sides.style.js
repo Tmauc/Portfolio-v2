@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 import { TABLET_WIDTH } from 'constants/constants';
 
+export const LeftWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+`
 export const AboutWrapper = styled.div`
   & > *:not(:last-child) {
     margin-bottom: 10px;
@@ -22,14 +27,15 @@ const sketchStyle = css`
   transform: rotate(2deg);
 `;
 
-export const Section = styled.section`
+export const Section = styled.div`
   border-radius: 0px;
   background: ${(p) => p.theme.secondaryBackground};
-  padding: 20px;
+  padding: 50px;
   & > *:not(:last-child) {
     margin-bottom: 20px;
   }
   width: 100%;
+  height: 100vh;
 
   ${(p) => {
     if (p.scrollIndicator) {

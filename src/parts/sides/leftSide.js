@@ -9,6 +9,7 @@ import Projects from 'components/projects/projects';
 import Button from 'components/button/button';
 
 import {
+  LeftWrapper,
   H2,
   P,
   Italic,
@@ -23,7 +24,7 @@ import {
 function LeftSide() {
   const [t] = useTranslation();
   return (
-    <>
+    <LeftWrapper>
       <Section id="about">
         <AboutWrapper>
           <H2>
@@ -51,7 +52,7 @@ function LeftSide() {
           />
         </ContactWrapper>
       </Section>
-      <Section id="projects">
+      {/*<Section id="projects">
         <P>
           <Trans
             i18nKey="left.projects"
@@ -59,7 +60,7 @@ function LeftSide() {
           />
         </P>
         <Projects />
-      </Section>
+      </Section>*/}
       <Section id="skills">
         <P>
           <Trans i18nKey="left.skills" components={{ 1: <HighlightRect /> }} />
@@ -78,7 +79,7 @@ function LeftSide() {
           href={'mailto:' + MAIL_NAME + '@gmail.com'}
         />
       </Center>
-    </>
+    </LeftWrapper>
   );
 }
 

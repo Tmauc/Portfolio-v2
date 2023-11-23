@@ -3,6 +3,8 @@ import { shadow, jump } from 'assets/styles/animations';
 
 export const LoaderWrapper = styled.div`
   position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,12 +36,12 @@ export const LoaderElement = styled.div`
     transition: background-color 1s ease;
 
     ${(p) => {
-      if (p.isSwap) {
-        return css`
+    if (p.isSwap) {
+      return css`
           background-color: ${(p) => p.theme.primaryDark};
         `;
-      }
-    }};
+    }
+  }};
   }
 
   &:after {
@@ -54,11 +56,11 @@ export const LoaderElement = styled.div`
     background-color: ${(p) => p.theme.tertiary};
     transition: background-color 1s ease;
     ${(p) => {
-      if (p.isSwap) {
-        return css`
+    if (p.isSwap) {
+      return css`
           background-color: ${(p) => p.theme.primary};
         `;
-      }
-    }};
+    }
+  }};
   }
 `;

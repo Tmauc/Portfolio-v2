@@ -6,7 +6,8 @@ export const LargeText = styled.h1`
   width: fit-content;
 
   font-family: 'TT Firs Neue Trl Black';
-  font-size: calc(5000vw / 1080);
+  font-size: 5vw;
+  //font-size: calc(5000vw / 1080);
   line-height: 75%;
   text-transform: uppercase;
 

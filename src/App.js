@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ReactLenis } from "@studio-freight/react-lenis";
 import {
   BrowserRouter as Router,
   Route,
@@ -7,7 +10,6 @@ import {
   Navigate,
 } from 'react-router-dom';
 
-import { useDarkMode } from 'hooks/useDarkMode';
 import Home from 'pages/home/home';
 
 import { GlobalFonts } from 'assets/styles/fonts';
@@ -16,24 +18,28 @@ import { themes } from 'themes/themes';
 
 import { ORANGE_COLOR, LEFT_SIDE, RIGHT_SIDE } from 'constants/constants';
 
+import './Library.scss'
+
 function App() {
-  const isbrowserDarkMode = useDarkMode();
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem('isDarkMode') === 'true' || isbrowserDarkMode
-  );
   const [selectedTheme, setSelectedTheme] = useState(ORANGE_COLOR);
-  const [theme, setTheme] = useState(themes[selectedTheme].darkTheme);
+  const theme = themes[selectedTheme].darkTheme;
+  /*gsap.registerPlugin(ScrollTrigger);
+  const lenisRef = useRef()
 
   useEffect(() => {
-    localStorage.setItem('isDarkMode', isDarkMode);
-    setTheme(
-      isDarkMode
-        ? themes[selectedTheme].darkTheme
-        : themes[selectedTheme].lightTheme
-    );
-  }, [isDarkMode, selectedTheme]);
+    function update(time) {
+      lenisRef.current?.raf(time * 1000)
+    }
+
+    gsap.ticker.add(update)
+
+    return () => {
+      gsap.ticker.remove(update)
+    }
+  })*/
 
   return (
+
     <ThemeProvider theme={theme}>
       <GlobalFonts />
       <GlobalStyle />
@@ -44,8 +50,6 @@ function App() {
             path="/thomas"
             element={
               <Home
-                isDarkMode={isDarkMode}
-                setIsDarkMode={setIsDarkMode}
                 setSelectedTheme={setSelectedTheme}
                 activeSide={LEFT_SIDE}
               />
@@ -56,8 +60,6 @@ function App() {
             path="/mauc"
             element={
               <Home
-                isDarkMode={isDarkMode}
-                setIsDarkMode={setIsDarkMode}
                 setSelectedTheme={setSelectedTheme}
                 activeSide={RIGHT_SIDE}
               />
@@ -67,6 +69,7 @@ function App() {
         </Routes>
       </Router>
     </ThemeProvider>
+
   );
 }
 

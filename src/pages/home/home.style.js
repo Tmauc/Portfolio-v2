@@ -12,6 +12,16 @@ export const Background = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
 
+  overflow-x: hidden;
+
+  .navbar-fixed {
+    position: fixed;
+    opacity: 0;
+    z-index: 201;
+    top: 0;
+    left: 0;
+  }
+
   @media only screen and (max-width: ${TABLET_WIDTH}px),
     only screen and (orientation: portrait) {
     background-position: center center;
@@ -28,15 +38,13 @@ export const Background = styled.div`
 `;
 
 export const Img = styled.img`
-  position: fixed;
-  top: 0;
+  position: absolute;
+  bottom: 0;
   right: 0;
   width: auto;
-  min-height: 100vh;
-  min-height: 100dvh;
-  height: 1000px;
-  overflow: hidden;
-  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 1));
+  min-height: 900px;
+  max-height: 900px;
+  height: auto;
   @media only screen and (max-width: ${TABLET_WIDTH}px) {
     object-fit: contain;
     object-position: bottom;
@@ -45,40 +53,42 @@ export const Img = styled.img`
   }
 `;
 
-export const Main = styled.div`
+export const Header = styled.div`
   position: relative;
-  display: flex;
-  overflow: hidden;
   height: 100vh;
   height: 100dvh;
+  width: 100vw;
+`;
+
+export const HeaderWrapper = styled.div`
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+  width: 100vw;
   background-color: ${(p) => p.theme.transparentBackground02};
 
-  @media only screen and (max-width: ${TABLET_WIDTH}px) {
-    background-color: ${(p) => p.theme.transparentBackground06};
+  .InfoWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    width: 70vw;
+    padding: 0px 10%;
+
+    .navWrapper {
+      margin-top: 20px;
+    }
   }
 `;
 
-export const PageWrapper = styled.div`
-  width: calc(100vw - 20px);
-  display: flex;
-  flex-direction: column;
-  margin: 10px 10px 10px 50px;
-  padding: 50px;
-  background-image: url("${(p) => p.theme.backgroundUrl}");
-
-  @media only screen and (max-width: ${TABLET_WIDTH}px) {
-    padding: 50px 8%;
-    margin-left: 10px;
-  }
-`;
-
-export const Header = styled.div`
-  display: flex;
-  flex-direction: column;
+export const TextWrapper = styled.div`
+  
 `;
 
 export const GradientWrapper = styled.div`
   display: flex;
+  width: fit-content;
 `;
 
 export const LargeTransparentText = styled(LargeText)`
@@ -201,54 +211,16 @@ export const ColorGradient = styled(Gradient)`
   }
 `;
 
-export const MainSection = styled.div`
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  max-width: 100vw;
-  height: 100%;
-
-  margin-top: 20px;
-
-  &::-webkit-scrollbar {
-    width: 30px;
-  }
-  &::-webkit-scrollbar * {
-    background: transparent;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: rgba(255, 0, 0, 0) !important;
-  }
-
-  @media only screen and (max-width: ${TABLET_WIDTH}px) {
-    display: flex;
-    justify-content: center;
-    margin-left: 0;
-    margin-top: 30px;
-    max-width: 100vw;
-    font-size: 12px;
-    &::-webkit-scrollbar {
-      width: 0px;
-    }
-  }
-
-  @media only screen and (orientation: portrait) {
-    margin-top: 100px;
-  }
-`;
-
-export const MainWrapper = styled.div`
+export const Main = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 55vw;
+  padding: 0px 50px;
+  background-color: ${(p) => p.theme.transparentBackground02};
 
-  & > *:not(:last-child) {
-    margin-bottom: 150px;
-  }
-
-  @media only screen and (max-width: ${TABLET_WIDTH}px),
-    only screen and (orientation: portrait) {
-    max-width: 100vw;
-    width: 100%
+  @media only screen and (max-width: ${TABLET_WIDTH}px) {
+    background-color: ${(p) => p.theme.transparentBackground06};
+    padding: 50px 8%;
+    margin-left: 10px;
   }
 `;
