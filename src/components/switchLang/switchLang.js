@@ -6,10 +6,8 @@ import i18n from 'translation/i18n';
 import { LANG_FR, LANG_EN } from 'constants/constants';
 
 import {
-  Wrapper,
   LangButton,
   LangDesktop,
-  Separator,
 } from './switchLang.style';
 
 function SwitchLang({ isMobile }) {
@@ -31,12 +29,9 @@ function SwitchLang({ isMobile }) {
   return (
     <>
       {!isMobile ? (
-        <Wrapper>
-          <Separator />
-          <LangDesktop onClick={handleToggle}>
-            {lang === LANG_FR ? 'FR' : 'EN'}
-          </LangDesktop>
-        </Wrapper>
+        <LangDesktop onClick={handleToggle}>
+          {lang === LANG_FR ? 'FR' : 'EN'}
+        </LangDesktop>
       ) : (
         <LangButton onClick={handleToggle} mobile>
           {t('navbar.language')} {lang === LANG_FR ? 'FR' : 'EN'}

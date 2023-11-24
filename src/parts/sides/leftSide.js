@@ -23,6 +23,7 @@ import {
 
 function LeftSide() {
   const [t] = useTranslation();
+
   return (
     <LeftWrapper>
       <Section id="about">
@@ -52,7 +53,7 @@ function LeftSide() {
           />
         </ContactWrapper>
       </Section>
-      {/*<Section id="projects">
+      <Section id="projects">
         <P>
           <Trans
             i18nKey="left.projects"
@@ -60,7 +61,7 @@ function LeftSide() {
           />
         </P>
         <Projects />
-      </Section>*/}
+      </Section>
       <Section id="skills">
         <P>
           <Trans i18nKey="left.skills" components={{ 1: <HighlightRect /> }} />

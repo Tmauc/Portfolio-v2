@@ -27,7 +27,7 @@ const sketchStyle = css`
   transform: rotate(2deg);
 `;
 
-export const Section = styled.div`
+export const Section = styled.section`
   border-radius: 0px;
   background: ${(p) => p.theme.secondaryBackground};
   padding: 50px;
@@ -35,7 +35,7 @@ export const Section = styled.div`
     margin-bottom: 20px;
   }
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
   ${(p) => {
     if (p.scrollIndicator) {

@@ -1,33 +1,33 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLenis } from '@studio-freight/react-lenis'
 
 import { NAVBAR_ABOUT } from 'constants/constants';
 
-function useActiveNavbarLink(navbarRef) {
-  const mainSection = document.querySelector('div#mainSection');
+function useActiveNavbarLink() {
   const [activeSection, setActiveSection] = useState(NAVBAR_ABOUT);
 
-  useEffect(() => {
-    if (mainSection) {
-      function handleScroll() {
-        const sections = Array.from(document.querySelectorAll('section[id]'));
-
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop;
-
-          if (mainSection.scrollTop >= sectionTop - 500) {
-            setActiveSection(section.getAttribute('id'));
-          }
-        });
-      }
-
-      mainSection.addEventListener('scroll', handleScroll);
-
-      return () => {
-        mainSection.removeEventListener('scroll', handleScroll);
-      };
+  const calcSectionTop = (section) => {
+    if (section.id === 'header') {
+      return section.offsetTop;
+    } else {
+      return section.offsetTop + window.innerWidth / 2;
     }
-  }, [activeSection, mainSection, navbarRef]);
-  return activeSection;
+  }
+
+  const lenis = useLenis(({ scroll }) => {
+    ScrollTrigger.update();
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+
+    sections.forEach((section) => {
+      const sectionTop = calcSectionTop(section);
+
+      if (scroll >= sectionTop) {
+        setActiveSection(section.getAttribute('id'));
+      }
+    });
+  })
+  return { lenis, activeSection };
 }
 
 export default useActiveNavbarLink;

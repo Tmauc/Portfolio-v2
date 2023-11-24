@@ -53,7 +53,7 @@ export const Img = styled.img`
   }
 `;
 
-export const Header = styled.div`
+export const Header = styled.section`
   position: relative;
   height: 100vh;
   height: 100dvh;
@@ -80,10 +80,6 @@ export const HeaderWrapper = styled.div`
       margin-top: 20px;
     }
   }
-`;
-
-export const TextWrapper = styled.div`
-  
 `;
 
 export const GradientWrapper = styled.div`

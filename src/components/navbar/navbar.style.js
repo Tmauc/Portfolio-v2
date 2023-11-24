@@ -124,6 +124,7 @@ export const Ul = styled.ul`
   display: flex;
 
   width: fit-content;
+  align-items: center;
   height: 100%;
   margin: 0;
   margin-block-start: 0;
@@ -141,7 +142,7 @@ export const Span = styled.span`
 `;
 
 export const NavItem = styled.li`
-  
+  height: fit-content;
 `;
 
 export const NavLink = styled.a`
@@ -184,4 +185,10 @@ export const NavLink = styled.a`
       `;
     }
   }};
+`;
+
+export const Separator = styled.div`
+  width: 1px;
+  height: 30px;
+  background-color: ${(p) => p.theme.tertiary};
 `;

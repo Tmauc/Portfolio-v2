@@ -1,6 +1,9 @@
 import React, { useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { useLenis } from '@studio-freight/react-lenis';
+
+import { handleScrollTo } from 'utils/handleScrollTo';
 
 import SwitchLang from 'components/switchLang/switchLang';
 
@@ -20,13 +23,15 @@ import {
   Span,
   GradientWrapper,
   ColorGradient,
+  Separator,
 } from './navbar.style';
 
 function Navbar({ navbarItems, setLoading, activeSide, isShort }) {
+  const lenis = useLenis();
   const navigate = useNavigate();
   const [t] = useTranslation();
   const navbarRef = useRef(null);
-  const activeSection = useActiveNavbarLink(navbarRef);
+  const { activeSection } = useActiveNavbarLink();
 
   const handleClick = useCallback(() => {
     setLoading('swap');
@@ -56,17 +61,18 @@ function Navbar({ navbarItems, setLoading, activeSide, isShort }) {
         {navbarItems.map((item, index) => (
           <NavItem key={index}>
             <NavLink
-              href={item.href}
               active={activeSection === item.activeConstant}
               disabled={item.disabled}
               tabIndex={item.tabIndex}
+              onClick={() => handleScrollTo(lenis, item.href)}
             >
               <Span>{t(item.label)}</Span>
             </NavLink>
           </NavItem>
         ))}
+        <Separator />
+        <SwitchLang />
       </Ul>
-      {/*<SwitchLang />*/}
     </Nav>
   );
 }
