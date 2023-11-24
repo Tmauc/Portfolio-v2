@@ -1,5 +1,4 @@
 import React from 'react';
-import Lenis from '@studio-freight/lenis'
 
 import useScroll from 'hooks/useScroll';
 

@@ -69,7 +69,7 @@ function Home({ setSelectedTheme, activeSide }) {
     setSelectedTheme(activeSide === LEFT_SIDE ? ORANGE_COLOR : PURPLE_COLOR);
   }, [activeSide, setSelectedTheme]);
 
-  /*useEffect(() => {
+  useEffect(() => {
     gsap.set('.navbar-fixed', {
       opacity: 0,
     })
@@ -86,7 +86,7 @@ function Home({ setSelectedTheme, activeSide }) {
     tl.to('.navbar-fixed', {
       opacity: 1,
     })
-  }, []);*/
+  }, []);
 
   const navbarItems =
     activeSide === LEFT_SIDE ? NAVBAR_ITEMS_LEFT : NAVBAR_ITEMS_RIGHT;

@@ -15,7 +15,7 @@ export const Nav = styled.nav`
       return css`
         width: 100dvw;
         padding: 1% 50px;
-        background-color: ${(p) => p.theme.transparentBackground02};
+        background-color: ${(p) => p.theme.secondaryBackground};
       `
     }
   }}

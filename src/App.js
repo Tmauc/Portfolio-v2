@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ReactLenis } from "@studio-freight/react-lenis";
 import {
   BrowserRouter as Router,
   Route,
@@ -23,7 +22,8 @@ import './Library.scss'
 function App() {
   const [selectedTheme, setSelectedTheme] = useState(ORANGE_COLOR);
   const theme = themes[selectedTheme].darkTheme;
-  /*gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
+
   const lenisRef = useRef()
 
   useEffect(() => {
@@ -36,10 +36,9 @@ function App() {
     return () => {
       gsap.ticker.remove(update)
     }
-  })*/
+  })
 
   return (
-
     <ThemeProvider theme={theme}>
       <GlobalFonts />
       <GlobalStyle />
@@ -69,7 +68,6 @@ function App() {
         </Routes>
       </Router>
     </ThemeProvider>
-
   );
 }
 

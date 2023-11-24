@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 
-function useScroll(ref) {
+function useScroll() {
   const [isScrollBottom, setIsScrollBottom] = useState(false);
 
   useEffect(() => {
-    const element = ref && ref.current;
+    const element = document.body;
+
     if (!element) return;
 
     const isScrollable = element.scrollHeight > element.clientHeight;
@@ -21,12 +22,15 @@ function useScroll(ref) {
     return () => {
       element.removeEventListener('scroll', handleScroll);
     };
-  }, [ref]);
+  }, []);
 
   function scrollToTop() {
-    const element = ref && ref.current;
+    const element = document.body;
     if (!element) return;
-    element.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }
 
   return [isScrollBottom, scrollToTop];
