@@ -1,16 +1,13 @@
 import React from 'react';
-import Lenis from '@studio-freight/lenis'
-
-import useScroll from 'hooks/useScroll';
+import { useLenis } from '@studio-freight/react-lenis';
 
 import { Wrapper, SpanScroll, SpanGoToTop } from './scrollIndicator.style';
 
-function ScrollIndicator({ mainRef }) {
-  const [isScrollBottom, scrollToTop] = useScroll(mainRef);
-  const lenis = new Lenis()
+function ScrollIndicator() {
+  const lenis = useLenis();
 
   const handleScrollToTop = () => {
-    lenis.scrollTo({
+    lenis.scrollTo('top', {
       duration: 2000,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
     })

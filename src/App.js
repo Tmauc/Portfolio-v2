@@ -25,7 +25,7 @@ function App() {
   const theme = themes[selectedTheme].darkTheme;
   gsap.registerPlugin(ScrollTrigger);
   const lenis = useLenis(({ scroll }) => {
-    console.log('Scroll', scroll)
+
   })
 
   const lenisRef = useRef(lenis)
@@ -46,7 +46,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalFonts />
       <GlobalStyle />
-      <ReactLenis ref={lenisRef} autoRaf={false}>
+      <ReactLenis ref={lenisRef} autoRaf={false} root>
         <Router>
           <Routes>
             <Route

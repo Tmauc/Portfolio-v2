@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState, useRef } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
@@ -39,12 +39,9 @@ import {
   Img,
   Header,
   HeaderWrapper,
-  TextWrapper,
   GradientWrapper,
   ColorGradient,
   LargeTransparentText,
-  MainSection,
-  MainWrapper,
 } from './home.style';
 
 function Home({ setSelectedTheme, activeSide }) {
@@ -53,7 +50,6 @@ function Home({ setSelectedTheme, activeSide }) {
   const { isMobile, isVertical } = useDeviceType();
   const { itsMeArrow, smallArrow, backgroundCharacter } = useTheme();
   const [t] = useTranslation();
-  const mainRef = useRef(null);
 
   const handleClick = useCallback(() => {
     setLoading('swap');
@@ -77,7 +73,7 @@ function Home({ setSelectedTheme, activeSide }) {
     const tl = gsap.timeline({
       scrollTrigger: {
         start: 'top+=700',
-        end: '+=1',
+        end: '+=100',
         toggleActions: 'play none none reverse',
         scrub: .5
       }
@@ -92,7 +88,7 @@ function Home({ setSelectedTheme, activeSide }) {
     activeSide === LEFT_SIDE ? NAVBAR_ITEMS_LEFT : NAVBAR_ITEMS_RIGHT;
 
   return (
-    <Background ref={mainRef}>
+    <Background>
       {!isMobile && <CustomCursor />}
       <div className='navbar-fixed'>
         {isMobile ? (
@@ -166,7 +162,7 @@ function Home({ setSelectedTheme, activeSide }) {
       </Main>
       {!isMobile && <Socials />}
       <Available />
-      <ScrollIndicator mainRef={mainRef} />
+      <ScrollIndicator />
       {loading && (
         <Loader
           aria-label="Loader"

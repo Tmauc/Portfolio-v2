@@ -82,10 +82,6 @@ export const HeaderWrapper = styled.div`
   }
 `;
 
-export const TextWrapper = styled.div`
-  
-`;
-
 export const GradientWrapper = styled.div`
   display: flex;
   width: fit-content;

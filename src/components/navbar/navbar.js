@@ -20,6 +20,7 @@ import {
   Span,
   GradientWrapper,
   ColorGradient,
+  Separator,
 } from './navbar.style';
 
 function Navbar({ navbarItems, setLoading, activeSide, isShort }) {
@@ -65,8 +66,9 @@ function Navbar({ navbarItems, setLoading, activeSide, isShort }) {
             </NavLink>
           </NavItem>
         ))}
+        <Separator />
+        <SwitchLang />
       </Ul>
-      {/*<SwitchLang />*/}
     </Nav>
   );
 }

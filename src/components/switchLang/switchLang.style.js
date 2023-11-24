@@ -37,9 +37,3 @@ export const LangDesktop = styled.button`
     color: ${(p) => p.theme.primary};
   }
 `;
-
-export const Separator = styled.div`
-  width: 1px;
-  height: 30px;
-  background-color: ${(p) => p.theme.tertiary};
-`;
