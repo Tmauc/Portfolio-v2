@@ -23,6 +23,7 @@ import {
 
 function LeftSide() {
   const [t] = useTranslation();
+
   return (
     <LeftWrapper>
       <Section id="about">

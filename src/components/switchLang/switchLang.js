@@ -6,7 +6,6 @@ import i18n from 'translation/i18n';
 import { LANG_FR, LANG_EN } from 'constants/constants';
 
 import {
-  Wrapper,
   LangButton,
   LangDesktop,
 } from './switchLang.style';

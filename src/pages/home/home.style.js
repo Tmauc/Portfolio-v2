@@ -53,7 +53,7 @@ export const Img = styled.img`
   }
 `;
 
-export const Header = styled.div`
+export const Header = styled.section`
   position: relative;
   height: 100vh;
   height: 100dvh;

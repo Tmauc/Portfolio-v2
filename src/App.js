@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
+import { ReactLenis } from '@studio-freight/react-lenis'
+import useActiveNavbarLink from 'hooks/useActiveNavbarLink';
 import {
   BrowserRouter as Router,
   Route,
@@ -22,12 +23,9 @@ import './Library.scss'
 
 function App() {
   const [selectedTheme, setSelectedTheme] = useState(ORANGE_COLOR);
+  const { lenis } = useActiveNavbarLink();
   const theme = themes[selectedTheme].darkTheme;
   gsap.registerPlugin(ScrollTrigger);
-  const lenis = useLenis(({ scroll }) => {
-
-  })
-
   const lenisRef = useRef(lenis)
 
   useEffect(() => {
