@@ -11,7 +11,7 @@ function useActiveNavbarLink() {
     if (section.id === 'header') {
       return section.offsetTop;
     } else {
-      return section.offsetTop + window.innerWidth / 2;
+      return section.offsetTop + (window.innerWidth / 2 - 100);
     }
   }
 
