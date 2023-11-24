@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 import {
   BrowserRouter as Router,
   Route,
@@ -23,8 +24,11 @@ function App() {
   const [selectedTheme, setSelectedTheme] = useState(ORANGE_COLOR);
   const theme = themes[selectedTheme].darkTheme;
   gsap.registerPlugin(ScrollTrigger);
+  const lenis = useLenis(({ scroll }) => {
+    console.log('Scroll', scroll)
+  })
 
-  const lenisRef = useRef()
+  const lenisRef = useRef(lenis)
 
   useEffect(() => {
     function update(time) {
@@ -42,32 +46,34 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalFonts />
       <GlobalStyle />
-      <Router>
-        <Routes>
-          <Route
-            exact
-            path="/thomas"
-            element={
-              <Home
-                setSelectedTheme={setSelectedTheme}
-                activeSide={LEFT_SIDE}
-              />
-            }
-          />
-          <Route
-            exact
-            path="/mauc"
-            element={
-              <Home
-                setSelectedTheme={setSelectedTheme}
-                activeSide={RIGHT_SIDE}
-              />
-            }
-          />
-          <Route path="*" element={<Navigate to="/thomas" />} />
-        </Routes>
-      </Router>
-    </ThemeProvider>
+      <ReactLenis ref={lenisRef} autoRaf={false}>
+        <Router>
+          <Routes>
+            <Route
+              exact
+              path="/thomas"
+              element={
+                <Home
+                  setSelectedTheme={setSelectedTheme}
+                  activeSide={LEFT_SIDE}
+                />
+              }
+            />
+            <Route
+              exact
+              path="/mauc"
+              element={
+                <Home
+                  setSelectedTheme={setSelectedTheme}
+                  activeSide={RIGHT_SIDE}
+                />
+              }
+            />
+            <Route path="*" element={<Navigate to="/thomas" />} />
+          </Routes>
+        </Router>
+      </ReactLenis>
+    </ThemeProvider >
   );
 }
 
